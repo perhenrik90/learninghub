@@ -10,6 +10,6 @@ class EProject(models.Model):
 
     name = models.CharField(max_length=40)
     timecreated = models.DateTimeField(auto_now_add=True)
-    owner = models.ForeignKey(User, User)
+    owner = models.ForeignKey(User)
     
 
