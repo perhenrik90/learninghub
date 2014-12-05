@@ -23,6 +23,7 @@ SECRET_KEY = 'znuytm9xhr_1u2pp70b2g@d4p5&(dda4&4gltxv(8lq649_z)y'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+#TEMPLATE_DIRS = ("learningbucket/template")
 
 ALLOWED_HOSTS = []
 
@@ -77,6 +78,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGES = ('no')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
