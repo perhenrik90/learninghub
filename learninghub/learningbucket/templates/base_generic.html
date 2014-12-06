@@ -1,9 +1,12 @@
 {% load i18n %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>{% trans "app-title" %}</title>
     <meta charset="UTF-8"></meta>
+    <link rel="stylesheet" type="text/css"
+	  href="{%static 'css/default.css' %}"/>
   </head>
   <body>
     <header>

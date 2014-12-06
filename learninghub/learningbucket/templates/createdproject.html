@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>{% trans "Project created!" %}</h1>
+<a href={% url 'learningbucket.views.myprojects' %}>
+<p>{% trans "You have created the project " %}
+   {{ pname }}</p>
+
+<p>{% trans "Go back to projects" %}</p>
+</a>
+{% endblock %}
+

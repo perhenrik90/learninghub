@@ -1,6 +1,7 @@
+from django.core.context_processors import csrf
 from django.shortcuts import render
 from django.template.response import TemplateResponse
-from django.template import RequestContext, loader, Template
+from django.template import RequestContext, loader, Template, Context
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 
@@ -17,10 +18,12 @@ def login(request):
     user = request.user
 
     template = loader.get_template('login.html')
-    #template = Template("Hello World")
     context = RequestContext(request, {})
     return HttpResponse(template.render(context))
-    
+ 
+#
+# Lists projects for a user
+#   
 
 def myprojects(request):
 
@@ -34,6 +37,9 @@ def myprojects(request):
     return HttpResponse(template.render(context))
 
 
+#
+# Form for create a new project!
+#
 
 def createproject(request):
 
@@ -42,6 +48,18 @@ def createproject(request):
     if(not user.is_authenticated()):
         return userNotAuthenticated(request)
 
+    # on post, create a project!
+    if(request.method == "POST"):
+        # variable from the post to be used
+        pname = request.POST["name"]
+
+        template = loader.get_template("createdproject.html")
+        context = Context({"pname":pname})
+        context.update(csrf(request))
+        return HttpResponse(template.render(context))
+
+
+    # normaly show a form 
     template = loader.get_template("createproject.html")
     context = RequestContext(request, {})
     return HttpResponse(template.render(context))

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-06 13:26+0000\n"
-"PO-Revision-Date: 2014-12-06 14:28+0100\n"
+"PO-Revision-Date: 2014-12-06 14:23+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,37 +19,37 @@ msgstr ""
 
 #: learningbucket/templates/base_generic.html:5
 msgid "app-title"
-msgstr "Learning Hub"
+msgstr "Lærings hubben"
 
 #: learningbucket/templates/base_generic.html:14
 msgid "My Projects"
-msgstr ""
+msgstr "Mine prosjekter"
 
 #: learningbucket/templates/base_generic.html:17
 #: learningbucket/templates/createproject.html:6
 msgid "Create project"
-msgstr ""
+msgstr "Opprett prosjekt"
 
 #: learningbucket/templates/createproject.html:8
 msgid "Name"
-msgstr "Name"
+msgstr "Navn"
 
 #: learningbucket/templates/createproject.html:9
 msgid "Description"
-msgstr ""
+msgstr "Beskrivelse"
 
 #: learningbucket/templates/login.html:7
 msgid "Login"
-msgstr "Login"
+msgstr "Logg inn"
 
 #: learningbucket/templates/login.html:8
 msgid "Username"
-msgstr "Username"
+msgstr "Brukernavn"
 
 #: learningbucket/templates/login.html:9
 msgid "Password"
-msgstr "Password"
+msgstr "Passord"
 
 #: learningbucket/templates/myprojects.html:6
 msgid "My projects"
-msgstr ""
+msgstr "Mine prosjekter"
