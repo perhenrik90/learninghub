@@ -6,8 +6,9 @@ from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 from django.utils import translation
 from django.contrib.auth import authenticate, login
+from django.forms.models import model_to_dict
 
-
+import learningbucket.models as models
 
 def userNotAuthenticated(request):
     return redirect("/login");
@@ -45,9 +46,13 @@ def myprojects(request):
     user = request.user
     if(not user.is_authenticated()):
         return userNotAuthenticated(request)
+
+    projects = models.EProject.objects.all().filter(owner=user)
+    print(projects)
+    c = {"projects":projects}
     
     template = loader.get_template("myprojects.html")
-    context = RequestContext(request, {})
+    context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
 
@@ -66,6 +71,14 @@ def createproject(request):
     if(request.method == "POST"):
         # variable from the post to be used
         pname = request.POST["name"]
+        org   = request.POST["organization"]
+
+        eproject = models.EProject(name=pname,
+                                   owner=user,
+                                   organization=org,
+                                   visits=0)
+
+        eproject.save()
 
         template = loader.get_template("createdproject.html")
         context = Context({"pname":pname})
