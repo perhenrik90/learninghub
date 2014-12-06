@@ -86,8 +86,8 @@ LOCALE_PATHS = ('locales')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
 # LEARNING HUB settings
 # Spesific settings for learninghub
