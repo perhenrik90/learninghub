@@ -41,7 +41,7 @@ def login_view(request):
 #   
 
 def myprojects(request):
-    print(translation.get_language())
+
     # if user is not authenticated!
     user = request.user
     if(not user.is_authenticated()):
@@ -55,6 +55,29 @@ def myprojects(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
+
+def project(request):
+
+    # if user is not authenticated!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+    # prepare to show the user that project do not exists
+    template = loader.get_template("project_not_found.html")
+    c = {}
+
+    # get for project id
+    if(request.method == "GET" and 'id' in request.GET):
+        get_id = request.GET["id"];
+        eproject = models.EProject.objects.get(id=get_id)
+        if eproject:
+            template = loader.get_template("project.html")
+            c = {"project":eproject}
+
+    # render the template
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))
 
 #
 # Form for create a new project!

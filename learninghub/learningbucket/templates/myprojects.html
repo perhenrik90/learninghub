@@ -5,9 +5,11 @@
 {% block content %}
 <h1>{% trans "My projects" %}</h1>
 {% for project in projects %}
+<a href="{% url 'learningbucket.views.project'%}?id={{project.id}}">
 <div class="projectMiniDisplay">
-<p>{{project.name}}</p>
+  <p>{{project.name}}</p>
 </div>
+</a>
 {% endfor %}
 {% endblock %}
 

@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>{% blocktrans %}Project not found!{% endblocktrans %}</h1>
+<a href="{% url 'learningbucket.views.myprojects' %}">
+<p>{% blocktrans %}Back to my projects{% endblocktrans %}</p>
+</a>
+{% endblock %}
+

@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>{{project.name}}</h1>
+<p>{% blocktrans %}Project owner: {% endblocktrans %}
+  {{project.owner.first_name}} {{project.owner.last_name}}
+  </p>
+<p>{{project.organization}}</p>
+<p>{{project.description}}</p>
+{% endblock %}
+
