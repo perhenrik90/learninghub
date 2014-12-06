@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     url(r'^login/$', 'learningbucket.views.login', name='Login'),
     url(r'^myprojects/$', 'learningbucket.views.myprojects', name='My Projects'),
 
+    url(r'^createproject/$', 'learningbucket.views.createproject', name='Create project'),
+
 
     url(r'^admin/', include(admin.site.urls)),
 )

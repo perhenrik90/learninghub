@@ -31,3 +31,6 @@ def myprojects(request):
     context = RequestContext(request, {})
     return HttpResponse(template.render(context))
 
+def createproject(requets):
+    
+    return HttpResponse("Start createing!")

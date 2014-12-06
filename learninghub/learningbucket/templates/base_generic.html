@@ -9,6 +9,13 @@
     <header>
 
     </header>
+    <nav>
+      <a href={% url 'learningbucket.views.myprojects' %}>
+	{% trans "My Projects" %}</a> 
+
+      <a href={% url 'learningbucket.views.createproject' %}>
+	{% trans "Create project" %}</a> 
+    </nav>
     <section>
     <div id="content">
       {% block content %}

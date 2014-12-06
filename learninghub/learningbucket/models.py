@@ -14,4 +14,11 @@ class EProject(models.Model):
     timecreated = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User)
     visits = models.BigIntegerField()
+    organization = models.CharField(max_length=40)
 
+class EProjectFile(models.Model):
+    
+    type = models.CharField(max_length=40)
+    timecreated = models.DateTimeField(auto_now_add=True)
+    owner_project = models.ForeignKey(EProject)
+    description = models.CharField(max_length=200)

@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>{% trans "Create project" %}</h1>
+<form type="post">
+<input>{% trans "Name" %}</input>
+<input>{% trans "Description" %}</input>
+<input type="submit"></input>
+</form>
+{% endblock %}
+
