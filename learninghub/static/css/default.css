@@ -1,0 +1,16 @@
+/*********************************************
+ * Default CSS for all LearningHub sites 
+ * @author Per-Henrik Kvalnes
+ *
+ ********************************************/
+
+body
+{
+  background-color:#AAA;
+  text-align:center;
+}
+
+head
+{
+  background-color:#444;
+}

@@ -1,14 +1,23 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block title %} Learning Hub {% endblock %}</title>
+    <title>{% trans "app-title" %}</title>
     <meta charset="UTF-8"></meta>
   </head>
   <body>
+    <header>
+
+    </header>
+    <section>
     <div id="content">
       {% block content %}
       {% endblock %}
       
     </div>
+    </section>
+    <footer>
+      
+    </footer>
   </body>
 </html>
