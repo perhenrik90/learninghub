@@ -1,52 +1,51 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-06 16:07+0000\n"
-"PO-Revision-Date: 2014-12-06 14:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 #: learningbucket/templates/base_generic.html:6
 msgid "app-title"
-msgstr "Lærings hubben"
+msgstr "Learning Hub"
 
 #: learningbucket/templates/base_generic.html:17
 msgid "My Projects"
-msgstr "Mine prosjekter"
+msgstr ""
 
 #: learningbucket/templates/base_generic.html:20
 #: learningbucket/templates/createproject.html:6
 msgid "Create project"
-msgstr "Opprett prosjekt"
+msgstr ""
 
 #: learningbucket/templates/createdproject.html:6
 msgid "Project created!"
 msgstr ""
 
 #: learningbucket/templates/createdproject.html:8
-#, fuzzy
 msgid "You have created the project "
-msgstr "Opprett prosjekt"
+msgstr ""
 
 #: learningbucket/templates/createdproject.html:11
-#, fuzzy
 msgid "Go back to projects"
-msgstr "Opprett prosjekt"
+msgstr ""
 
 #: learningbucket/templates/createproject.html:9
 msgid "Name"
-msgstr "Navn"
+msgstr "Name"
 
 #: learningbucket/templates/createproject.html:10
 msgid "Organization"
@@ -54,20 +53,20 @@ msgstr ""
 
 #: learningbucket/templates/createproject.html:11
 msgid "Description"
-msgstr "Beskrivelse"
+msgstr ""
 
 #: learningbucket/templates/login.html:7
 msgid "Login"
-msgstr "Logg inn"
+msgstr "Login"
 
 #: learningbucket/templates/login.html:8
 msgid "Username"
-msgstr "Brukernavn"
+msgstr "Username"
 
 #: learningbucket/templates/login.html:9
 msgid "Password"
-msgstr "Passord"
+msgstr "Password"
 
 #: learningbucket/templates/myprojects.html:6
 msgid "My projects"
-msgstr "Mine prosjekter"
+msgstr ""

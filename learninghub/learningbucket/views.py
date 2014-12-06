@@ -1,22 +1,36 @@
 from django.core.context_processors import csrf
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
 from django.template import RequestContext, loader, Template, Context
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
+from django.utils import translation
+from django.contrib.auth import authenticate, login
 
 
 
 def userNotAuthenticated(request):
-    return login(request)
+    return redirect("/login");
 
 #
 # Login view
 #
 
-def login(request):
+def login_view(request):
     user = request.user
+    if user.is_authenticated():
+        return myprojects(request)
 
+    if request.method == "POST":
+        us = request.POST["username"] 
+        pa = request.POST["pass"]         
+
+        usr = authenticate(username=us, password=pa)
+        if(user is not None):
+            login(request, usr)
+            return redirect("/myprojects")
+        
+        
     template = loader.get_template('login.html')
     context = RequestContext(request, {})
     return HttpResponse(template.render(context))
@@ -26,7 +40,7 @@ def login(request):
 #   
 
 def myprojects(request):
-
+    print(translation.get_language())
     # if user is not authenticated!
     user = request.user
     if(not user.is_authenticated()):

@@ -1,11 +1,27 @@
-{% extends "base_generic.html" %}
 {% load i18n %}
+{% load staticfiles %}
 
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css"
+	href="{% static 'css/default.css'%}"/>
+</head>
 
+<body>
+  <header>
+  </header>
+  <section>
+    <form method="POST">
+      {% csrf_token %}
+      <h1>{% trans "Login" %}</h1>
+      <input name="username">{% trans "Username" %}</input></br>
+      <input name="pass" type="password">{% trans "Password" %}</input></br>
+      <input type="submit"></input>
+    </form>
+  </section>
+  <footer>
+  </footer>
+</body>
 
-{% block content %}
-<h1>{% trans "Login" %}</h1>
-<input>{% trans "Username" %}</input></br>
-<input>{% trans "Password" %}</input>
-{% endblock %}
 

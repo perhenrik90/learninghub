@@ -3,38 +3,40 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-06 13:26+0000\n"
-"PO-Revision-Date: 2014-12-06 14:28+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-#: learningbucket/templates/base_generic.html:5
+#: learningbucket/templates/base_generic.html:6
 msgid "app-title"
 msgstr "Learning Hub"
 
-#: learningbucket/templates/base_generic.html:14
-msgid "My Projects"
-msgstr ""
-
 #: learningbucket/templates/base_generic.html:17
+msgid "My Projects"
+msgstr "My Projects"
+
+#: learningbucket/templates/base_generic.html:20
 #: learningbucket/templates/createproject.html:6
 msgid "Create project"
+msgstr "Create project"
+
+#: learningbucket/templates/createdproject.html:6
+msgid "Project created!"
 msgstr ""
 
-#: learningbucket/templates/createproject.html:8
+#: learningbucket/templates/createdproject.html:8
+msgid "You have created the project "
+msgstr ""
+
+#: learningbucket/templates/createdproject.html:11
+msgid "Go back to projects"
+msgstr "Go back to projects"
+
+#: learningbucket/templates/createproject.html:9
 msgid "Name"
 msgstr "Name"
 
-#: learningbucket/templates/createproject.html:9
+#: learningbucket/templates/createproject.html:10
+msgid "Organization"
+msgstr "Organization"
+
+#: learningbucket/templates/createproject.html:11
 msgid "Description"
 msgstr ""
 

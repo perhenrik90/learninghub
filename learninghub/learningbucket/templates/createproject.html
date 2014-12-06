@@ -7,7 +7,8 @@
 <form method="POST">
   {% csrf_token %}
   <input name="name">{% trans "Name" %}</input></br>
-  <input name="description">{% trans "Description" %}</input>
+  <input name="organization">{% trans "Organization" %}</input></br>
+  <textarea name="description">{% trans "Description" %}</textarea></br>
 <input type="submit"></input>
 </form>
 {% endblock %}
