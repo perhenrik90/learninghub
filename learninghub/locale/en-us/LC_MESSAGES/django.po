@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-06 11:37+0000\n"
+"POT-Creation-Date: 2014-12-06 11:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: learningbucket/views.py:16
+#: learningbucket/views.py:16 learningbucket/templates/login.html:7
 msgid "Login"
 msgstr "Login"
+
+#: learningbucket/templates/login.html:8
+msgid "Username"
+msgstr "Username"
+
+#: learningbucket/templates/login.html:9
+msgid "Password"
+msgstr "Password"
