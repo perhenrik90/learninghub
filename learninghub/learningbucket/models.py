@@ -18,7 +18,6 @@ class EProject(models.Model):
 
 
 
-
 #
 # Describes a participant (person)
 #

@@ -5,7 +5,9 @@
 {% block content %}
 <h1>{% trans "My projects" %}</h1>
 {% for project in projects %}
+<div class="projectMiniDisplay">
 <p>{{project.name}}</p>
+</div>
 {% endfor %}
 {% endblock %}
 
