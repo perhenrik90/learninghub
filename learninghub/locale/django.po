@@ -1,0 +1,5 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Per-Henrik Kvalnes, 2014.
+#
+#, fuzzy
