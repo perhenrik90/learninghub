@@ -16,6 +16,28 @@ class EProject(models.Model):
     visits = models.BigIntegerField()
     organization = models.CharField(max_length=40)
 
+
+
+#
+# Describes a participant (person)
+#
+class EProjectParticipant(models.Model):
+
+    firstname = models.CharField(max_length=40)
+    lastname = models.CharField(max_length=40)
+    organization = models.CharField(max_length=40)
+
+#
+# Links participant to project
+#
+class EProjectParticipantEntry(models.Model):
+    
+    project = models.ForeignKey(EProject)
+    participant = models.ForeignKey(EProjectParticipant)
+
+    role = models.CharField(max_length=50)
+    write = models.BooleanField(default=False)
+
 class EProjectFile(models.Model):
     
     type = models.CharField(max_length=40)
