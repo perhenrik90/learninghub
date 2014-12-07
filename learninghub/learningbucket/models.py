@@ -14,7 +14,9 @@ class EProject(models.Model):
     timecreated = models.DateTimeField(auto_now_add=True)
     visits = models.IntegerField(default=0)
     organization = models.CharField(max_length=40)
+    description = models.CharField(max_length=300)
     owner = models.ForeignKey(User)
+
 
 
 

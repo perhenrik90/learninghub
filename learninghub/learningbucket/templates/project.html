@@ -7,7 +7,8 @@
 <p>{% blocktrans %}Project owner: {% endblocktrans %}
   {{project.owner.first_name}} {{project.owner.last_name}}
   </p>
-<p>{{project.organization}}</p>
+<p>{% blocktrans %}Organization {% endblocktrans %}
+  {{project.organization}}</p>
 <p>{{project.description}}</p>
 {% endblock %}
 

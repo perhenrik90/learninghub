@@ -95,11 +95,13 @@ def createproject(request):
         # variable from the post to be used
         pname = request.POST["name"]
         org   = request.POST["organization"]
+        desc  = request.POST["description"]
 
         eproject = models.EProject(name=pname,
                                    owner=user,
                                    organization=org,
-                                   visits=0)
+                                   visits=0,
+                                   description=desc)
 
         eproject.save()
 
