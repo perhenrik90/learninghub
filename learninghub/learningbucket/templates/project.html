@@ -1,14 +1,33 @@
 {% extends "base_generic.html" %}
+{% comment %}
+Display information of one project.
+Connected to learningbucket.views.project
+
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
 {% load i18n %}
 
 
 {% block content %}
-<h1>{{project.name}}</h1>
-<p>{% blocktrans %}Project owner: {% endblocktrans %}
+<table>
+<tr>
+<td>{% blocktrans %}Name{% endblocktrans %}</td><td>{{project.name}}</td>
+
+</td>
+<tr>
+  <td>{% blocktrans %}Project owner: {% endblocktrans %}</td>
+ <td>
   {{project.owner.first_name}} {{project.owner.last_name}}
-  </p>
-<p>{% blocktrans %}Organization {% endblocktrans %}
-  {{project.organization}}</p>
-<p>{{project.description}}</p>
+ </td>
+</tr>
+<tr>
+<td>
+{% blocktrans %}Organization {% endblocktrans %}</td>
+<td>  {{project.organization}}</td>
+<tr>
+  <td>{% blocktrans %}Description{% endblocktrans %}</td>
+  <td>{{project.description}}</td>
+</tr>
+</table>
 {% endblock %}
 
