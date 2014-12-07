@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<h1>{% blocktrans %}Upload a file to project. {% endblocktrans %}</h1>
+<h1>{% blocktrans %}Upload a file to project.{% endblocktrans %}</h1>
 <form method="POST">
   {% csrf_token %}
   <input type="file" name="projectFile"/><br/>
