@@ -46,8 +46,22 @@ def logout_view(request):
         return HttpResponse(template.render(context))
 
     return redirect("/login")
-    
+
+
+
+#
+# Display an error to the user
+#
+def error_view(request):
+    user = request.user
+    if user.is_authenticated():
+        message = _("Unknown error.")
+        template = loader.get_template('private_error.html')
+        context = RequestContext(request, {'message':message})
+        return HttpResponse(template.render(context))
  
+    return "Not yet implemented."
+
 #
 # Lists projects for a user
 #   

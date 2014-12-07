@@ -6,14 +6,15 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    #url(r'^login/', 'learninghub.views.login', name='Login')
-    # Examples:
+    # learning bucket app/module
     url(r'^login/$', 'learningbucket.views.login_view', name='Login'),
     url(r'^logout/$', 'learningbucket.views.logout_view', name='Logout'),
-    url(r'^myprojects/$', 'learningbucket.views.myprojects', name='My Projects'),
+    url(r'^error/$', 'learningbucket.views.error_view', name='Error'),
 
+    url(r'^myprojects/$', 'learningbucket.views.myprojects', name='My Projects'),
     url(r'^createproject/$', 'learningbucket.views.createproject', name='Create project'),
     url(r'^project/$', 'learningbucket.views.project', name='Project'),
 
+    # admin app/module
     url(r'^admin/', include(admin.site.urls)),
 )

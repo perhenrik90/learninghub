@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% comment %}
+A generic error template for users loged in!
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>{% blocktrans %}Something went worng! {% endblocktrans %}</h1>
+<p>{{message}}</p>
+<br\>
+<a href="{% url 'learningbucket.views.myprojects' %}">
+<p>{% blocktrans %}Back to my projects {% endblocktrans %}</p>
+</a>
+{% endblock %}
+
