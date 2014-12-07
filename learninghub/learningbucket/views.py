@@ -5,7 +5,7 @@ from django.template import RequestContext, loader, Template, Context
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 from django.utils import translation
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.forms.models import model_to_dict
 
 import learningbucket.models as models
@@ -35,6 +35,18 @@ def login_view(request):
     template = loader.get_template('login.html')
     context = RequestContext(request, {})
     return HttpResponse(template.render(context))
+
+
+def logout_view(request):
+    user = request.user
+    if user.is_authenticated():
+        logout(request)
+        template = loader.get_template('logout.html')
+        context = RequestContext(request, {'name':user.first_name})
+        return HttpResponse(template.render(context))
+
+    return redirect("/login")
+    
  
 #
 # Lists projects for a user

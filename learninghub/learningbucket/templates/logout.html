@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% comment %}
+Logout template
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>{% blocktrans %}You are out!{% endblocktrans %}</h1>
+<p>{% blocktrans %}Welcome back {% endblocktrans %} {{name}}</p>
+
+
+</div>
+{% endblock %}
+

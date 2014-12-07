@@ -61,7 +61,7 @@ WSGI_APPLICATION = 'learninghub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, '../db.sqlite3'),
     }
 }
 
@@ -87,7 +87,11 @@ LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale/'))
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = '../static/'
+
+# Media files
+MEDIA_URL = "/media/"
+MEDIA_ROOT = '../media/'
 
 # LEARNING HUB settings
 # Spesific settings for learninghub
