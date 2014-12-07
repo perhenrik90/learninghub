@@ -52,17 +52,18 @@ def logout_view(request):
 #
 # Display an error to the user
 #
-def error_view(request):
+def error_view(request, message=_("Unknown error")):
     user = request.user
     if user.is_authenticated():
-        message = _("Unknown error.")
         template = loader.get_template('private_error.html')
         context = RequestContext(request, {'message':message})
         return HttpResponse(template.render(context))
  
     return "Not yet implemented."
 
-#
+###############################
+# PROJECT VIEWS
+###############################
 # Lists projects for a user
 #   
 
@@ -104,6 +105,26 @@ def project(request):
     # render the template
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
+
+
+def project_upload_file(request):
+    # no user, no file!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+    # if no project id is given, display error.
+    if 'id' not in request.GET:
+        return error_view(request, _("No project is choosen."))
+
+
+    # on GET method 
+    template = loader.get_template("project_uploadfile.html")
+    c = {}
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))
+    
+
 
 #
 # Form for create a new project!

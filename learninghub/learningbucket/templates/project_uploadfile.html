@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>{% blocktrans %}Upload a file to project. {% endblocktrans %}</h1>
+<form method="POST">
+  {% csrf_token %}
+  <input type="file" name="projectFile"/><br/>
+  <select>
+    <option value="SCORM">
+      {% blocktrans %}SCORM{% endblocktrans %}</option>
+    <option value="zip">
+      {% blocktrans %}Zip{% endblocktrans %}</option>
+    <option value="image">
+      {% blocktrans %}Image{% endblocktrans %}</option>
+    <option value="story">
+      {% blocktrans %}Storyline{% endblocktrans %}</option>
+    <option value="flash">
+      {% blocktrans %}Flash{% endblocktrans %}</option>
+    <option value="other">
+      {% blocktrans %}Other{% endblocktrans %}</option>
+  </select></br>
+
+  <input type="submit"/>
+</form>
+
+{% endblock %}
+
