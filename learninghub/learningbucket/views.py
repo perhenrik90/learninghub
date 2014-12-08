@@ -106,23 +106,47 @@ def project(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
-
+# File upload
 def project_upload_file(request):
     # no user, no file!
     user = request.user
+    pid = 0
     if(not user.is_authenticated()):
         return userNotAuthenticated(request)
+
+    # handle post 
+    if(request.method == "POST"):
+        pid = request.POST["project_id"]
+        filetype = request.POST["filetype"]
+        filep = request.FILES["projectFile"]
+
+        print(filep)
+        project = models.EProject.objects.get(id=pid)
+
+        pfile = models.EProjectFile(filetype=filetype,
+                                    filepointer=filep,
+                                    owner_project=project)
+        pfile.save()
+
+        return error_view(request, _("Upload succses!."))
+
+
 
     # if no project id is given, display error.
     if 'id' not in request.GET:
         return error_view(request, _("No project is choosen."))
 
+    if(request.method == "GET"):
+        # on GET method 
+        pid = request.GET["id"]
+        template = loader.get_template("project_uploadfile.html")
+        c = {"project_id":pid}
+        context = RequestContext(request, c)
+        return HttpResponse(template.render(context))
 
-    # on GET method 
-    template = loader.get_template("project_uploadfile.html")
-    c = {}
-    context = RequestContext(request, c)
-    return HttpResponse(template.render(context))
+
+
+
     
 
 

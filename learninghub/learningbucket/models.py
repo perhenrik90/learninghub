@@ -42,13 +42,12 @@ class EProjectParticipantEntry(models.Model):
 
 class EProjectFile(models.Model):
     
-
-
-    type = models.CharField(max_length=40)
     timecreated = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=200)
     filetype = models.CharField(max_length=20,
                                 default="other")
 
+    filepointer = models.FileField(upload_to='eprojects/%Y/%m/%d')
+    
     owner_project = models.ForeignKey(EProject)
     
