@@ -48,6 +48,7 @@
 /** project view ***/
 table
 {
+
     border:2px solid #555;
     padding:10px;
     font-size:22px;
@@ -57,6 +58,7 @@ table
 
 table td
 {
+    min-width:230px;
     padding:5px;
     padding-right:15px;
 }

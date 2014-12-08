@@ -35,10 +35,17 @@ Author Per-Henrik Kvalnes, 2014
 
 {% blocktrans %}Upload file{% endblocktrans %}</a>
 
+<table>
+<tr>
+<td>{% blocktrans %}Name{% endblocktrans %}</td>
+<td>{% blocktrans %}File type{% endblocktrans %}</td>
 {% for file in files %}
-<p>{{ file.name}}</p>
+<tr>
+<td>{{ file.name}}</td>
+<td>{{ file.filetype}}</td>
+</tr>
 {% endfor %}
-
+</table>
 
 {% endblock %}
 
