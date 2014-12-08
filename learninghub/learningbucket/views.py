@@ -100,8 +100,13 @@ def project(request):
         eproject = models.EProject.objects.get(id=get_id)
         if eproject:
             template = loader.get_template("project.html")
-            c = {"project":eproject}
 
+
+        # get files
+        files = models.EProjectFile.objects.all().filter(owner_project=eproject)
+
+
+        c = {"project":eproject,"files":files}        
     # render the template
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))

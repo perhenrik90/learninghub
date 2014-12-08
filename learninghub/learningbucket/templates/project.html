@@ -32,5 +32,9 @@ Author Per-Henrik Kvalnes, 2014
 
 <a href="{% url 'learningbucket.views.project_upload_file' %}?id={{project.id}}" >
 {% blocktrans %}Upload file{% endblocktrans %}</a>
+
+{% for file in files %}
+<p>{{ file.filepointer}}</p>
+{% endfor %}
 {% endblock %}
 

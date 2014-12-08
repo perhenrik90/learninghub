@@ -40,8 +40,12 @@ class EProjectParticipantEntry(models.Model):
     role = models.CharField(max_length=50)
     write = models.BooleanField(default=False)
 
+#
+# One file to one instance of an EProject
+#
 class EProjectFile(models.Model):
     
+    name = models.CharField(max_length=40,default="-")
     timecreated = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=200)
     filetype = models.CharField(max_length=20,
