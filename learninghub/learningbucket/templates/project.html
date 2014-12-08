@@ -58,12 +58,24 @@ Author Per-Henrik Kvalnes, 2014
 {% endfor %}
 </table>
 </div>
+
 <!-- Comment section -->
 <div class="subsection">
   <h1>{% blocktrans %}Comments{% endblocktrans %}</h1>
-<p>{% blocktrans %}Comment {% endblocktrans %}</p><br/>
-<input name="comment_field"></input>
-<input type="submit"></input>
+  {% for c in comments %}
+  <div class="comment">
+    <p><b>{{c.owner.first_name}} {{c.owner.last_name}}: </b>
+      {{c.comment}}</p>
+  </div>
+  {% endfor %}
+  <form method="POST" 
+	action="{% url 'learningbucket.views.project_post_comment' %}">
+    {% csrf_token %}
+
+    <input name="id" hidden="true" value="{{project.id}}"/>
+    <input name="comment"></input>
+    <input type="submit"></input>
+  </form>
 </div>
 {% endblock %}
 

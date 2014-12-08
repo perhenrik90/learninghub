@@ -111,11 +111,43 @@ def project(request):
         files = models.EProjectFile.objects.all().filter(owner_project=eproject)
         if files == None: files = []
 
-        c = {"project":eproject,"files":files, "is_owner":is_owner}
+        # get comments 
+        comments = models.EProjectComment.objects.all().filter(project_owner=eproject)
+        # prepare context
+        c = {"project":eproject,"files":files, "is_owner":is_owner,
+             "comments":comments}
 
     # render the template
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
+
+##########################
+# Project post comment
+###########################
+
+def project_post_comment(request):
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)    
+
+    elif request.method == "GET":
+        return error_view(request, _("The comment has not been posted!"))
+
+    # get post statements
+    try:
+        project_id = request.POST["id"]
+        user = request.user
+        comment = request.POST["comment"]
+        p = models.EProject.objects.get(id=project_id)
+
+        comment_model = models.EProjectComment(comment=comment, project_owner=p, owner=user)
+        comment_model.save()
+        return redirect("/project?id="+project_id)
+    except:
+        return error_view(request, _("The comment has not been posted!"))
+
+
+
 
 ##########################
 # File upload

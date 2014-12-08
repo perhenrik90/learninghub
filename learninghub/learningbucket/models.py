@@ -61,5 +61,6 @@ class EProjectComment(models.Model):
     
     comment = models.CharField(max_length=200)
     timecreated = models.DateTimeField(auto_now_add=True)
+    project_owner = models.ForeignKey(EProject)
     owner = models.ForeignKey(User)
     

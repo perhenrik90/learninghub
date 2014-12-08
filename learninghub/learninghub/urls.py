@@ -17,6 +17,9 @@ urlpatterns = patterns('',
     url(r'^project/upload$', 
         'learningbucket.views.project_upload_file', 
         name='Upload'),
+    url(r'^project/postcomment$', 
+        'learningbucket.views.project_post_comment', 
+        name='Upload'),
                     
 
     # admin app/module
