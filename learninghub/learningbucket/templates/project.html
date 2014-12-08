@@ -29,5 +29,8 @@ Author Per-Henrik Kvalnes, 2014
   <td>{{project.description}}</td>
 </tr>
 </table>
+
+<a href="{% url 'learningbucket.views.project_upload_file' %}?id={{project.id}}" >
+{% blocktrans %}Upload file{% endblocktrans %}</a>
 {% endblock %}
 
