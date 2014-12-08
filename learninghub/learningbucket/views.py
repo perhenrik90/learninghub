@@ -104,6 +104,7 @@ def project(request):
 
         # get files
         files = models.EProjectFile.objects.all().filter(owner_project=eproject)
+        if files == None: files = []
 
 
         c = {"project":eproject,"files":files}        
@@ -121,14 +122,16 @@ def project_upload_file(request):
 
     # handle post 
     if(request.method == "POST"):
+        # get post parameters
         pid = request.POST["project_id"]
         filetype = request.POST["filetype"]
+        name = request.POST["name"]
         filep = request.FILES["projectFile"]
 
-        print(filep)
         project = models.EProject.objects.get(id=pid)
 
-        pfile = models.EProjectFile(filetype=filetype,
+        pfile = models.EProjectFile(name=name,
+                                    filetype=filetype,
                                     filepointer=filep,
                                     owner_project=project)
         pfile.save()
