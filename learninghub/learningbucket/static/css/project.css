@@ -10,6 +10,32 @@
     border:2px solid black;
 }
 
+/*****************************************************
+ * Defines a subsection, used in project.html
+ *****************************************************/
+.subsection
+{
+    width:80%;
+    border:2px solid #444;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:20px;
+    padding:2px;
+}
+.subsection h1
+{
+    font-size:22px;
+    margin-top:0px;
+    width:100%;
+    background-color:#333;
+    color:#FFF;
+}
+.subsection p
+{
+    margin:0px;
+}
+
+/** Project display mini tiles for the overview ***/
 .projectMiniDisplay
 {
     position:relative;
@@ -48,17 +74,12 @@
 /** project view ***/
 table
 {
-
-    border:2px solid #555;
-    padding:10px;
     font-size:22px;
-    margin-left:auto;
-    margin-right:auto;
+    margin:0px;
 }
 
 table td
 {
     min-width:230px;
-    padding:5px;
     padding-right:15px;
 }

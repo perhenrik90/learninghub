@@ -90,9 +90,11 @@ def project(request):
     if(not user.is_authenticated()):
         return userNotAuthenticated(request)
 
+
     # prepare to show the user that project do not exists
     template = loader.get_template("project_not_found.html")
     c = {}
+    is_owner = False
 
     # get for project id
     if(request.method == "GET" and 'id' in request.GET):
@@ -100,14 +102,17 @@ def project(request):
         eproject = models.EProject.objects.get(id=get_id)
         if eproject:
             template = loader.get_template("project.html")
-
-
+            # if the user is the owner; set can_edit to true
+    
+        if(user.id == eproject.owner.id):
+            is_owner = True
+       
         # get files
         files = models.EProjectFile.objects.all().filter(owner_project=eproject)
         if files == None: files = []
 
+        c = {"project":eproject,"files":files, "is_owner":is_owner}
 
-        c = {"project":eproject,"files":files}        
     # render the template
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
@@ -160,8 +165,6 @@ def project_upload_file(request):
 
 
 
-
-    
 
 
 #

@@ -9,6 +9,9 @@ Author Per-Henrik Kvalnes, 2014
 
 
 {% block content %}
+<!-- Project info section -->
+<div class="subsection">
+<h1>{% blocktrans %}Project information {% endblocktrans %}</h1>
 <table>
 <tr>
 <td>{% blocktrans %}Name{% endblocktrans %}</td><td>{{project.name}}</td>
@@ -29,12 +32,20 @@ Author Per-Henrik Kvalnes, 2014
   <td>{{project.description}}</td>
 </tr>
 </table>
+</div>
 
+
+<!-- File section section -->
+<div class="subsection">
+<h1>{% blocktrans %}Uploaded files{% endblocktrans %}</h1>
+{% if is_owner %}
+<nav>
 <a 
    href="{% url 'learningbucket.views.project_upload_file'%}?id={{project.id}}" >
 
 {% blocktrans %}Upload file{% endblocktrans %}</a>
-
+</nav>
+{% endif %}
 <table>
 <tr>
 <td>{% blocktrans %}Name{% endblocktrans %}</td>
@@ -46,6 +57,13 @@ Author Per-Henrik Kvalnes, 2014
 </tr>
 {% endfor %}
 </table>
-
+</div>
+<!-- Comment section -->
+<div class="subsection">
+  <h1>{% blocktrans %}Comments{% endblocktrans %}</h1>
+<p>{% blocktrans %}Comment {% endblocktrans %}</p><br/>
+<input name="comment_field"></input>
+<input type="submit"></input>
+</div>
 {% endblock %}
 

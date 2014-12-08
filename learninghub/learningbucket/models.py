@@ -29,6 +29,8 @@ class EProjectParticipant(models.Model):
     lastname = models.CharField(max_length=40)
     organization = models.CharField(max_length=40)
 
+
+
 #
 # Links participant to project
 #
@@ -54,4 +56,10 @@ class EProjectFile(models.Model):
     filepointer = models.FileField(upload_to='eprojects/%Y/%m/%d')
     
     owner_project = models.ForeignKey(EProject)
+  
+class EProjectComment(models.Model):
+    
+    comment = models.CharField(max_length=200)
+    timecreated = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User)
     
