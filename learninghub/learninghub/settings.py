@@ -83,7 +83,7 @@ LANGUAGES = (('nb-no','Norwegian'),('en-us', 'English'))
 
 #LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale/'))
 LOCALE_PATHS = (os.path.abspath(os.path.join(BASE_DIR, 'locale')))
-
+#LOCALE_PATH = "locale/"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

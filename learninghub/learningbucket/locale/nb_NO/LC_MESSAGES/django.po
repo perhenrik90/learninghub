@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-07 20:38+0000\n"
-"PO-Revision-Date: 2014-12-07 21:24+0100\n"
+"POT-Creation-Date: 2014-12-08 19:04+0100\n"
+"PO-Revision-Date: 2014-12-08 19:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -16,129 +16,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: learningbucket/views.py:55
+#: views.py:55
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#: learningbucket/views.py:118
+#: views.py:151
 msgid "No project is choosen."
 msgstr "Ingen prosjekt er valgt."
 
-#: learningbucket/templates/base_generic.html:13
+#: templates/base_generic.html:13
 msgid "app-title"
 msgstr "Lærings hubben"
 
-#: learningbucket/templates/base_generic.html:26
+#: templates/base_generic.html:26
 msgid "My Projects"
 msgstr "Mine prosjekter"
 
-#: learningbucket/templates/base_generic.html:29
-#: learningbucket/templates/createproject.html:12
+#: templates/base_generic.html:29 templates/createproject.html:12
 msgid "Create project"
 msgstr "Opprett prosjekt"
 
-#: learningbucket/templates/base_generic.html:31
+#: templates/base_generic.html:31
 msgid "Logout"
 msgstr "Logg ut"
 
-#: learningbucket/templates/createdproject.html:6
+#: templates/createdproject.html:6
 msgid "Project created!"
 msgstr ""
 
-#: learningbucket/templates/createdproject.html:8
+#: templates/createdproject.html:8
 msgid "You have created the project "
 msgstr "Du har opprettet prosjektet "
 
-#: learningbucket/templates/createdproject.html:11
+#: templates/createdproject.html:11
 msgid "Go back to projects"
 msgstr "Gå tilbake til prosjektene"
 
-#: learningbucket/templates/createproject.html:15
-#: learningbucket/templates/project.html:14
+#: templates/createproject.html:15 templates/project.html:14
+#: templates/project.html.py:40 templates/project_uploadfile.html:11
 msgid "Name"
 msgstr "Navn"
 
-#: learningbucket/templates/createproject.html:16
+#: templates/createproject.html:16
 msgid "Organization"
 msgstr ""
 
-#: learningbucket/templates/createproject.html:17
-#: learningbucket/templates/project.html:28
+#: templates/createproject.html:17 templates/project.html:28
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: learningbucket/templates/login.html:25
+#: templates/login.html:25
 msgid "Login"
 msgstr "Logg inn"
 
-#: learningbucket/templates/login.html:26
+#: templates/login.html:26
 msgid "Username"
 msgstr "Brukernavn"
 
-#: learningbucket/templates/login.html:27
+#: templates/login.html:27
 msgid "Password"
 msgstr "Passord"
 
-#: learningbucket/templates/logout.html:12
+#: templates/logout.html:12
 msgid "You are out!"
 msgstr ""
 
-#: learningbucket/templates/logout.html:13
+#: templates/logout.html:13
 msgid "Welcome back "
 msgstr ""
 
-#: learningbucket/templates/myprojects.html:12
+#: templates/myprojects.html:12
 msgid "My projects"
 msgstr "Mine prosjekter"
 
-#: learningbucket/templates/private_error.html:10
+#: templates/private_error.html:10
 msgid "Something went worng! "
 msgstr "Noe gikk galt!"
 
-#: learningbucket/templates/private_error.html:14
+#: templates/private_error.html:14
 msgid "Back to my projects "
 msgstr "Tilbake til mine prosjekter "
 
-#: learningbucket/templates/project.html:18
+#: templates/project.html:18
 msgid "Project owner: "
 msgstr "Prosjekteier: "
 
-#: learningbucket/templates/project.html:25
+#: templates/project.html:25
 msgid "Organization "
 msgstr "Organisasjon "
 
-#: learningbucket/templates/project_not_found.html:6
+#: templates/project.html:36
+msgid "Upload file"
+msgstr "Last opp fil"
+
+#: templates/project.html:41
+msgid "File type"
+msgstr ""
+
+#: templates/project_not_found.html:6
 msgid "Project not found!"
 msgstr "Prosjekt ble ikke funnet!"
 
-#: learningbucket/templates/project_not_found.html:8
+#: templates/project_not_found.html:8
 msgid "Back to my projects"
 msgstr "Tilbake til mine prosjekter"
 
-#: learningbucket/templates/project_uploadfile.html:6
+#: templates/project_uploadfile.html:6 templates/project_uploadsuccess.html:6
 msgid "Upload a file to project."
 msgstr "Last opp en fil til prosjektet."
 
-#: learningbucket/templates/project_uploadfile.html:12
+#: templates/project_uploadfile.html:15
 msgid "SCORM"
 msgstr "SCORM"
 
-#: learningbucket/templates/project_uploadfile.html:14
+#: templates/project_uploadfile.html:17
 msgid "Zip"
 msgstr "Zip"
 
-#: learningbucket/templates/project_uploadfile.html:16
+#: templates/project_uploadfile.html:19
 msgid "Image"
 msgstr "Bilde"
 
-#: learningbucket/templates/project_uploadfile.html:18
+#: templates/project_uploadfile.html:21
 msgid "Storyline"
 msgstr "Storyline"
 
-#: learningbucket/templates/project_uploadfile.html:20
+#: templates/project_uploadfile.html:23
 msgid "Flash"
 msgstr "Flash"
 
-#: learningbucket/templates/project_uploadfile.html:22
+#: templates/project_uploadfile.html:25
 msgid "Other"
 msgstr "Annet"
+
+#: templates/project_uploadsuccess.html:8
+msgid "You have successfully uploaded the file: \n"
+msgstr "Du har lastet opp filen: \n"
+
+#: templates/project_uploadsuccess.html:9
+msgid " to "
+msgstr " til "

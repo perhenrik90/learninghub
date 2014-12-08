@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>{% blocktrans %}Upload a file to project.{% endblocktrans %}</h1>
+<p>
+{% blocktrans %}You have successfully uploaded the file: 
+{% endblocktrans %}{{file.name}} {% blocktrans %} to {% endblocktrans %} 
+<a href="{% url 'learningbucket.views.project' %}?id={{project.id}}"> 
+   {{project.name}}</p></a>
+
+</form>
+
+{% endblock %}
+

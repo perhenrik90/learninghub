@@ -112,7 +112,9 @@ def project(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
+##########################
 # File upload
+##########################
 def project_upload_file(request):
     # no user, no file!
     user = request.user
@@ -136,7 +138,11 @@ def project_upload_file(request):
                                     owner_project=project)
         pfile.save()
 
-        return error_view(request, _("Upload succses!."))
+        template = loader.get_template("project_uploadsuccess.html")
+        c = {"file":pfile, "project":project}
+        context = RequestContext(request, c)
+        return HttpResponse(template.render(context))
+
 
 
 
