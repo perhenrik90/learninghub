@@ -1,3 +1,5 @@
+import os
+
 from django.core.context_processors import csrf
 from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
@@ -9,6 +11,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.forms.models import model_to_dict
 
 import learningbucket.models as models
+import learninghub.settings as settings
 
 def userNotAuthenticated(request):
     return redirect("/login");
@@ -150,8 +153,10 @@ def project_post_comment(request):
 
 
 ##########################
-# File upload
+# File handling views
 ##########################
+
+# upload file
 def project_upload_file(request):
     # no user, no file!
     user = request.user
@@ -195,6 +200,33 @@ def project_upload_file(request):
         context = RequestContext(request, c)
         return HttpResponse(template.render(context))
 
+# Download file
+def project_download_file(request):
+
+    user = request.user
+    file_model = None
+
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)    
+
+    if('file_id' not in request.GET): 
+        return error_view(request, _("No file were given!"))
+
+    id = request.GET['file_id']
+    file_model = models.EProjectFile.objects.get(id=id)
+     
+
+    file_model.filepointer.open("r")
+    data = file_model.filepointer.read()
+    file_model.filepointer.close();
+    
+    mimetype = 'application/force-download'
+    response = HttpResponse(data, mimetype=mimetype)
+    filename = os.path.basename(file_model.filepointer.url)
+    response['Content-Disposition'] = "attachment; filename=%s" % (filename)
+
+    
+    return response
 
 
 
