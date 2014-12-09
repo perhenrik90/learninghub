@@ -1,0 +1,42 @@
+{% comment %}
+Base generic genereate the main structure of
+the html file.
+
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% blocktrans %}app-title{% endblocktrans %}</title>
+    <meta charset="UTF-8"></meta>
+    <link rel="stylesheet" type="text/css"
+	  href="{% static 'css/default.css' %}"/>
+  </head>
+  <body>
+    <header>
+
+    </header>
+    <nav id="topMenu">
+      <a href={% url 'learningbucket.views.myprojects' %}>
+	{% trans "My Projects" %}</a> 
+
+      <a href={% url 'learningbucket.views.createproject' %}>
+	{% trans "Create project" %}</a> 
+      <a href={% url 'learningbucket.views.logout_view' %}>
+	{% trans "Logout" %}</a> 
+    </nav>
+    <section>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+      
+    </div>
+    </section>
+    <footer>
+      
+    </footer>
+  </body>
+</html>

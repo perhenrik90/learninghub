@@ -1,0 +1,92 @@
+/*********************************************
+ * Default CSS for all LearningHub sites 
+ * @author Per-Henrik Kvalnes
+ *
+ ********************************************/
+
+body
+{
+  background-color:#AAA;
+  text-align:center;
+}
+
+header
+{
+  position:absolute;
+  top:0px;
+  height:20px;
+  left:0px;
+  right:0px;
+  background-color:#444;
+}
+
+/*
+ * Navigation bar
+ */ 
+#topMenu
+{
+  position:absolute;
+  text-align:left;
+  top:30px;
+  height:20px;
+  left:0px;
+  right:0px;
+  padding-left:5px;
+}
+
+#topMenu a
+{
+    padding:5px;
+    margin:2px;
+    border:1px solid black;
+    font-family:sans;
+    font-size:18px;
+    color:#FFF;
+    background-color:#000;
+    text-decoration:none;
+}
+
+section
+{
+    position:absolute;
+    top:75px;
+    left:0px;
+    right:0px;
+}
+
+#content
+{
+    position:absolute;
+    left:40px;
+    right:40px;
+    text-align:left;
+}
+
+/*
+ * Input styling
+ */
+input
+{
+    border:2px solid black;
+    font-size:20px;
+    margin:5px;
+}
+textarea
+{
+    border:2px solid black;
+    font-size:20px;
+    margin:5px;
+}
+
+
+/****************'
+ * Login styling 
+ *******************/
+
+#loginTable
+{
+    margin-left:auto;
+    margin-right:auto;
+    background-color:rgba(0,0,0,0.2);
+    padding:10px;
+}
