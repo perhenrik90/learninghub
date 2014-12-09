@@ -35,6 +35,20 @@
     margin:0px;
 }
 
+
+.subsection table
+{
+    font-size:22px;
+    margin:0px;
+}
+
+.subsection table td
+{
+    min-width:230px;
+    padding-right:15px;
+}
+
+
 /** Project display mini tiles for the overview ***/
 .projectMiniDisplay
 {
@@ -71,15 +85,3 @@
     bottom:0px;
 }
 
-/** project view ***/
-table
-{
-    font-size:22px;
-    margin:0px;
-}
-
-table td
-{
-    min-width:230px;
-    padding-right:15px;
-}

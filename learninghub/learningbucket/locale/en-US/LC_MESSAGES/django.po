@@ -2,7 +2,11 @@
 msgid "Unknown error"
 msgstr ""
 
-#: views.py:151
+#: views.py:134 views.py:147
+msgid "The comment has not been posted!"
+msgstr ""
+
+#: views.py:188
 msgid "No project is choosen."
 msgstr ""
 
@@ -39,8 +43,8 @@ msgstr ""
 msgid "Go back to projects"
 msgstr "Go back to projects"
 
-#: templates/createproject.html:15 templates/project.html:14
-#: templates/project.html.py:40 templates/project_uploadfile.html:11
+#: templates/createproject.html:15 templates/project.html:17
+#: templates/project.html.py:51 templates/project_uploadfile.html:11
 msgid "Name"
 msgstr "Name"
 
@@ -48,7 +52,7 @@ msgstr "Name"
 msgid "Organization"
 msgstr "Organization"
 
-#: templates/createproject.html:17 templates/project.html:28
+#: templates/createproject.html:17 templates/project.html:31
 msgid "Description"
 msgstr ""
 
@@ -85,22 +89,35 @@ msgstr ""
 msgid "Back to my projects "
 msgstr "Go back to projects"
 
-#: templates/project.html:18
+#: templates/project.html:14
+msgid "Project information "
+msgstr ""
+
+#: templates/project.html:21
 msgid "Project owner: "
 msgstr ""
 
-#: templates/project.html:25
+#: templates/project.html:28
 #, fuzzy
 msgid "Organization "
 msgstr "Organization"
 
-#: templates/project.html:36
+#: templates/project.html:40
+#, fuzzy
+msgid "Uploaded files"
+msgstr "Go back to projects"
+
+#: templates/project.html:46
 #, fuzzy
 msgid "Upload file"
 msgstr "Go back to projects"
 
-#: templates/project.html:41
+#: templates/project.html:52
 msgid "File type"
+msgstr ""
+
+#: templates/project.html:64
+msgid "Comments"
 msgstr ""
 
 #: templates/project_not_found.html:6

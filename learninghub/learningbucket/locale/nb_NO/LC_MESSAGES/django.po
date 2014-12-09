@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-08 19:04+0100\n"
-"PO-Revision-Date: 2014-12-08 19:10+0100\n"
+"POT-Creation-Date: 2014-12-08 21:11+0100\n"
+"PO-Revision-Date: 2014-12-08 21:14+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,7 +20,11 @@ msgstr ""
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#: views.py:151
+#: views.py:134 views.py:147
+msgid "The comment has not been posted!"
+msgstr "Kommentaren ble ikke postet!"
+
+#: views.py:188
 msgid "No project is choosen."
 msgstr "Ingen prosjekt er valgt."
 
@@ -42,7 +46,7 @@ msgstr "Logg ut"
 
 #: templates/createdproject.html:6
 msgid "Project created!"
-msgstr ""
+msgstr "Prosjekt opprettet!"
 
 #: templates/createdproject.html:8
 msgid "You have created the project "
@@ -52,16 +56,16 @@ msgstr "Du har opprettet prosjektet "
 msgid "Go back to projects"
 msgstr "Gå tilbake til prosjektene"
 
-#: templates/createproject.html:15 templates/project.html:14
-#: templates/project.html.py:40 templates/project_uploadfile.html:11
+#: templates/createproject.html:15 templates/project.html:17
+#: templates/project.html.py:51 templates/project_uploadfile.html:11
 msgid "Name"
 msgstr "Navn"
 
 #: templates/createproject.html:16
 msgid "Organization"
-msgstr ""
+msgstr "Organisasjon"
 
-#: templates/createproject.html:17 templates/project.html:28
+#: templates/createproject.html:17 templates/project.html:31
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -79,11 +83,11 @@ msgstr "Passord"
 
 #: templates/logout.html:12
 msgid "You are out!"
-msgstr ""
+msgstr "Du er ute!"
 
 #: templates/logout.html:13
 msgid "Welcome back "
-msgstr ""
+msgstr "Velkommen tilbake "
 
 #: templates/myprojects.html:12
 msgid "My projects"
@@ -97,21 +101,33 @@ msgstr "Noe gikk galt!"
 msgid "Back to my projects "
 msgstr "Tilbake til mine prosjekter "
 
-#: templates/project.html:18
+#: templates/project.html:14
+msgid "Project information "
+msgstr "Prosjektinformasjon"
+
+#: templates/project.html:21
 msgid "Project owner: "
 msgstr "Prosjekteier: "
 
-#: templates/project.html:25
+#: templates/project.html:28
 msgid "Organization "
 msgstr "Organisasjon "
 
-#: templates/project.html:36
+#: templates/project.html:40
+msgid "Uploaded files"
+msgstr "Last opp filer"
+
+#: templates/project.html:46
 msgid "Upload file"
 msgstr "Last opp fil"
 
-#: templates/project.html:41
+#: templates/project.html:52
 msgid "File type"
-msgstr ""
+msgstr "Filtype"
+
+#: templates/project.html:64
+msgid "Comments"
+msgstr "Kommentarer"
 
 #: templates/project_not_found.html:6
 msgid "Project not found!"

@@ -23,9 +23,18 @@ Author Per-Henrik Kvalnes, 2014
     <form method="POST">
       {% csrf_token %}
        <h1>{% trans "Login" %}</h1>
-      <input name="username">{% trans "Username" %}</input></br>
-      <input name="pass" type="password">{% trans "Password" %}</input></br>
-      <input type="submit"></input>
+       <table id="loginTable">
+	 <tr>
+	   <td><input name="username"></input></td>
+	   <td>{% trans "Username" %}</td>
+	 </tr>
+	 <tr>
+	   <td><input name="pass" type="password"></input></td>
+	   <td>{% trans "Password" %}</td>
+	 </tr>
+	 <tr>
+	   <td><input type="submit"></input></td>
+	 </tr>
     </form>
   </section>
   <footer>
