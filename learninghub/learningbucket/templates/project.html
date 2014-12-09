@@ -52,7 +52,11 @@ Author Per-Henrik Kvalnes, 2014
 <td>{% blocktrans %}File type{% endblocktrans %}</td>
 {% for file in files %}
 <tr>
-<td>{{ file.name}}</td>
+<td>
+<a href="{% url 'learningbucket.views.project_download_file' %}?file_id={{file.id}}">
+{{ file.name}}
+</a>
+</td>
 <td>{{ file.filetype}}</td>
 </tr>
 {% endfor %}
