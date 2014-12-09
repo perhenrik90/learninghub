@@ -13,6 +13,10 @@ from django.forms.models import model_to_dict
 import learningbucket.models as models
 import learninghub.settings as settings
 
+import learningbucket.buckettools.comment as commenttool
+
+
+
 def userNotAuthenticated(request):
     return redirect("/login");
 
@@ -142,11 +146,18 @@ def project_post_comment(request):
         user = request.user
         comment = request.POST["comment"]
         p = models.EProject.objects.get(id=project_id)
-
+        # create comment
         comment_model = models.EProjectComment(comment=comment, project_owner=p, owner=user)
         comment_model.save()
+        
+        # create and save tags
+        taglist = commenttool.filterTags(comment)
+        commenttool.storeTags(taglist=taglist, project=p)
+
         return redirect("/project?id="+project_id)
-    except:
+
+    except Exception as e:
+        print(e)
         return error_view(request, _("The comment has not been posted!"))
 
 
