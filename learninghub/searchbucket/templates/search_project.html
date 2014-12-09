@@ -10,10 +10,35 @@ Author Per-Henrik Kvalnes 2014
 
 {% block content %}
 <table>
+<form method="GET">
 <tr>
-<td><input></input></td>
 <td>{% blocktrans %}Search {% endblocktrans %}</td>
 </tr>
+<tr>
+  <td><input name='tags'></input></td>
+  <td><input type="submit"></input></td>
+</tr>
 </table>
+</form>
+<hr/>
+
+{% if results %}
+<table id="searchResults">
+<tr>
+<td>{% blocktrans %}Project name{% endblocktrans %}</td>
+<td>{% blocktrans %}Tag matched{% endblocktrans %}</td>
+{% for tag in tags %}
+
+<tr>
+  <td>
+    <a href="{% url 'learningbucket.views.project' %}?id={{tag.project.id}}">
+      {{tag.project.name}}</a></td>
+  <td>{{tag.tag}}</td>
+  
+</tr>
+
+{% endfor %}
+</table>
+{% endif %}
 {% endblock %}
 
