@@ -48,6 +48,15 @@
     padding-right:15px;
 }
 
+/** comments in project.html **/
+
+.comment a
+{
+    color:rgb(0,50,131);
+    font-weight:bold;
+}
+
+
 
 /** Project display mini tiles for the overview ***/
 .projectMiniDisplay
