@@ -31,7 +31,6 @@ header img
 {
     position:relative;
     width:64px;
-
 }
 
 /*
@@ -61,6 +60,10 @@ header img
     color:#FFF;
     text-decoration:none;
     font-family:"Calibri Bold", "Sans-Serif";
+}
+#topMenu a:hover
+{
+    background-color:rgb(144,142,151);
 }
 
 section

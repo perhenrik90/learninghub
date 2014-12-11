@@ -50,6 +50,7 @@ Author Per-Henrik Kvalnes, 2014
 {% blocktrans %}Upload file{% endblocktrans %}</a>
 </nav>
 {% endif %}
+{% if files %}
 <table>
 <tr>
 <td>{% blocktrans %}Name{% endblocktrans %}</td>
@@ -63,8 +64,14 @@ Author Per-Henrik Kvalnes, 2014
 </td>
 <td>{{ file.filetype}}</td>
 </tr>
-{% endfor %}
 </table>
+{% endfor %}
+
+{% else %}
+<!-- no files found -->
+<p>{% blocktrans %}No files are uploaded to this project{% endblocktrans %}</p>
+{% endif %}
+
 </div>
 
 <!-- Comment section -->

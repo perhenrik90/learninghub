@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # learning bucket app/module
+    url(r'^$', 'learningbucket.views.login_view',name='Login'),
     url(r'^login/$', 'learningbucket.views.login_view', name='Login'),
     url(r'^logout/$', 'learningbucket.views.logout_view', name='Logout'),
     url(r'^error/$', 'learningbucket.views.error_view', name='Error'),
