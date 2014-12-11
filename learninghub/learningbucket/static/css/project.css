@@ -7,7 +7,7 @@
 /* myprojects view */
 #myProjectList
 {
-    border:2px solid black;
+    border:2px solid rgb(0,50,131);
 }
 
 /*****************************************************
@@ -16,7 +16,7 @@
 .subsection
 {
     width:80%;
-    border:2px solid #444;
+    border:2px solid rgb(0,50,131);
     margin-left:auto;
     margin-right:auto;
     margin-bottom:20px;
@@ -27,7 +27,7 @@
     font-size:22px;
     margin-top:0px;
     width:100%;
-    background-color:#333;
+    background-color:rgb(0,50,131);
     color:#FFF;
 }
 .subsection p
@@ -54,7 +54,7 @@
 {
     position:relative;
     margin:5px;
-    border:1px solid black;
+    border:1px solid rgb(129,169,255);
     width:300px;
     height:200px;
     display:inline-block;
@@ -71,7 +71,7 @@
     margin:0px;
 
     color:#FFF;
-    background-color:rgba(0,0,0,0.8);
+    background-color:rgba(0,50,131,0.8);
     font-size:22px;
     padding:5px;
 }
