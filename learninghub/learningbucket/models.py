@@ -17,9 +17,6 @@ class EProject(models.Model):
     description = models.CharField(max_length=300)
     owner = models.ForeignKey(User)
 
-
-
-
 #
 # Describes a participant (person)
 #
@@ -28,8 +25,6 @@ class EProjectParticipant(models.Model):
     firstname = models.CharField(max_length=40)
     lastname = models.CharField(max_length=40)
     organization = models.CharField(max_length=40)
-
-
 
 #
 # Links participant to project
@@ -56,7 +51,11 @@ class EProjectFile(models.Model):
     filepointer = models.FileField(upload_to='eprojects/%Y/%m/%d')
     
     owner_project = models.ForeignKey(EProject)
-  
+
+
+#
+# EProject comment
+#  
 class EProjectComment(models.Model):
     
     comment = models.CharField(max_length=200)

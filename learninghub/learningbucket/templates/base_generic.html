@@ -16,6 +16,8 @@ Author Per-Henrik Kvalnes, 2014
 	  href="{% static 'css/default.css' %}"/>
     <link rel="stylesheet" type="text/css"
 	  href="{% static 'css/project.css' %}"/>
+    {% block customhead %}
+    {% endblock %}
   </head>
   <body>
     <header>
@@ -27,6 +29,8 @@ Author Per-Henrik Kvalnes, 2014
 
       <a href={% url 'learningbucket.views.createproject' %}>
 	{% trans "Create project" %}</a> 
+      <a href={% url 'searchbucket.views.searchProjects' %}>
+	{% trans "Search" %}</a> 
       <a href={% url 'learningbucket.views.logout_view' %}>
 	{% trans "Logout" %}</a> 
     </nav>

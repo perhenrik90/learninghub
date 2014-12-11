@@ -23,7 +23,10 @@ urlpatterns = patterns('',
     url(r'^project/postcomment$', 
         'learningbucket.views.project_post_comment', 
         name='Upload'),
-                    
+
+    # search bucket app/module 
+    url(r'^search$','searchbucket.views.searchProjects',
+        name='Search'),
 
     # admin app/module
     url(r'^admin/', include(admin.site.urls)),

@@ -6,11 +6,7 @@ Connected to learningbucket.views.project
 Author Per-Henrik Kvalnes, 2014
 {% endcomment %}
 {% load i18n %}
-{% load static %}
 
-{% block customhead %}
-<script src="{% static 'js/commentTagLinker.js' %}"></script>
-{% endblock %}
 
 {% block content %}
 <!-- Project info section -->
@@ -76,6 +72,7 @@ Author Per-Henrik Kvalnes, 2014
       {{c.comment}}</p>
   </div>
   {% endfor %}
+
   <form method="POST" 
 	action="{% url 'learningbucket.views.project_post_comment' %}">
     {% csrf_token %}
