@@ -1,10 +1,18 @@
-/****************************************************
- * Loops through comment class and links
- *  the tag to the searchbucket.view.searchProject 
+/*******************************************************
+ * Controller for learningbucket/template/project.html
  *
  * @author Per-Henrik E Kvalnes 2014
- ****************************************************/
+ *****************************************************/
+function initPage()
+{
+  loadTagLinker();
+}
+window.addEventListener('load',initPage);
 
+/******************************************************
+ * Loops through comment class and links
+ *  the tag to the searchbucket.view.searchProject 
+ *****************************************************/
 function loadTagLinker()
 {
     comments = document.getElementsByClassName("comment");
@@ -20,7 +28,7 @@ function loadTagLinker()
     }
 
 }
-window.addEventListener('load', loadTagLinker);
+
 
 /*****************************************************************
  * Append anchors (a) to href <site>/search?tags=<tagsearchvalue 
