@@ -81,7 +81,8 @@ def myprojects(request):
     if(not user.is_authenticated()):
         return userNotAuthenticated(request)
 
-    projects = models.EProject.objects.all().filter(owner=user)
+    # get user related projects by updated date
+    projects = models.EProject.objects.all().filter(owner=user).order_by('-timeupdated')
     print(projects)
     c = {"projects":projects}
     
@@ -113,6 +114,10 @@ def project(request):
     
         if(user.id == eproject.owner.id):
             is_owner = True
+
+        if(is_owner == False):
+            eproject.visits += 1
+            eproject.save()
        
         # get files
         files = models.EProjectFile.objects.all().filter(owner_project=eproject)
@@ -190,6 +195,7 @@ def project_upload_file(request):
                                     filepointer=filep,
                                     owner_project=project)
         pfile.save()
+        project.save() # update time for project
 
         template = loader.get_template("project_uploadsuccess.html")
         c = {"file":pfile, "project":project}

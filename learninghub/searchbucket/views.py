@@ -15,8 +15,18 @@ def searchProjects(request):
     c = {"results":False}
 
     if 'tags' in request.GET:
-        tags_get = request.GET['tags']
-        tags = models.EProjectTag.objects.all().filter(tag=tags_get)
+        searchString = request.GET['tags']
+        # tags = result list 
+        tags = []
+
+        # split the saerch tekst in to search terms
+        terms = searchString.split(" ")
+
+        for term in terms:
+            ## do multiple querys for every term and append to result list
+            tags += models.EProjectTag.objects.all().filter(tag=term).order_by('tag')
+            tags += models.EProjectTag.objects.all().filter(tag='#'+term).order_by('tag')
+
         c['tags'] = tags
         c['results'] = True
 
