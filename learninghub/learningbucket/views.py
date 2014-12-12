@@ -13,7 +13,7 @@ from django.forms.models import model_to_dict
 import learningbucket.models as models
 import learninghub.settings as settings
 
-import learningbucket.buckettools.comment as commenttool
+import learningbucket.buckettools as buckettool
 
 
 
@@ -156,8 +156,8 @@ def project_post_comment(request):
         comment_model.save()
         
         # create and save tags
-        taglist = commenttool.filterTags(comment)
-        commenttool.storeTags(taglist=taglist, project=p)
+        taglist = buckettool.filterTags(comment)
+        buckettool.storeTags(taglist=taglist, project=p)
 
         return redirect("/project?id="+project_id)
 

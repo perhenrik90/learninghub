@@ -16,6 +16,8 @@ def searchProjects(request):
 
     if 'tags' in request.GET:
         searchString = request.GET['tags']
+        searchString = searchString.lower()
+
         # tags = result list 
         tags = []
 

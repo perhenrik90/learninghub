@@ -48,30 +48,35 @@ Author Per-Henrik Kvalnes, 2014
    href="{% url 'learningbucket.views.project_upload_file'%}?id={{project.id}}" >
 
 {% blocktrans %}Upload file{% endblocktrans %}</a>
+
 </nav>
 {% endif %}
 {% if files %}
+<!-- span is initialised by projectController.js -->
+<span id="fileselector"/></span>
+
 <table>
 <tr>
 <td>{% blocktrans %}Name{% endblocktrans %}</td>
 <td>{% blocktrans %}File type{% endblocktrans %}</td>
+</tr>
 {% for file in files %}
-<tr>
-<td>
+<tr class="fileTr">
+<td class="nameTd">
 <a href="{% url 'learningbucket.views.project_download_file' %}?file_id={{file.id}}">
 {{ file.name}}
 </a>
 </td>
-<td>{{ file.filetype}}</td>
+<td class="fileTypeTd">{{ file.filetype}}</td>
 </tr>
-</table>
+
 {% endfor %}
+</table>
 
 {% else %}
 <!-- no files found -->
 <p>{% blocktrans %}No files are uploaded to this project{% endblocktrans %}</p>
 {% endif %}
-
 </div>
 
 <!-- Comment section -->

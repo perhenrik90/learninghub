@@ -1,6 +1,9 @@
-#
-# Comment tools
+# Bucket tools
+# ------------
+# Tools for stroing lables / tags on projects in the learning bucket
 # 
+# @author Per-Henrik Kvalnes 2014
+#
 import learningbucket.models
 
 # return a list of tags based on a comment string
@@ -9,6 +12,7 @@ def filterTags(commentString):
     words = commentString.split()
     for word in words:
         if len(word) > 1 and word[0] == "#":
+            word = word.lower()
             taglist.append(word)
 
     return taglist
