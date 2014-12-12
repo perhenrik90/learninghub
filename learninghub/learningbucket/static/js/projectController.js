@@ -103,3 +103,37 @@ function setupFileSelector()
 	}
     }
 }
+
+
+
+/***********************************************
+ * Delete file
+ * Creates a popup with yes and now dialouge
+ ***********************************************/
+
+function deleteFile(id)
+{
+    /** transparent background **/
+    shadow = document.createElement("div");
+    shadow.className = "shadow";
+
+    /** main popup box **/
+    div = document.createElement("div");
+    div.className = "popup";
+    shadow.appendChild(div);
+
+
+    /** get the strings and buttons from a 
+	hidden place in the html             **/
+    p = document.getElementById("delete_message");
+    div.appendChild(p);
+
+    nobutton = document.getElementById("delete_no");
+    div.appendChild(nobutton);
+
+    yesbutton = document.getElementById("delete_yes");
+    yesbutton.href += "?id="+id;
+    div.appendChild(yesbutton);
+
+    document.body.appendChild(shadow);
+}

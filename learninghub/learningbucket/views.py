@@ -133,6 +133,32 @@ def project(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
+
+def deleteFile(request):
+
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)    
+
+
+    # get the project
+    pid = request.GET['id']
+    efile = models.EProjectFile.objects.get(id=pid)
+    # if method is not post, show the editable things
+    
+    if efile.owner_project.owner.id != user.id:
+        return error_view(request, _("You don't have the premission to delete this file!"))
+    
+    efile.filepointer.delete()
+    efile.delete()
+    
+    newurl = '/project?id='+str(efile.owner_project.id)
+    return redirect(newurl)
+        
+        
+
+
+
 ##########################
 # Project post comment
 ###########################

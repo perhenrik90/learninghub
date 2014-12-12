@@ -10,6 +10,23 @@ Author Per-Henrik Kvalnes, 2014
 
 {% block customhead %}
 <script src="{% static 'js/projectController.js' %}"></script>
+
+{% if is_owner %}
+<div hidden="true">
+  <p id="delete_message" type="button">
+    {% blocktrans %}
+    When the file is deleted, you can not get it back.
+    Are you shure you want to delete it? {% endblocktrans %}</p>
+
+  <a id="delete_yes"
+     href="{% url 'learningbucket.views.deleteFile' %}">
+    <input id="delete_yes" type="button" value="{% blocktrans %}Yes{% endblocktrans %}"></input></a>
+  <a id="delete_no" 
+     href="{% url 'learningbucket.views.project' %}?id={{project.id}}">
+    <input type="button" value="{% blocktrans %}No{% endblocktrans %}"> </input></a>
+
+</div>
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -88,6 +105,12 @@ Author Per-Henrik Kvalnes, 2014
 </td>
 <td class="fileTypeTd">{{ file.filetype}}</td>
 <td class="dateTd">{{ file.timecreated }}</td>
+{% if is_owner %}
+<!-- deletebutton -->
+<td class="deleteTd">
+  <img src="{% static 'img/buttons/minimize.png' %}"
+     onclick="deleteFile({{file.id}})"></td>
+{% endif %}
 </tr>
 
 {% endfor %}
