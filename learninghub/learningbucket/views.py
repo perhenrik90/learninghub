@@ -284,3 +284,44 @@ def createproject(request):
     template = loader.get_template("createproject.html")
     context = RequestContext(request, {})
     return HttpResponse(template.render(context))
+
+
+
+#
+# Edit the project
+#
+
+def editproject(request):
+    user = request.user
+    if(not user.is_authenticated()): 
+        return userNotAuthenticated(request)
+
+    if('id' not in request.GET):
+        return error_view(request,_("Can not edit a non existing project"))
+
+    # get the project
+    pid = request.GET['id']
+    eproject = models.EProject.objects.get(id=pid)
+    # if method is not post, show the editable things
+
+    if eproject.owner.id != user.id:
+        return error_view(request, _("You don't have the premission to edit this project!"))
+
+    c = {} # c is the context
+
+    # if method is post
+    if(request.method == "POST"):
+            pid = request.GET['id']
+            eproject.name = request.POST['name']
+            eproject.organizatoin = request.POST['organization']
+            eproject.description = request.POST['description']
+            c["updated"] = True
+            eproject.save()
+
+
+    
+    c['project'] = eproject
+    template = loader.get_template("editproject.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))
+

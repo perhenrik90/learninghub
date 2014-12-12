@@ -16,6 +16,16 @@ Author Per-Henrik Kvalnes, 2014
 <!-- Project info section -->
 <div class="subsection">
 <h1>{% blocktrans %}Project information {% endblocktrans %}</h1>
+
+
+{% if is_owner %}
+<nav>
+  <a href="{% url 'learningbucket.views.editproject' %}?id={{project.id}}">
+  <input type="button" value="{% blocktrans %}Edit{% endblocktrans %}"/></a>
+</nav>
+{% endif %}
+
+
 <table>
 <tr>
 <td>{% blocktrans %}Name{% endblocktrans %}</td><td>{{project.name}}</td>

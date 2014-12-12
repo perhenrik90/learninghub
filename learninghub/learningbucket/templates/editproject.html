@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+{% comment %}
+Template for create project form.
+Connected to learingbucket.views.createproject
+
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+{% load i18n %}
+
+
+{% block content %}
+<h1>{% trans "Edit the project: " %}{{project.name}}</h1>
+{% if updated %}
+<p>{% blocktrans %}Your project has been updated.{% endblocktrans %}</p>
+{% endif %}
+
+<form method="POST">
+  {% csrf_token %}
+  <input name="name" value={{project.name}}>{% trans "Name" %}</input><br/>
+  <input name="organization" value="{{project.organization}}">
+  {% trans "Organization" %}</input><br/>
+  <textarea name="description">
+    {{project.description}}
+  </textarea><br/>
+  <br/>
+  <input type="submit" value="{%blocktrans %}Save{% endblocktrans %}"></input>
+  <a href="{% url 'learningbucket.views.project' %}?id={{project.id}}">
+  <input type="button" value="{%blocktrans %}Back to the project{% endblocktrans %}"/></a>
+
+</form>
+{% endblock %}
+
