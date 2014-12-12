@@ -15,12 +15,15 @@
  *****************************************************/
 .subsection
 {
+    position:relative;
     width:80%;
     border:2px solid rgb(0,50,131);
     margin-left:auto;
     margin-right:auto;
     margin-bottom:20px;
     padding:2px;
+    max-height:300px;
+    overflow-y:scroll;
 }
 .subsection h1
 {
@@ -46,6 +49,20 @@
 {
     min-width:230px;
     padding-right:15px;
+}
+
+.upperRight
+{
+    position:absolute;
+    right:6px;
+    top:3px;
+    text-align:right;
+    height:20px;
+}
+
+#fileselector
+{
+
 }
 
 /** comments in project.html **/
