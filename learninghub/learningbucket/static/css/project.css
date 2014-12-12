@@ -51,6 +51,7 @@
     padding-right:15px;
 }
 
+/** style upper right menu in sub sectoins **/
 .upperRight
 {
     position:absolute;
@@ -60,9 +61,9 @@
     height:20px;
 }
 
-#fileselector
+.upperRight img
 {
-
+    height:20px;
 }
 
 /** comments in project.html **/
@@ -73,7 +74,11 @@
     font-weight:bold;
 }
 
-
+/** span it not so important to display usaly the date **/
+.comment span
+{
+    color:#AAA;
+}
 
 /** Project display mini tiles for the overview ***/
 .projectMiniDisplay

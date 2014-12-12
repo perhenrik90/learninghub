@@ -35,6 +35,14 @@ Author Per-Henrik Kvalnes, 2014
   <td>{% blocktrans %}Description{% endblocktrans %}</td>
   <td>{{project.description}}</td>
 </tr>
+<tr>
+  <td>{% blocktrans %}Last update{% endblocktrans %}</td>
+  <td>{{ project.timeupdated }}</td>
+</tr>
+<tr>
+  <td>{% blocktrans %}Created {% endblocktrans %}</td>
+  <td>{{ project.timecreated }}</td>
+</tr>
 </table>
 </div>
 
@@ -53,12 +61,13 @@ Author Per-Henrik Kvalnes, 2014
 {% endif %}
 {% if files %}
 <!-- span is initialised by projectController.js -->
-<span id="fileselector"/></span>
+<nav class="upperRight"><span id="fileselector"/></span></nav>
 
 <table>
 <tr>
 <td>{% blocktrans %}Name{% endblocktrans %}</td>
 <td>{% blocktrans %}File type{% endblocktrans %}</td>
+<td>{% blocktrans %}Date uploaded{% endblocktrans %}</td>
 </tr>
 {% for file in files %}
 <tr class="fileTr">
@@ -68,6 +77,7 @@ Author Per-Henrik Kvalnes, 2014
 </a>
 </td>
 <td class="fileTypeTd">{{ file.filetype}}</td>
+<td class="dateTd">{{ file.timecreated }}</td>
 </tr>
 
 {% endfor %}
@@ -82,12 +92,15 @@ Author Per-Henrik Kvalnes, 2014
 <!-- Comment section -->
 <div class="subsection">
   <h1>{% blocktrans %}Comments{% endblocktrans %}</h1>
+
+  {% if comments %}
   {% for c in comments %}
   <div class="comment">
     <p><b>{{c.owner.first_name}} {{c.owner.last_name}}: </b>
-      {{c.comment}}</p>
+      {{c.comment}} <span> - {{c.timecreated}}</span></p>
   </div>
   {% endfor %}
+  {% endif %}
   <form method="POST" 
 	action="{% url 'learningbucket.views.project_post_comment' %}">
     {% csrf_token %}
