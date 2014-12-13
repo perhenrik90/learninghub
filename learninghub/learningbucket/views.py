@@ -15,8 +15,17 @@ import learninghub.settings as settings
 
 import learningbucket.buckettools as buckettool
 
+#
+# Defines the views for the learning bucket
+# This is the main views for the system
+#
+# @author Per-Henrik Kvalnes 2014
+#
 
 
+#
+# what to do then a user is not loged in to the system
+#
 def userNotAuthenticated(request):
     return redirect("/login");
 

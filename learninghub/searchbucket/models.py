@@ -1,5 +1,12 @@
 from django.db import models
 
+#
+# Models related to searching
+#
+# @author Per-Henrik Kvalnes 2014
+#
+
+
 # Count times a tag is searched for
 class TagCounter(models.Model):
     

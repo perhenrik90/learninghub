@@ -9,7 +9,12 @@ from django.template import RequestContext, loader, Template, Context
 # import models from learning bucket
 import learningbucket.models as models
 
+#
+# Defines views for searching in projects
+# @author Per-Henrik Kvalnes 2014
+#
 
+# search based on tag names
 def searchProjects(request):
     
     c = {"results":False}
