@@ -51,6 +51,14 @@
     padding-right:15px;
 }
 
+.subsection img
+{
+    margin:0px;
+    margin-left:4px;
+    width:30px;
+    background-color:rgba(107,155,78,1);
+}
+
 /** style upper right menu in sub sectoins **/
 .upperRight
 {

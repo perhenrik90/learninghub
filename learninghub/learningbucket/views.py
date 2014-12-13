@@ -206,8 +206,13 @@ def project_upload_file(request):
     if(not user.is_authenticated()):
         return userNotAuthenticated(request)
 
+
     # handle post 
     if(request.method == "POST"):
+
+        if not 'projectFile' in request.FILES:
+            return error_view(request, _("No file was given."))
+
         # get post parameters
         pid = request.POST["project_id"]
         filetype = request.POST["filetype"]

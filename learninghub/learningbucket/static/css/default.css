@@ -93,12 +93,12 @@ input
 }
 input[type=button]
 {
-    background-color:rgb(0,50,131);
+    background-color:rgba(107,155,78,1);
     color:#FFF;
 }
 input[type=submit]
 {
-    background-color:rgb(0,50,131);
+    background-color:rgba(107,155,78,1);
     color:#FFF;
 }
 textarea

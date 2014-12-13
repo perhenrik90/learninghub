@@ -40,6 +40,7 @@ Author Per-Henrik Kvalnes, 2014
   <a href="{% url 'learningbucket.views.editproject' %}?id={{project.id}}">
   <input type="button" value="{% blocktrans %}Edit{% endblocktrans %}"/></a>
 </nav>
+<hr/>
 {% endif %}
 
 
@@ -81,8 +82,9 @@ Author Per-Henrik Kvalnes, 2014
 <nav>
 <a 
    href="{% url 'learningbucket.views.project_upload_file'%}?id={{project.id}}" >
-
-{% blocktrans %}Upload file{% endblocktrans %}</a>
+  <img src="{% static 'img/buttons/upload.png' %}"
+       alt="{% blocktrans %}Upload file{% endblocktrans %}"></img>
+</a>
 
 </nav>
 {% endif %}
@@ -90,6 +92,7 @@ Author Per-Henrik Kvalnes, 2014
 <!-- span is initialised by projectController.js -->
 <nav class="upperRight"><span id="fileselector"/></span></nav>
 
+<hr/>
 <table>
 <tr>
 <td>{% blocktrans %}Name{% endblocktrans %}</td>
