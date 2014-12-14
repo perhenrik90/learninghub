@@ -1,51 +1,65 @@
-#: views.py:65
-msgid "Unknown error"
-msgstr ""
-
-#: views.py:153
-msgid "You don't have the premission to delete this file!"
-msgstr ""
-
-#: views.py:175 views.py:195
-msgid "The comment has not been posted!"
-msgstr ""
-
-#: views.py:217
-msgid "No file was given."
-msgstr ""
-
-#: views.py:244
-msgid "No project is choosen."
-msgstr ""
-
-#: views.py:264
-msgid "No file were given!"
-msgstr ""
-
-#: views.py:334
-msgid "Can not edit a non existing project"
-msgstr ""
-
-#: views.py:342
-msgid "You don't have the premission to edit this project!"
-msgstr ""
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-14 20:38+0100\n"
+"PO-Revision-Date: 2014-12-12 16:33+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: views.py:65
+msgid "Unknown error"
+msgstr "Ukjent feil"
+
+#: views.py:153
+msgid "You don't have the premission to delete this file!"
+msgstr "Du har ikke rettigheter til å slette denne filen!"
+
+#: views.py:175 views.py:195
+msgid "The comment has not been posted!"
+msgstr "Kommentaren ble ikke postet!"
+
+#: views.py:217
+#, fuzzy
+msgid "No file was given."
+msgstr "Ingen fil er angitt!"
+
+#: views.py:244
+msgid "No project is choosen."
+msgstr "Ingen prosjekt er valgt."
+
+#: views.py:264
+msgid "No file were given!"
+msgstr "Ingen fil er angitt!"
+
+#: views.py:334
+msgid "Can not edit a non existing project"
+msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
+
+#: views.py:342
+msgid "You don't have the premission to edit this project!"
+msgstr "Du har ikke tilgang til å endre dette prosjektet!"
+
 #: templates/base_generic.html:13
 msgid "app-title"
-msgstr "Learning Hub"
+msgstr "Lærings hubben"
 
 #: templates/base_generic.html:28
 msgid "My Projects"
-msgstr "My Projects"
+msgstr "Mine prosjekter"
 
 #: templates/base_generic.html:31 templates/createproject.html:12
 msgid "Create project"
-msgstr "Create project"
+msgstr "Opprett prosjekt"
 
 #: templates/base_generic.html:33
 msgid "Search"
@@ -53,51 +67,49 @@ msgstr ""
 
 #: templates/base_generic.html:35
 msgid "Logout"
-msgstr ""
+msgstr "Logg ut"
 
 #: templates/createdproject.html:6
 msgid "Project created!"
-msgstr ""
+msgstr "Prosjekt opprettet!"
 
 #: templates/createdproject.html:8
 msgid "You have created the project "
-msgstr ""
+msgstr "Du har opprettet prosjektet "
 
 #: templates/createdproject.html:11
 msgid "Go back to projects"
-msgstr "Go back to projects"
+msgstr "Gå tilbake til prosjektene"
 
 #: templates/createproject.html:15 templates/editproject.html:19
 #: templates/project.html:49 templates/project.html.py:98
 #: templates/project_uploadfile.html:11
 msgid "Name"
-msgstr "Name"
+msgstr "Navn"
 
 #: templates/createproject.html:16 templates/editproject.html:21
 msgid "Organization"
-msgstr "Organization"
+msgstr "Organisasjon"
 
 #: templates/createproject.html:17 templates/project.html:63
 msgid "Description"
-msgstr ""
+msgstr "Beskrivelse"
 
 #: templates/editproject.html:12
-#, fuzzy
 msgid "Edit the project: "
-msgstr "Create project"
+msgstr "Endre prosjektet: "
 
 #: templates/editproject.html:14
 msgid "Your project has been updated."
-msgstr ""
+msgstr "Ditt prosjekt har blitt oppdatert."
 
 #: templates/editproject.html:26
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 #: templates/editproject.html:28
-#, fuzzy
 msgid "Back to the project"
-msgstr "Go back to projects"
+msgstr "Tilbake til prosjektet"
 
 #: templates/login.html:31
 msgid "The username and password you entered is wrong. "
@@ -105,36 +117,35 @@ msgstr ""
 
 #: templates/login.html:41
 msgid "Login"
-msgstr "Login"
+msgstr "Logg inn"
 
 #: templates/login.html:45
 msgid "Username"
-msgstr "Username"
+msgstr "Brukernavn"
 
 #: templates/login.html:49
 msgid "Password"
-msgstr "Password"
+msgstr "Passord"
 
 #: templates/logout.html:12
 msgid "You are out!"
-msgstr ""
+msgstr "Du er ute!"
 
 #: templates/logout.html:13
 msgid "Welcome back "
-msgstr ""
+msgstr "Velkommen tilbake "
 
 #: templates/myprojects.html:12
 msgid "My projects"
-msgstr ""
+msgstr "Mine prosjekter"
 
 #: templates/private_error.html:10
 msgid "Something went worng! "
-msgstr ""
+msgstr "Noe gikk galt!"
 
 #: templates/private_error.html:14
-#, fuzzy
 msgid "Back to my projects "
-msgstr "Go back to projects"
+msgstr "Tilbake til mine prosjekter "
 
 #: templates/project.html:17
 msgid ""
@@ -142,54 +153,53 @@ msgid ""
 "    When the file is deleted, you can not get it back.\n"
 "    Are you shure you want to delete it? "
 msgstr ""
+"\n"
+"Når du filen er slettet kan du ikke hente den tilbake.\n"
+"Er du sikker på at du vil slette filen? "
 
 #: templates/project.html:23
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: templates/project.html:26
 msgid "No"
-msgstr ""
+msgstr "Nei"
 
 #: templates/project.html:35
 msgid "Project information "
-msgstr ""
+msgstr "Prosjektinformasjon"
 
 #: templates/project.html:41
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
 #: templates/project.html:53
 msgid "Project owner: "
-msgstr ""
+msgstr "Prosjekteier: "
 
 #: templates/project.html:60
-#, fuzzy
 msgid "Organization "
-msgstr "Organization"
+msgstr "Organisasjon "
 
 #: templates/project.html:67
 msgid "Last update"
 msgstr ""
 
 #: templates/project.html:71
-#, fuzzy
 msgid "Created "
-msgstr "Create project"
+msgstr "Opprettet "
 
 #: templates/project.html:80
-#, fuzzy
 msgid "Uploaded files"
-msgstr "Go back to projects"
+msgstr "Last opp filer"
 
 #: templates/project.html:86
-#, fuzzy
 msgid "Upload file"
-msgstr "Go back to projects"
+msgstr "Last opp fil"
 
 #: templates/project.html:99
 msgid "File type"
-msgstr ""
+msgstr "Filtype"
 
 #: templates/project.html:100
 msgid "Date uploaded"
@@ -197,54 +207,52 @@ msgstr ""
 
 #: templates/project.html:124
 msgid "No files are uploaded to this project"
-msgstr ""
+msgstr "Ingen filer er lastet opp til dette prosjektet"
 
 #: templates/project.html:130
 msgid "Comments"
-msgstr ""
+msgstr "Kommentarer"
 
 #: templates/project_not_found.html:6
 msgid "Project not found!"
-msgstr ""
+msgstr "Prosjekt ble ikke funnet!"
 
 #: templates/project_not_found.html:8
-#, fuzzy
 msgid "Back to my projects"
-msgstr "Go back to projects"
+msgstr "Tilbake til mine prosjekter"
 
 #: templates/project_uploadfile.html:6 templates/project_uploadsuccess.html:6
-#, fuzzy
 msgid "Upload a file to project."
-msgstr "Go back to projects"
+msgstr "Last opp en fil til prosjektet."
 
 #: templates/project_uploadfile.html:15
 msgid "SCORM"
-msgstr ""
+msgstr "SCORM"
 
 #: templates/project_uploadfile.html:17
 msgid "Zip"
-msgstr ""
+msgstr "Zip"
 
 #: templates/project_uploadfile.html:19
 msgid "Image"
-msgstr ""
+msgstr "Bilde"
 
 #: templates/project_uploadfile.html:21
 msgid "Storyline"
-msgstr ""
+msgstr "Storyline"
 
 #: templates/project_uploadfile.html:23
 msgid "Flash"
-msgstr ""
+msgstr "Flash"
 
 #: templates/project_uploadfile.html:25
 msgid "Other"
-msgstr ""
+msgstr "Annet"
 
 #: templates/project_uploadsuccess.html:8
 msgid "You have successfully uploaded the file: \n"
-msgstr ""
+msgstr "Du har lastet opp filen: \n"
 
 #: templates/project_uploadsuccess.html:9
 msgid " to "
-msgstr ""
+msgstr " til "
