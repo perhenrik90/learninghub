@@ -4,6 +4,10 @@ Learning Hub
 Simple tool for sharing e-learning resources and files. 
 Still in early developmentstage.
 
+Contributors
+------------
+Per-Henrik Kvalnes 
+
 Functionalies (x implemented)
 -----------------------------
 
@@ -12,10 +16,14 @@ Functionalies (x implemented)
 [x] - upload a file to a project
 [x] - download a file from a project
 [x] - search within all projects (tags)
-[  ]  - search by title and project description
+[ ] - search by title and project description
+[ ] - search priorities (number of visits)
 [x] - tag a project (# with a category)
 [ ] - self change password
 [ ] - user profile
+[ ] - user profile image
+[ ] - following other users
+[ ] - wall / table of activities
 
 
 Requirments
@@ -26,6 +34,9 @@ Requirments
 - Sqlite (for now) / mysql
 
 Tested on Linux OpenSUSE, OpenSUSE on raspberry pi and Linux Mint. 
+
+
+
 
 Setup
 --------
@@ -42,5 +53,6 @@ mysql
 4) go to learninghub and run: python manage.py syndb
 5) python manage.py runserver
 
-
+user administration is done by django default admin site. 
+<your-size>/admin
 
