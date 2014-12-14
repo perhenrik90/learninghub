@@ -26,6 +26,7 @@ def userNotAuthenticated(request):
 
 def login_view(request):
     user = request.user
+    c = {}
     if user.is_authenticated():
         return myprojects(request)
 
@@ -34,13 +35,15 @@ def login_view(request):
         pa = request.POST["pass"]         
 
         usr = authenticate(username=us, password=pa)
-        if(user is not None):
+        if(usr is not None):
             login(request, usr)
             return redirect("/myprojects")
-        
+            
+        # mark that the user has tried to login
+        c["not_authenticated"] = 1
         
     template = loader.get_template('login.html')
-    context = RequestContext(request, {})
+    context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
 

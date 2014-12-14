@@ -24,7 +24,10 @@ Author Per-Henrik Kvalnes, 2014
    <img src="{% static 'img/logo.png' %}"/>
 </object>
 
-    
+{% comment %}If the user is not authenticated, display this message {% endcomment %}
+{% if not_authenticated %}
+<p>{% blocktrans %}The username and password you entered is wrong. {% endblocktrans %}</p>
+{% endif %}    
 
     <form method="POST">
       {% csrf_token %}
