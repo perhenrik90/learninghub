@@ -104,8 +104,11 @@ def profile_change_password(request):
         pwd1 = request.POST["password1"]
         pwd2 = request.POST["password2"]
         
+        # if the passwords is not equal
         if pwd1 != pwd2:
             c = {"password_failed":True}
+
+        # if the passwords are equal 
         elif pwd1 == pwd2:
             c = {"password_succes":True}
             request.user.set_password(pwd1)

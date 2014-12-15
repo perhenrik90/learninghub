@@ -12,9 +12,10 @@ Menu for the profile.
 
 <nav>
   <a href="{% url 'profilebucket.views.profile' %}?id={{user.id}}">
-    {% blocktrans %}View your profile{% endblocktrans %}</a> |
+    {% blocktrans %}View your profile{% endblocktrans %}
+  </a> </br>
     
-  <a href="">
+  <a href="{% url 'profilebucket.views.profile_change_password' %}">
     {% blocktrans %}Change password{% endblocktrans %}
   </a>
 </nav>
