@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+
+{% comment %}
+Display a user profile. 
+{% endcomment %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+
+{% if is_owner %}
+<p>This is your profile</p>
+{% endif %}
+
+<table>
+  <tr>
+    <td>{{user.first_name}} {{user.last_name}}</td>
+  </tr>
+  <tr>
+    <td>{{user.email}}</td>
+  </tr>
+</table>
+
+{% endblock %}

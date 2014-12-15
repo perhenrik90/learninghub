@@ -35,6 +35,11 @@ urlpatterns = patterns('',
     url(r'^search$','searchbucket.views.searchProjects',
         name='Search'),
 
+    # profile bucket app/module
+    url(r'^profile$','profilebucket.views.profile',
+        name='Profile'),
+
+    
     # admin app/module
     url(r'^admin/', include(admin.site.urls)),
 )
