@@ -38,7 +38,8 @@ urlpatterns = patterns('',
     # profile bucket app/module
     url(r'^profile$','profilebucket.views.profile',
         name='Profile'),
-
+    url(r'^profilemenu$','profilebucket.views.profile_menu',
+        name='Profile Menu'),
     
     # admin app/module
     url(r'^admin/', include(admin.site.urls)),

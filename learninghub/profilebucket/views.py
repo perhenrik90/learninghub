@@ -38,6 +38,28 @@ def error_view(request, message=_("Unknown error")):
  
     return "Not yet implemented."
 
+
+#
+# Display menu for the profile 
+#
+def profile_menu(request):
+    # if user is not authenticated!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+    c = {}    
+    
+    template = loader.get_template("profile_menu.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))
+
+
+
+#
+# Display a generic profile
+# 
+
 def profile(request):
 
     # if user is not authenticated!
