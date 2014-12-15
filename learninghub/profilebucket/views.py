@@ -82,10 +82,22 @@ def profile(request):
     if(viewuser == request.user):
         c["is_owner"] = True
 
-    
-
-
     c["user"] = viewuser
     template = loader.get_template("profile.html");
     context = RequestContext(request, c)
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context))    
+
+
+#
+# Change password for a user
+#
+
+def profile_change_password(request):
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+    
+    c = {}
+    template = loader.get_template("profile_change_password.html");
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))        
