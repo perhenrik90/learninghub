@@ -8,7 +8,7 @@ from django.template import RequestContext, loader, Template, Context
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 from django.utils import translation
-from django.contrib.auth import authenticate, login, logout 
+from django.contrib.auth import authenticate, login, logout
 from django.forms.models import model_to_dict
 from django.contrib.auth.models import User
 
@@ -98,6 +98,19 @@ def profile_change_password(request):
         return userNotAuthenticated(request)
     
     c = {}
+
+    if request.method == "POST":
+        
+        pwd1 = request.POST["password1"]
+        pwd2 = request.POST["password2"]
+        
+        if pwd1 != pwd2:
+            c = {"password_failed":True}
+        elif pwd1 == pwd2:
+            c = {"password_succes":True}
+            request.user.set_password(pwd1)
+            request.user.save()
+
     template = loader.get_template("profile_change_password.html");
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))        
