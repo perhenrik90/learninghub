@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+
+{% comment %}
+Menu for the profile. 
+{% endcomment %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+
+<nav>
+  <a href="{% url 'profilebucket.views.profile' %}?id={{user.id}}">
+    {% blocktrans %}View your profile{% endblocktrans %}
+  </a> </br>
+    
+  <a href="{% url 'profilebucket.views.profile_change_password' %}">
+    {% blocktrans %}Change password{% endblocktrans %}
+  </a>
+</nav>
+
+{% endblock %}
