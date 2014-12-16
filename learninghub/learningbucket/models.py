@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 """
 Models for learning bucket
-Here is there the e-learning projects are stored
+Here is where the e-learning projects are stored
 
 @author Per-Henrik Kvalnes
 """
