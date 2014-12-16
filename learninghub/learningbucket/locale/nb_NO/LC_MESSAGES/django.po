@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-12 16:28+0100\n"
+"POT-Creation-Date: 2014-12-14 20:38+0100\n"
 "PO-Revision-Date: 2014-12-12 16:33+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,31 +16,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: views.py:62
+#: views.py:65
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#: views.py:150
+#: views.py:153
 msgid "You don't have the premission to delete this file!"
 msgstr "Du har ikke rettigheter til å slette denne filen!"
 
-#: views.py:172 views.py:192
+#: views.py:175 views.py:195
 msgid "The comment has not been posted!"
 msgstr "Kommentaren ble ikke postet!"
 
-#: views.py:236
+#: views.py:217
+#, fuzzy
+msgid "No file was given."
+msgstr "Ingen fil er angitt!"
+
+#: views.py:244
 msgid "No project is choosen."
 msgstr "Ingen prosjekt er valgt."
 
-#: views.py:256
+#: views.py:264
 msgid "No file were given!"
 msgstr "Ingen fil er angitt!"
 
-#: views.py:326
+#: views.py:334
 msgid "Can not edit a non existing project"
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
-#: views.py:334
+#: views.py:342
 msgid "You don't have the premission to edit this project!"
 msgstr "Du har ikke tilgang til å endre dette prosjektet!"
 
@@ -77,7 +82,7 @@ msgid "Go back to projects"
 msgstr "Gå tilbake til prosjektene"
 
 #: templates/createproject.html:15 templates/editproject.html:19
-#: templates/project.html:48 templates/project.html.py:95
+#: templates/project.html:49 templates/project.html.py:98
 #: templates/project_uploadfile.html:11
 msgid "Name"
 msgstr "Navn"
@@ -86,7 +91,7 @@ msgstr "Navn"
 msgid "Organization"
 msgstr "Organisasjon"
 
-#: templates/createproject.html:17 templates/project.html:62
+#: templates/createproject.html:17 templates/project.html:63
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -107,14 +112,18 @@ msgid "Back to the project"
 msgstr "Tilbake til prosjektet"
 
 #: templates/login.html:31
+msgid "The username and password you entered is wrong. "
+msgstr "Brukernavnet og passordet du skrev inn er feil."
+
+#: templates/login.html:41
 msgid "Login"
 msgstr "Logg inn"
 
-#: templates/login.html:35
+#: templates/login.html:45
 msgid "Username"
 msgstr "Brukernavn"
 
-#: templates/login.html:39
+#: templates/login.html:49
 msgid "Password"
 msgstr "Passord"
 
@@ -164,43 +173,43 @@ msgstr "Prosjektinformasjon"
 msgid "Edit"
 msgstr "Rediger"
 
-#: templates/project.html:52
+#: templates/project.html:53
 msgid "Project owner: "
 msgstr "Prosjekteier: "
 
-#: templates/project.html:59
+#: templates/project.html:60
 msgid "Organization "
 msgstr "Organisasjon "
 
-#: templates/project.html:66
+#: templates/project.html:67
 msgid "Last update"
-msgstr ""
+msgstr "Sist oppdatert"
 
-#: templates/project.html:70
+#: templates/project.html:71
 msgid "Created "
 msgstr "Opprettet "
 
-#: templates/project.html:79
+#: templates/project.html:80
 msgid "Uploaded files"
 msgstr "Last opp filer"
 
-#: templates/project.html:85
+#: templates/project.html:86
 msgid "Upload file"
 msgstr "Last opp fil"
 
-#: templates/project.html:96
+#: templates/project.html:99
 msgid "File type"
 msgstr "Filtype"
 
-#: templates/project.html:97
+#: templates/project.html:100
 msgid "Date uploaded"
-msgstr ""
+msgstr "Dato opplastet"
 
-#: templates/project.html:121
+#: templates/project.html:124
 msgid "No files are uploaded to this project"
 msgstr "Ingen filer er lastet opp til dette prosjektet"
 
-#: templates/project.html:127
+#: templates/project.html:130
 msgid "Comments"
 msgstr "Kommentarer"
 

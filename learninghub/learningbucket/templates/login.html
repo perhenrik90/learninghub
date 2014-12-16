@@ -20,11 +20,20 @@ Author Per-Henrik Kvalnes, 2014
   <header>
   </header>
   <section>
+
+
+{% comment %}If the user is not authenticated, display this message {% endcomment %}
+{% if not_authenticated %}
+<object data="{% static 'img/logo_fail.svg' %}" type="image/svg+xml">
+   <img src="{% static 'img/logo_fail.png' %}"/>
+</object>
+<p>{% blocktrans %}The username and password you entered is wrong. {% endblocktrans %}</p>
+{% else %}
 <object data="{% static 'img/logo.svg' %}" type="image/svg+xml">
    <img src="{% static 'img/logo.png' %}"/>
 </object>
+{% endif %}    
 
-    
 
     <form method="POST">
       {% csrf_token %}

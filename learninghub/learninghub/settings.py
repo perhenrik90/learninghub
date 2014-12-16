@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # installed learninghub projects
     'learningbucket',
     'searchbucket',
 )
@@ -62,8 +63,15 @@ WSGI_APPLICATION = 'learninghub.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../db.sqlite3'),
+        # mySQL
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'learninghub',
+        'USER':'learninghub',
+        'PASSWORD':'1234',
+
+        # Sqlite3 - uncomment this and add comments to mySQL 
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, '../db.sqlite3'),
     }
 }
 
