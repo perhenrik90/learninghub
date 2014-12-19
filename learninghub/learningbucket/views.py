@@ -7,6 +7,8 @@ from django.template import RequestContext, loader, Template, Context
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 from django.utils import translation
+from django.core.urlresolvers import reverse
+
 from django.contrib.auth import authenticate, login, logout
 from django.forms.models import model_to_dict
 
@@ -27,7 +29,7 @@ import learningbucket.buckettools as buckettool
 # what to do then a user is not loged in to the system
 #
 def userNotAuthenticated(request):
-    return redirect("/login");
+    return redirect(login_view);
 
 #
 # Login view
@@ -46,7 +48,7 @@ def login_view(request):
         usr = authenticate(username=us, password=pa)
         if(usr is not None):
             login(request, usr)
-            return redirect("/myprojects")
+            return redirect(myprojects)
             
         # mark that the user has tried to login
         c["not_authenticated"] = 1
@@ -64,7 +66,7 @@ def logout_view(request):
         context = RequestContext(request, {'name':user.first_name})
         return HttpResponse(template.render(context))
 
-    return redirect("/login")
+    return redirect(login_view)
 
 
 
@@ -197,7 +199,7 @@ def project_post_comment(request):
         taglist = buckettool.filterTags(comment)
         buckettool.storeTags(taglist=taglist, project=p)
 
-        return redirect("/project?id="+project_id)
+        return redirect(reverse(myprojects)+"?id="+project_id)
 
     except Exception as e:
         print(e)

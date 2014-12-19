@@ -12,6 +12,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.forms.models import model_to_dict
 from django.contrib.auth.models import User
 
+from learningbucket.views import login_view
 #
 # Views for profilebucket
 # All profile related views goes here
@@ -22,7 +23,7 @@ from django.contrib.auth.models import User
 
 # called when user is not logged in 
 def userNotAuthenticated(request):
-    return redirect("/login");
+    return redirect(login_view);
 
 
 
