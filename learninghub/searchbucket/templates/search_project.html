@@ -39,6 +39,14 @@ Author Per-Henrik Kvalnes 2014
 </tr>
 
 {% endfor %}
+
+{% for usr in users %}
+<tr>
+  <td>
+    <a href="{% url 'profilebucket.views.profile' %}?id={{usr.id}}">
+    {{usr.first_name}}</a></td>
+</tr>
+{% endfor %}
 </table>
 {% endif %}
 {% endblock %}

@@ -5,6 +5,7 @@ from django.core.context_processors import csrf
 from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
 from django.template import RequestContext, loader, Template, Context
+from django.contrib.auth.models import User
 
 # import models from learning bucket
 import learningbucket.models as models
@@ -25,6 +26,7 @@ def searchProjects(request):
 
         # tags = result list 
         tags = []
+        users = []
 
         # split the saerch tekst in to search terms
         terms = searchString.split(" ")
@@ -33,7 +35,11 @@ def searchProjects(request):
             ## do multiple querys for every term and append to result list
             tags += models.EProjectTag.objects.all().filter(tag=term).order_by('tag')
             tags += models.EProjectTag.objects.all().filter(tag='#'+term).order_by('tag')
-
+            users += User.objects.all().filter(first_name__iexact=term)
+            users += User.objects.all().filter(last_name__iexact=term)
+            
+        print(users)
+        c["users"] = users
         c['tags'] = tags
         c['results'] = True
 
