@@ -13,6 +13,7 @@ from django.forms.models import model_to_dict
 from django.contrib.auth.models import User
 
 from learningbucket.views import login_view
+from profilebucket.models import UserProfile
 #
 # Views for profilebucket
 # All profile related views goes here
@@ -83,11 +84,39 @@ def profile(request):
     if(viewuser == request.user):
         c["is_owner"] = True
 
+        user_profile = UserProfile.objects.all().filter(user_ref=viewuser)
+        if(len(user_profile)>0): user_profile = user_profile[0]
+
+    if(user_profile):
+        c["user_profile"] = user_profile
+
     c["user"] = viewuser
     template = loader.get_template("profile.html");
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))    
 
+
+#
+# Edit a user additional profile
+#
+def profile_update(request):
+    # if user is not authenticated!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+    user_profile = UserProfile.objects.all().filter(user_ref=user)
+    if(len(user_profile)<1):
+        up = UserProfile(user_ref=user,bio="Wee")
+        up.save()
+
+    else:
+        user_profile = user_profile[0]
+
+    c = {"user_profile":user_profile}
+    template = loader.get_template("profile_update.html");
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))        
 
 #
 # Change password for a user

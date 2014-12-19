@@ -44,6 +44,8 @@ urlpatterns = patterns('',
         name='Profile Menu'),
     url(r'^'+up+'profilepassword$','profilebucket.views.profile_change_password',
         name='Profile Menu'),
+    url(r'^'+up+'profileupdate$','profilebucket.views.profile_update',
+        name='Profile Update'),
     
     # admin app/module
     url(r'^'+up+'admin/', include(admin.site.urls)),
