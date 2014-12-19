@@ -19,9 +19,7 @@ Author Per-Henrik Kvalnes, 2014
   <input name="name" value={{project.name}}>{% trans "Name" %}</input><br/>
   <input name="organization" value="{{project.organization}}">
   {% trans "Organization" %}</input><br/>
-  <textarea name="description">
-    {{project.description}}
-  </textarea><br/>
+  <textarea name="description">{{project.description}}</textarea><br/>
   <br/>
   <input type="submit" value="{%blocktrans %}Save{% endblocktrans %}"></input>
   <a href="{% url 'learningbucket.views.project' %}?id={{project.id}}">
