@@ -38,9 +38,13 @@ def searchProjects(request):
             users += User.objects.all().filter(first_name__iexact=term)
             users += User.objects.all().filter(last_name__iexact=term)
             
-        print(users)
-        c["users"] = users
-        c['tags'] = tags
+
+        if len(users)> 0:
+            c["users"] = users
+
+        if len(tags)> 0:
+            c['tags'] = tags
+
         c['results'] = True
 
     template = loader.get_template("search_project.html")

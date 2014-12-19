@@ -24,6 +24,8 @@ Author Per-Henrik Kvalnes 2014
 <hr/>
 
 {% if results %}
+<!-- tag results -->
+{% if tags %}
 <table id="searchResults">
 <tr>
 <td>{% blocktrans %}Project name{% endblocktrans %}</td>
@@ -39,15 +41,24 @@ Author Per-Henrik Kvalnes 2014
 </tr>
 
 {% endfor %}
+</table>
+{% endif %}
 
+<!-- user results -->
+{% if users %}
+<table>
+<tr>
+  <td>{% blocktrans %}Name{% endblocktrans %}</td>
+</tr>
 {% for usr in users %}
 <tr>
   <td>
     <a href="{% url 'profilebucket.views.profile' %}?id={{usr.id}}">
-    {{usr.first_name}}</a></td>
+    {{usr.first_name}} {{usr.last_name}}</a></td>
 </tr>
 {% endfor %}
 </table>
+{% endif %}
 {% endif %}
 {% endblock %}
 
