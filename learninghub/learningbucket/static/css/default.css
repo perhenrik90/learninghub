@@ -98,11 +98,19 @@ input[type=button]
     width:200px;
     color:#FFF;
 }
+input[type=button]:hover
+{
+    background-color:rgba(97,145,68,1);	
+}
 input[type=submit]
 {
     background-color:rgba(107,155,78,1);
     color:#FFF;
     width:200px;
+}
+input[type=submit]:hover
+{
+    background-color:rgba(97,145,68,1);	
 }
 textarea
 {
