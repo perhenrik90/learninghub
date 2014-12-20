@@ -19,12 +19,12 @@ Functionalies (x implemented)
 [ ] - search by title and project description
 [ ] - search priorities (number of visits)
 [x] - tag a project (# with a category)
-[ ] - self change password
-[ ] - user profile
+[x] - self change password
+[x] - user profile
 [ ] - user profile image
 [ ] - following other users
 [ ] - wall / table of activities
-
+[ ] - follow projects
 
 Requirments
 -------------------
