@@ -19,7 +19,7 @@ Template for user profile.
 
 <div id="profile_header">
   <img src="{% static 'img/no_image.png' %}"/>
-  <p>{{user.first_name}} {{user.last_name}}</p>
+  <p>{{user_auth.first_name}} {{user_auth.last_name}}</p>
   <hr/>
 </div>
 <nav>
@@ -27,8 +27,13 @@ Template for user profile.
 <a href="{% url 'profilebucket.views.profile_update' %}">
 <input type="button" value="{% blocktrans %}Edit profile{% endblocktrans %}"/></a>
 {% endif %}
+
 <a href="{% url 'profilebucket.views.profile' %}?id={{user.id}}">
 <input type="button" value="{% blocktrans %}Information{% endblocktrans %}"/></a>
+
+<a href="{% url 'profilebucket.views.profile_projects' %}?id={{user.id}}">
+<input type="button" value="{% blocktrans %}Projects{% endblocktrans %}"/>
+</a>
 </nav>
 
 {% block profile_content %}

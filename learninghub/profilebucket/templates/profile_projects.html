@@ -10,12 +10,13 @@ Display a user profile main entries.
 {% load url from future %}
 
 {% block profile_content %}
+<p>Projects</p>
+
 <table>
-  <tr>
-    <td>{{user_auth.email}}</td>
-  </tr>
-  <tr>
-    <td>{{user_profile.bio}}</td>
-  </tr>
+{% for project in projects %}
+<tr>
+    <td><a href="{% url 'learningbucket.views.project' %}?id={{project.id}}">{{project.name}}</a></td>
+</tr>
+{% endfor %}
 </table>
 {% endblock %}

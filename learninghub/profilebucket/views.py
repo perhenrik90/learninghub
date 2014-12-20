@@ -15,6 +15,7 @@ from django.contrib.auth.models import User
 
 from learningbucket.views import login_view
 from profilebucket.models import UserProfile
+from learningbucket.models import EProject
 #
 # Views for profilebucket
 # All profile related views goes here
@@ -85,13 +86,16 @@ def profile(request):
     if(viewuser == request.user):
         c["is_owner"] = True
 
-        user_profile = UserProfile.objects.all().filter(user_ref=viewuser)
-        if(len(user_profile)>0): user_profile = user_profile[0]
+    user_profile = UserProfile.objects.all().filter(user_ref=viewuser)
+    if(len(user_profile)>0): user_profile = user_profile[0]
 
-    if(user_profile):
-        c["user_profile"] = user_profile
+    else: 
+        user_profile = UserProfile(user_ref=viewuser)
+        user_profile.save()
 
-    c["user"] = viewuser
+    c["user_auth"] = viewuser
+    c["user_profile"] = user_profile
+
     template = loader.get_template("profile.html");
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))    
@@ -170,3 +174,35 @@ def profile_change_password(request):
     template = loader.get_template("profile_change_password.html");
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))        
+
+
+#
+# View projects owned by an user
+#
+
+def profile_projects(request):
+
+    user = request.user
+    c = {}
+
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+    if 'id' not in request.GET:
+        return error_view(request, _("Can not show profile with an empty id"))
+
+    uid = request.GET["id"]
+    viewuser = User.objects.get(id=uid)
+
+    if viewuser == request.user:
+        c["is_owner"] = True
+
+    # get projects
+    projects = EProject.objects.all().filter(owner=viewuser)
+
+    c["user_auth"] = viewuser
+    c["projects"] = projects
+
+    template = loader.get_template("profile_projects.html");
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))            
