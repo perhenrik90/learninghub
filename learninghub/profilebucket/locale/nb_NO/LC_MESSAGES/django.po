@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-20 20:57+0100\n"
+"PO-Revision-Date: 2014-12-20 21:02+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: views.py:35
+msgid "Unknown error"
+msgstr "Ukjent feil"
+
+#: views.py:76
+msgid "Can not show profile with an empty id"
+msgstr "Profil uten id kan ikke vises"
+
+#: views.py:83
+msgid "This is not a valid user profile"
+msgstr "Dette er ikke en bruker profil"
+
+#: templates/base_generic.html:14
+msgid "app-title"
+msgstr "Lærebøtte"
+
+#: templates/base_generic.html:29
+msgid "My Projects"
+msgstr "Mine prosjekter"
+
+#: templates/base_generic.html:32
+msgid "Create project"
+msgstr "Opprett prosjekt"
+
+# Søk
+#: templates/base_generic.html:34
+msgid "Search"
+msgstr "Søk"
+
+#: templates/base_generic.html:36
+msgid "Logout"
+msgstr "Logg ut"
+
+#: templates/profile.html:16 templates/profile_menu.html:23
+msgid "Edit profile"
+msgstr "Endre profil"
+
+#: templates/profile_change_password.html:16
+msgid "The passwordfields must be equal. Please try again."
+msgstr "Passordene må være like"
+
+#: templates/profile_change_password.html:20
+msgid "Your password has been changed!"
+msgstr "Ditt passord har blitt endret"
+
+#: templates/profile_change_password.html:32
+msgid "Enter a new password"
+msgstr "Tast inn et nytt passord"
+
+#: templates/profile_change_password.html:37
+msgid "Enter the new password again "
+msgstr "Tast inn ditt nye passord en gang til"
+
+#: templates/profile_change_password.html:40 templates/profile_update.html:36
+msgid "Save"
+msgstr "Lagre"
+
+#: templates/profile_menu.html:16
+msgid "View your profile"
+msgstr "Se din profil"
+
+#: templates/profile_menu.html:20
+msgid "Change password"
+msgstr "Endre passord"
+
+#: templates/profile_update.html:20
+msgid "First name"
+msgstr "Fornavn"
+
+#: templates/profile_update.html:24
+msgid "Last name"
+msgstr "Etternavn"
+
+#: templates/profile_update.html:29
+msgid "Email"
+msgstr "Epost"
+
+# Biografi
+#: templates/profile_update.html:33
+msgid "Biography"
+msgstr "Biografi"
