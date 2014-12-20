@@ -12,7 +12,10 @@ Display a user profile.
 {% block content %}
 
 {% if is_owner %}
-<p>This is your profile</p>
+<a href="{% url 'profilebucket.views.profile_update' %}">
+<input type="button" value="{% blocktrans %}Edit profile{% endblocktrans %}"/></a>
+
+
 {% endif %}
 
 <table>

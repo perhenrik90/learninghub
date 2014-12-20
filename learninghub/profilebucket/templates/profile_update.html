@@ -24,8 +24,16 @@ Change a users profile information
       <td>{% blocktrans %}Last name{% endblocktrans %}</td>
     </tr>
     <tr>
-      <td><textarea name="last_name" value="{{user.last_name}}">{{user_profile.bio}}</textarea></td>
+    <tr>
+      <td><input name="email" value="{{user.email}}"/></td>
+      <td>{% blocktrans %}Email{% endblocktrans %}</td>
+    </tr>
+    <tr>
+      <td><textarea name="bio">{{user_profile.bio}}</textarea></td>
       <td>{% blocktrans %}Biography{% endblocktrans %}</td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="{% blocktrans %}Save{% endblocktrans %}"/></td>
     </tr>
   </table>
 </form>

@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
 from django.template import RequestContext, loader, Template, Context
 from django.http import HttpResponse
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from django.utils import translation
 from django.contrib.auth import authenticate, login, logout
@@ -105,6 +106,28 @@ def profile_update(request):
     if(not user.is_authenticated()):
         return userNotAuthenticated(request)
 
+    # update user information if it is a post request
+    if request.method == "POST":
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
+        bio = request.POST["bio"]
+        email = request.POST["email"]
+
+        user_profile = UserProfile.objects.all().filter(user_ref=user)
+
+        if(len(user_profile) > 0):
+            user_profile = user_profile[0]
+
+        user_profile.bio = bio            
+        user_profile.save()
+        user.first_name = first_name
+        user.last_name = last_name
+        user.email = email
+        user.save()
+        # go back to user profile
+        return redirect(reverse(profile)+"?id="+str(user.id))
+
+    # get user information 
     user_profile = UserProfile.objects.all().filter(user_ref=user)
     if(len(user_profile)<1):
         up = UserProfile(user_ref=user,bio="Wee")
