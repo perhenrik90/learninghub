@@ -145,6 +145,38 @@ def profile_update(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))        
 
+
+def project_uploadimage(request):
+
+    # no user, no file!
+    user = request.user
+    pid = 0
+    c = {}
+
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+    # handle post 
+    if(request.method == "POST"):
+
+        if not 'profileImg' in request.FILES:
+            return error_view(request, _("No file was given."))
+
+        # get the profile
+        user_profile = UserProfile.objects.all().filter(user_ref=user)
+        if(len(user_profile)>0):
+            user_profile = user_profile[0]
+        else: 
+            user_profile = UserProfile()
+
+        user_profile.image = request.FILES['profileImg']
+        user_profile.save()
+        
+
+    template = loader.get_template("profile_upload_img.html");
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))        
+
 #
 # Change password for a user
 #
@@ -200,8 +232,14 @@ def profile_projects(request):
     # get projects
     projects = EProject.objects.all().filter(owner=viewuser)
 
+    # load the profile image 
+    user_profile = UserProfile.objects.all().filter(user_ref=user)
+    if(len(user_profile) > 0):
+        user_profile = user_profile[0]
+
     c["user_auth"] = viewuser
     c["projects"] = projects
+    c["user_profile"] = user_profile
 
     template = loader.get_template("profile_projects.html");
     context = RequestContext(request, c)

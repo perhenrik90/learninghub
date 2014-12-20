@@ -2,7 +2,10 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 
 
+
 from django.contrib import admin
+import settings 
+
 admin.autodiscover()
 
 up = "lh/" # prefix
@@ -46,9 +49,16 @@ urlpatterns = patterns('',
         name='Profile Menu'),
     url(r'^'+up+'profileupdate$','profilebucket.views.profile_update',
         name='Profile Update'),
+    url(r'^'+up+'profileupload$','profilebucket.views.project_uploadimage',
+        name='Profile Upload'),
     url(r'^'+up+'profileprojects$','profilebucket.views.profile_projects',
         name='Profile Projects'),
     
     # admin app/module
     url(r'^'+up+'admin/', include(admin.site.urls)),
-)
+
+
+   
+    # only make the profile images public (accessable through url) 
+) +  static(settings.MEDIA_URL+"profileimg/", document_root=settings.MEDIA_ROOT+"profileimg/")
+print settings.MEDIA_ROOT

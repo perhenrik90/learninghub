@@ -18,7 +18,11 @@ Template for user profile.
 
 
 <div id="profile_header">
+  {% if user_profile.image %}
+  <img src="{{user_profile.image.url}}"/>
+  {% else %}
   <img src="{% static 'img/no_image.png' %}"/>
+  {% endif %}
   <p>{{user_auth.first_name}} {{user_auth.last_name}}</p>
   <hr/>
 </div>

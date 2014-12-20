@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block content %}
+<h1>{% blocktrans %}Upload a profile image.{% endblocktrans %}</h1>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file" name="profileImg" id="profileImg"><br/>
+  <input type="submit"/>
+</form>
+
+{% endblock %}
+

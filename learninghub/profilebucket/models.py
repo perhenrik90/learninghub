@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 class UserProfile(models.Model):
     
     bio = models.CharField(max_length=400)
-    user_ref = models.OneToOneField(User);
+    user_ref = models.OneToOneField(User)
     image = models.FileField(upload_to="profileimg/%Y/%m")
 
 #
