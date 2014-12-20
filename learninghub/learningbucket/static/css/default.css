@@ -112,6 +112,10 @@ textarea
     width:400px;
 }
 
+hr
+{
+    color:rgb(0,50,131);
+}
 
 /****************'
  * Login styling 
@@ -152,3 +156,4 @@ textarea
     margin-right:auto;
 
 }
+

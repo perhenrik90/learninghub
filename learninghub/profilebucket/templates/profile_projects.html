@@ -10,8 +10,7 @@ Display a user profile main entries.
 {% load url from future %}
 
 {% block profile_content %}
-<p>Projects</p>
-
+<p>{{user_auth.first_name}}'s {% blocktrans %}projects{% endblocktrans %}</p>
 <table>
 {% for project in projects %}
 <tr>
