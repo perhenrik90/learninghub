@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+
+{% comment %}
+Template for user profile.
+@author Per-Henrik Kvalnes 
+{% endcomment %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load url from future %}
+
+{% block customhead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+
+<div id="profile_header">
+  <img src="{% static 'img/no_image.png' %}"/>
+  <p>{{user.first_name}} {{user.last_name}}</p>
+  <hr/>
+</div>
+<nav>
+{% if is_owner %}
+<a href="{% url 'profilebucket.views.profile_update' %}">
+<input type="button" value="{% blocktrans %}Edit profile{% endblocktrans %}"/></a>
+{% endif %}
+<a href="{% url 'profilebucket.views.profile' %}?id={{user.id}}">
+<input type="button" value="{% blocktrans %}Information{% endblocktrans %}"/></a>
+</nav>
+
+{% block profile_content %}
+
+{% endblock%}
+
+{% endblock %}
