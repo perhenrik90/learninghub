@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-20 20:57+0100\n"
+"POT-Creation-Date: 2014-12-21 00:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: views.py:35
+#: views.py:36
 msgid "Unknown error"
 msgstr ""
 
-#: views.py:76
+#: views.py:77 views.py:224
 msgid "Can not show profile with an empty id"
 msgstr ""
 
-#: views.py:83
+#: views.py:84
 msgid "This is not a valid user profile"
+msgstr ""
+
+#: views.py:163
+msgid "No file was given."
 msgstr ""
 
 #: templates/base_generic.html:14
@@ -47,10 +51,6 @@ msgstr ""
 
 #: templates/base_generic.html:36
 msgid "Logout"
-msgstr ""
-
-#: templates/profile.html:16 templates/profile_menu.html:23
-msgid "Edit profile"
 msgstr ""
 
 #: templates/profile_change_password.html:16
@@ -81,6 +81,26 @@ msgstr ""
 msgid "Change password"
 msgstr ""
 
+#: templates/profile_menu.html:23 templates/profile_template.html:32
+msgid "Edit profile"
+msgstr ""
+
+#: templates/profile_menu.html:26
+msgid "Upload profile image"
+msgstr ""
+
+#: templates/profile_projects.html:13
+msgid "projects"
+msgstr ""
+
+#: templates/profile_template.html:36
+msgid "Information"
+msgstr ""
+
+#: templates/profile_template.html:39
+msgid "Projects"
+msgstr ""
+
 #: templates/profile_update.html:20
 msgid "First name"
 msgstr ""
@@ -95,4 +115,8 @@ msgstr ""
 
 #: templates/profile_update.html:33
 msgid "Biography"
+msgstr ""
+
+#: templates/profile_upload_img.html:6
+msgid "Upload a profile image."
 msgstr ""
