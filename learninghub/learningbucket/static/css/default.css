@@ -90,22 +90,26 @@ input
     border:2px solid rgb(0,50,131);
     font-size:20px;
     margin:5px;
+    width:400px;
 }
 input[type=button]
 {
     background-color:rgba(107,155,78,1);
+    width:200px;
     color:#FFF;
 }
 input[type=submit]
 {
     background-color:rgba(107,155,78,1);
     color:#FFF;
+    width:200px;
 }
 textarea
 {
     border:2px solid rgb(0,50,131);
     font-size:20px;
     margin:5px;
+    width:400px;
 }
 
 
