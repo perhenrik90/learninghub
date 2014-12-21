@@ -24,20 +24,29 @@ def searchProjects(request):
         searchString = request.GET['tags']
         searchString = searchString.lower()
 
-        # tags = result list 
-        tags = []
-        users = []
-
+        # match list
+        titles = [] #match on titles 
+        tags = []   # match on tags
+        users = []  # match on users
+        
         # split the saerch tekst in to search terms
         terms = searchString.split(" ")
 
+        # prioritize excat mathces in title
+        titles += models.EProject.objects.filter(name__iregex=r'^.*'+searchString+'.*$')
+
         for term in terms:
             ## do multiple querys for every term and append to result list
-            tags += models.EProjectTag.objects.all().filter(tag=term).order_by('tag')
-            tags += models.EProjectTag.objects.all().filter(tag='#'+term).order_by('tag')
-            users += User.objects.all().filter(first_name__iexact=term)
-            users += User.objects.all().filter(last_name__iexact=term)
-            
+            titles += models.EProject.objects.filter(name__iregex=r'^.*'+term+'.*$')
+
+            tags += models.EProjectTag.objects.filter(tag=term).order_by('tag')
+            tags += models.EProjectTag.objects.filter(tag='#'+term).order_by('tag')
+            users += User.objects.filter(first_name__iexact=term)
+            users += User.objects.filter(last_name__iexact=term)
+        print(titles)
+
+        if len(titles)> 0:
+            c["titles"] = titles
 
         if len(users)> 0:
             c["users"] = users

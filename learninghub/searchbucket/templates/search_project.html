@@ -24,6 +24,16 @@ Author Per-Henrik Kvalnes 2014
 <hr/>
 
 {% if results %}
+<!-- title results -->
+{% if titles %}
+<table id="titleResults">
+{% for project in titles %}
+<tr>
+  <td>{{project.name}}</td>
+{% endfor %}
+</table>
+{% endif %}
+
 <!-- tag results -->
 {% if tags %}
 <table id="searchResults">
@@ -41,6 +51,7 @@ Author Per-Henrik Kvalnes 2014
 </tr>
 
 {% endfor %}
+
 </table>
 {% endif %}
 
