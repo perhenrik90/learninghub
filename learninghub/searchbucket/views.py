@@ -24,6 +24,9 @@ def searchProjects(request):
         searchString = request.GET['tags']
         searchString = searchString.lower()
 
+        # project dic
+        pdic = {}
+
         # match list
         titles = [] #match on titles 
         tags = []   # match on tags
@@ -37,22 +40,48 @@ def searchProjects(request):
 
         for term in terms:
             ## do multiple querys for every term and append to result list
-            titles += models.EProject.objects.filter(name__iregex=r'^.*'+term+'.*$')
 
+            ## loop trough title results
+            titles += models.EProject.objects.filter(name__iregex=r'^.*'+term+'.*$')
+            for project in titles:
+                if not hasattr(project, 'priority'):
+                    project.priority = 1
+                else: 
+                    project.priority += 1
+
+                if(project.id not in pdic):
+                    pdic[project.id] = project
+                else:
+                    pdic[project.id].priority += project.priority
+                
             tags += models.EProjectTag.objects.filter(tag=term).order_by('tag')
             tags += models.EProjectTag.objects.filter(tag='#'+term).order_by('tag')
+            for tag in tags:
+                project = tag.project
+                if not hasattr(project, 'priority'):
+                    project.priority = 1
+                else: 
+                    project.priority += 1
+
+                if(project.id not in pdic):
+                    pdic[project.id] = project
+                else:
+                    pdic[project.id].priority += project.priority
+                
+
+
             users += User.objects.filter(first_name__iexact=term)
             users += User.objects.filter(last_name__iexact=term)
-        print(titles)
 
-        if len(titles)> 0:
-            c["titles"] = titles
+        # make the dictionary to a list and sort by priority
+        s = lambda(x): x.priority
+        pdic = sorted(pdic.values(),key=s, reverse=True)
 
         if len(users)> 0:
             c["users"] = users
 
-        if len(tags)> 0:
-            c['tags'] = tags
+        if len(pdic)> 0:
+            c['projects'] = pdic
 
         c['results'] = True
 

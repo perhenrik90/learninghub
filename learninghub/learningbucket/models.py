@@ -32,10 +32,6 @@ class EProjectParticipant(models.Model):
 # Links participant to project
 #
 class EProjectParticipantEntry(models.Model):
-    
-    project = models.ForeignKey(EProject)
-    participant = models.ForeignKey(EProjectParticipant)
-
     role = models.CharField(max_length=50)
     write = models.BooleanField(default=False)
 
