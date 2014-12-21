@@ -24,8 +24,10 @@ def searchProjects(request):
         searchString = request.GET['tags']
         searchString = searchString.lower()
 
-        # project dic
-        pdic = {}
+        # dictionaries is used to create a priority map
+        # the keyvalue is the object unique id
+        pdic = {} # map for projects
+        udic = {} # map for users
 
         # match list
         titles = [] #match on titles 
@@ -74,9 +76,22 @@ def searchProjects(request):
             users += User.objects.filter(first_name__iregex=r'^.*'+term+'.*$')
             users += User.objects.filter(last_name__iregex=r'^.*'+term+'.*$')
 
+            for user in users:
+                if not hasattr(user, 'priority'):
+                    user.priority = 1
+                else:
+                    user.priority += 1
+                    
+                if user.id in udic:
+                    udic[user.id].priority += user.priority
+                else:
+                    udic[user.id] = user
+            
         # make the dictionary to a list and sort by priority
+        #  on users and projects
         s = lambda(x): x.priority
         pdic = sorted(pdic.values(),key=s, reverse=True)
+        users = sorted(udic.values(), key=s, reverse=True)
 
         if len(users)> 0:
             c["users"] = users
