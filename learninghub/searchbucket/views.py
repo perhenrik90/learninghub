@@ -53,7 +53,8 @@ def searchProjects(request):
                     pdic[project.id] = project
                 else:
                     pdic[project.id].priority += project.priority
-                
+
+            # loop trought tags
             tags += models.EProjectTag.objects.filter(tag=term).order_by('tag')
             tags += models.EProjectTag.objects.filter(tag='#'+term).order_by('tag')
             for tag in tags:
@@ -69,9 +70,9 @@ def searchProjects(request):
                     pdic[project.id].priority += project.priority
                 
 
-
-            users += User.objects.filter(first_name__iexact=term)
-            users += User.objects.filter(last_name__iexact=term)
+            # search on users
+            users += User.objects.filter(first_name__iregex=r'^.*'+term+'.*$')
+            users += User.objects.filter(last_name__iregex=r'^.*'+term+'.*$')
 
         # make the dictionary to a list and sort by priority
         s = lambda(x): x.priority
