@@ -14,25 +14,44 @@ Author Per-Henrik Kvalnes, 2014
 
 {% block content %}
 <h1>{% blocktrans %}Participants{% endblocktrans %}</h1>
-
+<hr/>
 <form method="POST">
   {% csrf_token %}
+  <input value="delete" name="operation" hidden="true"/>
+  <input value="{{project_id}}" name="project" hidden="true"/>
   {% if participants %}
+  <p>{% blocktrans %}People participating to the project: {% endblocktrans %}{{project.name}}</p>
+  {% for participant in participants %}
+  <input type="checkbox" name="participantid" value="{{participant.id}}"/>
+  {{participant.usr.first_name}} {{participant.usr.last_name}} |
+  {{participant.role}}
+</input>
+  {% endfor %}
+  <br/><input type="submit" value="{% blocktrans %}Delete{% endblocktrans %}"/><br/>
+  <hr/>
   {% endif %}
+
 </form>
 
 <form method="GET">
+  <p>{% blocktrans %}Search to add new participants{% endblocktrans %}</p>
+  <input value="{{project_id}}" name="project" hidden="true"/>
   <input name="searchstring"></input>
   <input type="submit" 
 	 value="{% blocktrans %}Search{% endblocktrans %}"></input>
 </form>
-
+  <hr/>
 <form method="POST">
   {% csrf_token %}
   {% if usermatches %}
+  <input value="{{project_id}}" name="project" hidden="true"/>
+  <input value="add" name="operation" hidden="true"/>
   {% for usr in usermatches %}
-  <p>{{usr.first_name}}</p>
+
+  <input type="checkbox" name="userid" value="{{usr.id}}">
+  {{usr.first_name}} {{usr.last_name}}</input>
   {% endfor %}
+  <br/><input type="submit" value="{% blocktrans %}Add{% endblocktrans %}"/><br/>
   {% endif %}
 </form>
 {% endblock %}

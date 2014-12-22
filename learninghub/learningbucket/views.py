@@ -377,13 +377,51 @@ def editproject(request):
 
 def project_participants(request):
     
-    c = {}
+    if 'project' not in request.GET:
+        st = _("Can not add a participant to a non existing project.")
+        return error_view(request, st)        
 
+    project = models.EProject.objects.get(id=request.GET["project"])
+    c = {"project_id":request.GET["project"], 'project':project}
+
+    # get the project participants 
+    participants = models.EProjectParticipant.objects.filter(project=project)
+    if(participants > 0):
+        c["participants"] = participants
+
+    # do a search if there are a search string (ss)
     if 'searchstring' in request.GET:
         ss = request.GET["searchstring"]
-        users = User.objects.filter(first_name=ss)
-        print(users)
-        c["usermatches"] = users
+
+        # search for every matching substring
+        regex = r'^.*'+ss+'.*$'
+
+        # search for both first and last name
+        usrs = User.objects.filter(first_name__iregex=regex)
+        usrs = usrs | User.objects.filter(last_name__iregex=regex)
+        c["usermatches"] = usrs
+
+    # if it is a post request, do add or delete
+    if request.method == "POST":
+        #
+        # Add new participants 
+        #
+        if request.POST["operation"] == 'add':
+            user_ids = request.POST["userid"]
+
+            for u_id in user_ids:
+                user = User.objects.get(id=u_id)
+                participant = models.EProjectParticipant(usr=user, project=project)
+                participant.save()
+
+        #
+        # Delete participants
+        #
+        elif request.POST["operation"] == "delete":
+            participants_ids = request.POST["participantid"]
+            for p_id in participants_ids:
+                participant = models.EProjectParticipant.objects.get(id=p_id)
+                participant.delete()
 
     template = loader.get_template("project_participants.html")
     context = RequestContext(request, c)

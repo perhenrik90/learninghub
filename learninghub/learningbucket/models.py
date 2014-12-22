@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext as _
 """
 Models for learning bucket
 Here is where the e-learning projects are stored
@@ -24,7 +25,7 @@ class EProject(models.Model):
 #
 class EProjectParticipant(models.Model):
     
-    role = models.CharField(max_length=50)
+    role = models.CharField(max_length=50, default=_("Participant"))
     write = models.BooleanField(default=False)
     usr = models.ForeignKey(User)
     project = models.ForeignKey(EProject)

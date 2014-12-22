@@ -25,7 +25,6 @@ Author Per-Henrik Kvalnes, 2014
   <a id="delete_no" 
      href="{% url 'learningbucket.views.project' %}?id={{project.id}}">
     <input type="button" value="{% blocktrans %}No{% endblocktrans %}"> </input></a>
-
 </div>
 {% endif %}
 {% endblock %}
@@ -40,6 +39,8 @@ Author Per-Henrik Kvalnes, 2014
 <nav>
   <a href="{% url 'learningbucket.views.editproject' %}?id={{project.id}}">
   <input type="button" value="{% blocktrans %}Edit{% endblocktrans %}"/></a>
+  <a href="{% url 'learningbucket.views.project_participants' %}?project={{project.id}}">
+    <input type="button" value="{% blocktrans %}Edit participants{% endblocktrans %}" /></a>
 </nav>
 <hr/>
 {% endif %}
