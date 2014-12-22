@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-14 20:38+0100\n"
-"PO-Revision-Date: 2014-12-12 16:33+0100\n"
+"POT-Creation-Date: 2014-12-22 21:52+0100\n"
+"PO-Revision-Date: 2014-12-22 21:58+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -16,56 +16,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: views.py:65
+#: models.py:28
+msgid "Participant"
+msgstr "Deltaker"
+
+#: views.py:76
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#: views.py:153
+#: views.py:164
 msgid "You don't have the premission to delete this file!"
 msgstr "Du har ikke rettigheter til å slette denne filen!"
 
-#: views.py:175 views.py:195
+#: views.py:186 views.py:206
 msgid "The comment has not been posted!"
 msgstr "Kommentaren ble ikke postet!"
 
-#: views.py:217
-#, fuzzy
+#: views.py:228
 msgid "No file was given."
-msgstr "Ingen fil er angitt!"
+msgstr "Ingen fil ble gitt."
 
-#: views.py:244
+#: views.py:255
 msgid "No project is choosen."
 msgstr "Ingen prosjekt er valgt."
 
-#: views.py:264
+#: views.py:275
 msgid "No file were given!"
 msgstr "Ingen fil er angitt!"
 
-#: views.py:334
+#: views.py:345
 msgid "Can not edit a non existing project"
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
-#: views.py:342
+#: views.py:353
 msgid "You don't have the premission to edit this project!"
 msgstr "Du har ikke tilgang til å endre dette prosjektet!"
 
-#: templates/base_generic.html:13
+# Du kan ikke legge til en deltaker på et ikke eksisterende prosjekt.
+#: views.py:381
+msgid "Can not add a participant to a non existing project."
+msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
+
+#: templates/base_generic.html:15
 msgid "app-title"
 msgstr "Lærings hubben"
 
-#: templates/base_generic.html:28
+#: templates/base_generic.html:30
 msgid "My Projects"
 msgstr "Mine prosjekter"
 
-#: templates/base_generic.html:31 templates/createproject.html:12
+#: templates/base_generic.html:33 templates/createproject.html:12
 msgid "Create project"
 msgstr "Opprett prosjekt"
 
-#: templates/base_generic.html:33
+#: templates/base_generic.html:35 templates/project_participants.html:41
 msgid "Search"
-msgstr ""
+msgstr "Søk"
 
-#: templates/base_generic.html:35
+#: templates/base_generic.html:37
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/base_generic.html:39
 msgid "Logout"
 msgstr "Logg ut"
 
@@ -82,7 +94,7 @@ msgid "Go back to projects"
 msgstr "Gå tilbake til prosjektene"
 
 #: templates/createproject.html:15 templates/editproject.html:19
-#: templates/project.html:49 templates/project.html.py:98
+#: templates/project.html:51 templates/project.html.py:100
 #: templates/project_uploadfile.html:11
 msgid "Name"
 msgstr "Navn"
@@ -91,7 +103,7 @@ msgstr "Navn"
 msgid "Organization"
 msgstr "Organisasjon"
 
-#: templates/createproject.html:17 templates/project.html:63
+#: templates/createproject.html:17 templates/project.html:65
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -103,39 +115,39 @@ msgstr "Endre prosjektet: "
 msgid "Your project has been updated."
 msgstr "Ditt prosjekt har blitt oppdatert."
 
-#: templates/editproject.html:26
+#: templates/editproject.html:24
 msgid "Save"
 msgstr "Lagre"
 
-#: templates/editproject.html:28
+#: templates/editproject.html:26
 msgid "Back to the project"
 msgstr "Tilbake til prosjektet"
 
-#: templates/login.html:31
+#: templates/login.html:32
 msgid "The username and password you entered is wrong. "
 msgstr "Brukernavnet og passordet du skrev inn er feil."
 
-#: templates/login.html:41
+#: templates/login.html:42
 msgid "Login"
 msgstr "Logg inn"
 
-#: templates/login.html:45
+#: templates/login.html:46
 msgid "Username"
 msgstr "Brukernavn"
 
-#: templates/login.html:49
+#: templates/login.html:50
 msgid "Password"
 msgstr "Passord"
 
-#: templates/logout.html:12
+#: templates/logout.html:13
 msgid "You are out!"
 msgstr "Du er ute!"
 
-#: templates/logout.html:13
+#: templates/logout.html:14
 msgid "Welcome back "
 msgstr "Velkommen tilbake "
 
-#: templates/myprojects.html:12
+#: templates/myprojects.html:14
 msgid "My projects"
 msgstr "Mine prosjekter"
 
@@ -147,7 +159,7 @@ msgstr "Noe gikk galt!"
 msgid "Back to my projects "
 msgstr "Tilbake til mine prosjekter "
 
-#: templates/project.html:17
+#: templates/project.html:18
 msgid ""
 "\n"
 "    When the file is deleted, you can not get it back.\n"
@@ -157,11 +169,11 @@ msgstr ""
 "Når du filen er slettet kan du ikke hente den tilbake.\n"
 "Er du sikker på at du vil slette filen? "
 
-#: templates/project.html:23
+#: templates/project.html:24
 msgid "Yes"
 msgstr "Ja"
 
-#: templates/project.html:26
+#: templates/project.html:27
 msgid "No"
 msgstr "Nei"
 
@@ -173,43 +185,47 @@ msgstr "Prosjektinformasjon"
 msgid "Edit"
 msgstr "Rediger"
 
-#: templates/project.html:53
+#: templates/project.html:43
+msgid "Edit participants"
+msgstr ""
+
+#: templates/project.html:55
 msgid "Project owner: "
 msgstr "Prosjekteier: "
 
-#: templates/project.html:60
+#: templates/project.html:62
 msgid "Organization "
 msgstr "Organisasjon "
 
-#: templates/project.html:67
+#: templates/project.html:69
 msgid "Last update"
 msgstr "Sist oppdatert"
 
-#: templates/project.html:71
+#: templates/project.html:73
 msgid "Created "
 msgstr "Opprettet "
 
-#: templates/project.html:80
+#: templates/project.html:82
 msgid "Uploaded files"
 msgstr "Last opp filer"
 
-#: templates/project.html:86
+#: templates/project.html:88
 msgid "Upload file"
 msgstr "Last opp fil"
 
-#: templates/project.html:99
+#: templates/project.html:101
 msgid "File type"
 msgstr "Filtype"
 
-#: templates/project.html:100
+#: templates/project.html:102
 msgid "Date uploaded"
 msgstr "Dato opplastet"
 
-#: templates/project.html:124
+#: templates/project.html:126
 msgid "No files are uploaded to this project"
 msgstr "Ingen filer er lastet opp til dette prosjektet"
 
-#: templates/project.html:130
+#: templates/project.html:132
 msgid "Comments"
 msgstr "Kommentarer"
 
@@ -220,6 +236,26 @@ msgstr "Prosjekt ble ikke funnet!"
 #: templates/project_not_found.html:8
 msgid "Back to my projects"
 msgstr "Tilbake til mine prosjekter"
+
+#: templates/project_participants.html:16
+msgid "Participants"
+msgstr "Deltakere"
+
+#: templates/project_participants.html:23
+msgid "People participating to the project: "
+msgstr "Personer som deltar i prosjektet: "
+
+#: templates/project_participants.html:30
+msgid "Delete"
+msgstr "Slett"
+
+#: templates/project_participants.html:37
+msgid "Search to add new participants"
+msgstr "Søk for å legge til nye deltakere"
+
+#: templates/project_participants.html:54
+msgid "Add"
+msgstr "Legg til"
 
 #: templates/project_uploadfile.html:6 templates/project_uploadsuccess.html:6
 msgid "Upload a file to project."
