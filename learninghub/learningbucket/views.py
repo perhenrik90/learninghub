@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 from django.utils import translation
 from django.core.urlresolvers import reverse
-
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.forms.models import model_to_dict
 
@@ -370,3 +370,21 @@ def editproject(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
+
+#
+# Add / remove participants 
+# 
+
+def project_participants(request):
+    
+    c = {}
+
+    if 'searchstring' in request.GET:
+        ss = request.GET["searchstring"]
+        users = User.objects.filter(first_name=ss)
+        print(users)
+        c["usermatches"] = users
+
+    template = loader.get_template("project_participants.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))    

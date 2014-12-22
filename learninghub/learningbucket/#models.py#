@@ -19,15 +19,17 @@ class EProject(models.Model):
     description = models.CharField(max_length=300)
     owner = models.ForeignKey(User)
 
+
 #
-# Participant relation
+# Links participant to project
 #
-class EProjectParticipant(models.Model):
+class EProjectParticipantEntry(models.Model):
     
+    project = models.ForeignKey(EProject)
+    participant = models.ForeignKey(EProjectParticipant)
+
     role = models.CharField(max_length=50)
     write = models.BooleanField(default=False)
-    usr = models.ForeignKey(User)
-    project = models.ForeignKey(EProject)
 
 #
 # One file to one instance of an EProject

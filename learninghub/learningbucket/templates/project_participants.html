@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+{% comment %}
+Displays participants, and adds makes it posible to add
+new participants.
+
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+{% load i18n %}
+{% load static %}
+{% load url from future %}
+
+{% block customhead %}
+{% endblock %}
+
+{% block content %}
+<h1>{% blocktrans %}Participants{% endblocktrans %}</h1>
+
+<form method="POST">
+  {% csrf_token %}
+  {% if participants %}
+  {% endif %}
+</form>
+
+<form method="GET">
+  <input name="searchstring"></input>
+  <input type="submit" 
+	 value="{% blocktrans %}Search{% endblocktrans %}"></input>
+</form>
+
+<form method="POST">
+  {% csrf_token %}
+  {% if usermatches %}
+  {% for usr in usermatches %}
+  <p>{{usr.first_name}}</p>
+  {% endfor %}
+  {% endif %}
+</form>
+{% endblock %}
+

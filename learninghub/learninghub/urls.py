@@ -35,6 +35,9 @@ urlpatterns = patterns('',
     url(r'^'+up+'project/postcomment$', 
         'learningbucket.views.project_post_comment', 
         name='Upload'),
+    url(r'^'+up+'project/participants$', 
+        'learningbucket.views.project_participants', 
+        name='Project Participants'),
 
     # search bucket app/module 
     url(r'^'+up+'search$','searchbucket.views.searchProjects',
