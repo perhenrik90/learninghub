@@ -24,6 +24,11 @@ def searchProjects(request):
         searchString = request.GET['tags']
         searchString = searchString.lower()
 
+        # dictionaries is used to create a priority map
+        # the keyvalue is the object unique id
+        pdic = {} # map for projects
+        udic = {} # map for users
+
         # match list
         titles = [] #match on titles 
         tags = []   # match on tags
@@ -37,22 +42,62 @@ def searchProjects(request):
 
         for term in terms:
             ## do multiple querys for every term and append to result list
-            titles += models.EProject.objects.filter(name__iregex=r'^.*'+term+'.*$')
 
+            ## loop trough title results
+            titles += models.EProject.objects.filter(name__iregex=r'^.*'+term+'.*$')
+            for project in titles:
+                if not hasattr(project, 'priority'):
+                    project.priority = 1
+                else: 
+                    project.priority += 1
+
+                if(project.id not in pdic):
+                    pdic[project.id] = project
+                else:
+                    pdic[project.id].priority += project.priority
+
+            # loop trought tags
             tags += models.EProjectTag.objects.filter(tag=term).order_by('tag')
             tags += models.EProjectTag.objects.filter(tag='#'+term).order_by('tag')
-            users += User.objects.filter(first_name__iexact=term)
-            users += User.objects.filter(last_name__iexact=term)
-        print(titles)
+            for tag in tags:
+                project = tag.project
+                if not hasattr(project, 'priority'):
+                    project.priority = 1
+                else: 
+                    project.priority += 1
 
-        if len(titles)> 0:
-            c["titles"] = titles
+                if(project.id not in pdic):
+                    pdic[project.id] = project
+                else:
+                    pdic[project.id].priority += project.priority
+                
+
+            # search on users
+            users += User.objects.filter(first_name__iregex=r'^.*'+term+'.*$')
+            users += User.objects.filter(last_name__iregex=r'^.*'+term+'.*$')
+
+            for user in users:
+                if not hasattr(user, 'priority'):
+                    user.priority = 1
+                else:
+                    user.priority += 1
+                    
+                if user.id in udic:
+                    udic[user.id].priority += user.priority
+                else:
+                    udic[user.id] = user
+            
+        # make the dictionary to a list and sort by priority
+        #  on users and projects
+        s = lambda(x): x.priority
+        pdic = sorted(pdic.values(),key=s, reverse=True)
+        users = sorted(udic.values(), key=s, reverse=True)
 
         if len(users)> 0:
             c["users"] = users
 
-        if len(tags)> 0:
-            c['tags'] = tags
+        if len(pdic)> 0:
+            c['projects'] = pdic
 
         c['results'] = True
 
