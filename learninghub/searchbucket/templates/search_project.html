@@ -24,22 +24,16 @@ Author Per-Henrik Kvalnes 2014
 <hr/>
 
 {% if results %}
-<!-- tag results -->
-{% if tags %}
-<table id="searchResults">
-<tr>
-<td>{% blocktrans %}Project name{% endblocktrans %}</td>
-<td>{% blocktrans %}Tag matched{% endblocktrans %}</td>
-{% for tag in tags %}
+
+{% if projects %}
+<table id="results">
+{% for project in projects %}
 
 <tr>
-  <td>
-    <a href="{% url 'learningbucket.views.project' %}?id={{tag.project.id}}">
-      {{tag.project.name}}</a></td>
-  <td>{{tag.tag}}</td>
-  
+
+  <td><a href="{% url 'learningbucket.views.project' %}?id={{project.id}}">{{project.name}}</a></td>
+  <td>{{project.priority}}</td>
 </tr>
-
 {% endfor %}
 </table>
 {% endif %}
@@ -55,6 +49,7 @@ Author Per-Henrik Kvalnes 2014
   <td>
     <a href="{% url 'profilebucket.views.profile' %}?id={{usr.id}}">
     {{usr.first_name}} {{usr.last_name}}</a></td>
+  <td>{{usr.priority}}</td>
 </tr>
 {% endfor %}
 </table>
