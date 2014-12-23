@@ -95,6 +95,7 @@ input
 input[type=button]
 {
     background-color:rgba(107,155,78,1);
+    border:2px rgba(100,143,74,1);
     width:200px;
     color:#FFF;
 }
@@ -105,6 +106,7 @@ input[type=button]:hover
 input[type=submit]
 {
     background-color:rgba(107,155,78,1);
+    border:2px rgba(100,143,74,1);
     color:#FFF;
     width:200px;
 }

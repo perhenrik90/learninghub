@@ -17,22 +17,18 @@ Author Per-Henrik Kvalnes, 2014
 {% block content %}
 <h1>{% blocktrans %}Traffic Hall{% endblocktrans %}</h1>
 <p>{% blocktrans %}Projects you are following{% endblocktrans %}</p>
-<table>
-<td>{% blocktrans %}Project{% endblocktrans %}</td>
-<td>{% blocktrans %}Owner{% endblocktrans %}</td>
-<td>{% blocktrans %}Last updated{% endblocktrans %}</td>
-{% for participant in participants %}
-<tr>
-  <td>
-    <a href="{% url 'learningbucket.views.project' %}?id={{participant.project.id}}">
-    {{participant.project.name}}</td></a>
-  <td><a href="{% url 'profilebucket.views.profile' %}?id={{participant.project.owner.id}}">
-	 {{participant.project.owner.first_name}}
-	 {{participant.project.owner.last_name}}</a></td>
-  <td>{{participant.project.timeupdated}}</td>
 
-</tr>
+{% for participant in participants %}
+<div class="entry">
+  <p>
+    <a href="{% url 'learningbucket.views.project' %}?id={{participant.project.id}}">
+      {{participant.project.name}}</a> {% blocktrans %}has been updated by{% endblocktrans %}
+    <a href="{% url 'profilebucket.views.profile' %}?id={{participant.project.owner.id}}">
+      {{participant.project.owner.first_name}}
+      {{participant.project.owner.last_name}}</a></p>
+  <p>{{participant.project.timeupdated}}</p>
+</div>
 {% endfor %}
-</table>
+
 {% endblock %}
 
