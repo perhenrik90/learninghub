@@ -16,7 +16,7 @@ Author Per-Henrik Kvalnes, 2014
 
 {% block content %}
 <h1>{% blocktrans %}Traffic Hall{% endblocktrans %}</h1>
-<p>{% blocktrans %}Projects you are following{% endblocktrans %}</p>
+<p>{% blocktrans %}Projects you are participating to{% endblocktrans %}</p>
 
 {% for participant in participants %}
 <div class="entry">
@@ -29,6 +29,5 @@ Author Per-Henrik Kvalnes, 2014
   <p>{{participant.project.timeupdated}}</p>
 </div>
 {% endfor %}
-
 {% endblock %}
 

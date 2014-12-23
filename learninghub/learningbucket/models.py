@@ -71,4 +71,8 @@ class EProjectFollower(models.Model):
     
     followerType = models.CharField(max_length=12)
     user = models.ForeignKey(User)
-    
+    project = models.ForeignKey(EProject)
+
+    # a follower can only follow a project one time
+    class Meta:
+        unique_together = ('user', 'project')
