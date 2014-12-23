@@ -13,17 +13,18 @@ Menu for the profile.
 
 <nav>
   <a href="{% url 'profilebucket.views.profile' %}?id={{user.id}}">
-    {% blocktrans %}View your profile{% endblocktrans %}
+    <input value="{% blocktrans %}View your profile{% endblocktrans %}" type="button"/>
   </a> </br>
     
   <a href="{% url 'profilebucket.views.profile_change_password' %}">
-    {% blocktrans %}Change password{% endblocktrans %}
+    <input value="{% blocktrans %}Change password{% endblocktrans %}" type="button"/>
   </a></br>
+  
   <a href="{% url 'profilebucket.views.profile_update' %}">
-    {% blocktrans %}Edit profile{% endblocktrans %}
+    <input value="{% blocktrans %}Edit profile{% endblocktrans %}" type="button"/>
   </a><br/>
   <a href="{% url 'profilebucket.views.project_uploadimage' %}">
-    {% blocktrans %}Upload profile image{% endblocktrans %}
+    <input type="button" value="{% blocktrans %}Upload profile image{% endblocktrans %}"/>
   </a>
 </nav>
 
