@@ -376,6 +376,9 @@ def editproject(request):
 # 
 
 def project_participants(request):
+    user = request.user
+    if(not user.is_authenticated()): 
+        return userNotAuthenticated(request)
     
     if 'project' not in request.GET:
         st = _("Can not add a participant to a non existing project.")
@@ -426,3 +429,23 @@ def project_participants(request):
     template = loader.get_template("project_participants.html")
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))    
+
+
+#
+# Dislpay the lated updates on project participating,
+#  or following. 
+#
+def project_traffic(request):
+    user = request.user
+    if(not user.is_authenticated()): 
+        return userNotAuthenticated(request)    
+        
+    c = {}
+    user = request.user
+    EProject = models.EProject
+    participants = models.EProjectParticipant.objects.filter(usr=user).order_by('-project__timeupdated')
+    c["participants"] = participants
+
+    template = loader.get_template("project_traffic.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))

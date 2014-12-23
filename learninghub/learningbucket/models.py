@@ -56,9 +56,19 @@ class EProjectComment(models.Model):
     project_owner = models.ForeignKey(EProject)
     owner = models.ForeignKey(User)
     
-
+#
+# A comment on a project
+# 
 class EProjectTag(models.Model):
     
     tag = models.CharField(max_length=25)
     project = models.ForeignKey(EProject)
 
+#
+# Describes a follower 
+#
+class EProjectFollower(models.Model):
+    
+    followerType = models.CharField(max_length=12)
+    user = models.ForeignKey(User)
+    

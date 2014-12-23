@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+{% comment %}
+Display the lates updateds on projects following
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load url from future %}
+
+{% block customhead %}
+<link rel="stylesheet" type="text/css" 
+      href="{% static 'css/traffichall.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<h1>{% blocktrans %}Traffic Hall{% endblocktrans %}</h1>
+<p>{% blocktrans %}Projects you are following{% endblocktrans %}</p>
+<table>
+<td>{% blocktrans %}Project{% endblocktrans %}</td>
+<td>{% blocktrans %}Owner{% endblocktrans %}</td>
+<td>{% blocktrans %}Last updated{% endblocktrans %}</td>
+{% for participant in participants %}
+<tr>
+  <td>
+    <a href="{% url 'learningbucket.views.project' %}?id={{participant.project.id}}">
+    {{participant.project.name}}</td></a>
+  <td><a href="{% url 'profilebucket.views.profile' %}?id={{participant.project.owner.id}}">
+	 {{participant.project.owner.first_name}}
+	 {{participant.project.owner.last_name}}</a></td>
+  <td>{{participant.project.timeupdated}}</td>
+
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+
