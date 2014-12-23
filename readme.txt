@@ -25,6 +25,7 @@ Functionalies (x implemented)
 [ ] - following other users
 [ ] - wall / table of activities
 [ ] - follow projects
+[ ] - self registrating restricted to domains
 
 Requirments
 -------------------
