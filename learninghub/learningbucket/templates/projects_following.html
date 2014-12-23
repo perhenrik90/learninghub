@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% comment %}
+Display 'my projects'. Connected with view.myprojects
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load url from future %}
+
+
+{% block content %}
+<h1>{% blocktrans %}Projects you are following{% endblocktrans %}</h1>
+<div id="myProjectList">
+{% for follow in following %}
+<div class="projectMiniDisplay">
+<a href="{% url 'learningbucket.views.project'%}?id={{follow.project.id}}" >
+  <img src="{% static 'img/default-project.png' %}"></img>
+  <p>{{follow.project.name}}</p>
+</a>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+

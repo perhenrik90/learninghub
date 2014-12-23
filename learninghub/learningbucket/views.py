@@ -191,6 +191,23 @@ def project_follow(request):
     return redirect(reverse(project)+'?id='+p_id)
 
 #
+# Show projects the user are following
+#
+def projects_following(request):
+    # if user is not authenticated!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)    
+    c = {}
+    following = models.EProjectFollower.objects.filter(user=request.user)
+    if(len(following)>0):
+        c["following"] = following
+
+    template = loader.get_template('projects_following.html')
+    context = RequestContext(request,c)
+    return HttpResponse(template.render(context))
+
+#
 # File views
 #
 
