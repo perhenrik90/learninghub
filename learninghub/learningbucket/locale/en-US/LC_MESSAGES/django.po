@@ -34,7 +34,7 @@ msgstr ""
 msgid "You don't have the premission to edit this project!"
 msgstr ""
 
-#: views.py:381
+#: views.py:384
 msgid "Can not add a participant to a non existing project."
 msgstr ""
 
@@ -51,19 +51,23 @@ msgstr "Learning Hub"
 msgid "My Projects"
 msgstr "My Projects"
 
-#: templates/base_generic.html:33 templates/createproject.html:12
+#: templates/base_generic.html:32 templates/project_traffic.html:18
+msgid "Traffic Hall"
+msgstr ""
+
+#: templates/base_generic.html:34 templates/createproject.html:12
 msgid "Create project"
 msgstr "Create project"
 
-#: templates/base_generic.html:35 templates/project_participants.html:41
+#: templates/base_generic.html:36 templates/project_participants.html:41
 msgid "Search"
 msgstr ""
 
-#: templates/base_generic.html:37
+#: templates/base_generic.html:38
 msgid "Profile"
 msgstr ""
 
-#: templates/base_generic.html:39
+#: templates/base_generic.html:40
 msgid "Logout"
 msgstr ""
 
@@ -247,6 +251,14 @@ msgstr ""
 
 #: templates/project_participants.html:54
 msgid "Add"
+msgstr ""
+
+#: templates/project_traffic.html:19
+msgid "Projects you are following"
+msgstr ""
+
+#: templates/project_traffic.html:25
+msgid "has been updated by"
 msgstr ""
 
 #: templates/project_uploadfile.html:6 templates/project_uploadsuccess.html:6

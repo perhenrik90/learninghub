@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-22 21:52+0100\n"
-"PO-Revision-Date: 2014-12-22 21:58+0100\n"
+"POT-Creation-Date: 2014-12-23 14:31+0100\n"
+"PO-Revision-Date: 2014-12-23 14:33+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -53,7 +53,7 @@ msgid "You don't have the premission to edit this project!"
 msgstr "Du har ikke tilgang til å endre dette prosjektet!"
 
 # Du kan ikke legge til en deltaker på et ikke eksisterende prosjekt.
-#: views.py:381
+#: views.py:384
 msgid "Can not add a participant to a non existing project."
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
@@ -65,19 +65,23 @@ msgstr "Lærings hubben"
 msgid "My Projects"
 msgstr "Mine prosjekter"
 
-#: templates/base_generic.html:33 templates/createproject.html:12
+#: templates/base_generic.html:32 templates/project_traffic.html:18
+msgid "Traffic Hall"
+msgstr "Trafikk hall"
+
+#: templates/base_generic.html:34 templates/createproject.html:12
 msgid "Create project"
 msgstr "Opprett prosjekt"
 
-#: templates/base_generic.html:35 templates/project_participants.html:41
+#: templates/base_generic.html:36 templates/project_participants.html:41
 msgid "Search"
 msgstr "Søk"
 
-#: templates/base_generic.html:37
+#: templates/base_generic.html:38
 msgid "Profile"
 msgstr "Profil"
 
-#: templates/base_generic.html:39
+#: templates/base_generic.html:40
 msgid "Logout"
 msgstr "Logg ut"
 
@@ -256,6 +260,14 @@ msgstr "Søk for å legge til nye deltakere"
 #: templates/project_participants.html:54
 msgid "Add"
 msgstr "Legg til"
+
+#: templates/project_traffic.html:19
+msgid "Projects you are following"
+msgstr ""
+
+#: templates/project_traffic.html:25
+msgid "has been updated by"
+msgstr "har blitt oppdatert av"
 
 #: templates/project_uploadfile.html:6 templates/project_uploadsuccess.html:6
 msgid "Upload a file to project."
