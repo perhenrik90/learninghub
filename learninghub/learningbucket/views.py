@@ -105,6 +105,10 @@ def myprojects(request):
     return HttpResponse(template.render(context))
 
 
+#
+# Display a project
+#
+
 def project(request):
 
     # if user is not authenticated!
@@ -116,12 +120,14 @@ def project(request):
     # prepare to show the user that project do not exists
     template = loader.get_template("project_not_found.html")
     c = {}
+    eproject = None
     is_owner = False
 
     # get for project id
     if(request.method == "GET" and 'id' in request.GET):
         get_id = request.GET["id"];
         eproject = models.EProject.objects.get(id=get_id)
+        c = {}
         if eproject:
             template = loader.get_template("project.html")
             # if the user is the owner; set can_edit to true
@@ -143,9 +149,50 @@ def project(request):
         c = {"project":eproject,"files":files, "is_owner":is_owner,
              "comments":comments}
 
+        # check if user is following the project
+        follow = models.EProjectFollower.objects.filter(user=request.user, project=eproject)
+        if(len(follow) > 0):
+            c['following'] = follow
+
     # render the template
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
+
+
+#
+# Follow / unfollow a project
+# The view acts like a toggle and does not have 
+# its own template
+#
+
+def project_follow(request):
+    # if user is not authenticated!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+
+    # if no project given, send the user to errorview
+    if('id' not in request.GET):
+        return error_view(request, _("Not project given to follow."))
+
+    p_id = request.GET["id"]
+    projectmodel = models.EProject.objects.get(id=p_id)
+
+    follower = models.EProjectFollower.objects.filter(user=request.user, project=projectmodel)
+    if(len(follower) > 0):
+        follower = follower[0]
+        follower.delete()
+
+    else:
+        follower = models.EProjectFollower(user=request.user, project=projectmodel)
+        follower.save()
+
+    return redirect(reverse(project)+'?id='+p_id)
+
+#
+# File views
+#
 
 
 def deleteFile(request):

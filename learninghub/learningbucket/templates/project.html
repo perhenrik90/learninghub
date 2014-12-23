@@ -43,6 +43,17 @@ Author Per-Henrik Kvalnes, 2014
     <input type="button" value="{% blocktrans %}Edit participants{% endblocktrans %}" /></a>
 </nav>
 <hr/>
+{% else %}
+<nav>
+  <a href="{% url 'learningbucket.views.project_follow' %}?id={{project.id}}">
+  {% if following %}
+  <img src="{% static 'img/buttons/unfollow.png' %}"/>
+  {% else %}
+  <img src="{% static 'img/buttons/follow.png' %}"/>
+  {% endif %}
+  </a>
+</nav>
+<hr/>
 {% endif %}
 
 
