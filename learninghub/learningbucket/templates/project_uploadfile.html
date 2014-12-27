@@ -1,10 +1,11 @@
 {% extends "base_generic.html" %}
 {% load i18n %}
+{% load staticfiles %}
 {% load url from future %}
 
 {% block content %}
 <h1>{% blocktrans %}Upload a file to project.{% endblocktrans %}</h1>
-<form method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data" id="upload-form">
   {% csrf_token %}
   <input name="project_id" value="{{project_id}}"/ hidden="true"><br/>
   <input name="name" value="">
@@ -24,9 +25,19 @@
     <option value="other">
       {% blocktrans %}Other{% endblocktrans %}</option>
   </select></br>
-
-  <input type="submit"/>
+  <input type="submit" onclick="setLoadScreen()"/>
 </form>
+
+<div style="display:none;" id="load">
+<script>
+function setLoadScreen()
+{
+    document.getElementById("load").style = "display:block;";
+    document.getElementById("upload-form").style = "display:none;";
+}
+</script>
+<img src="{% static 'img/animation/swirl.gif' %}" style="width:32px;"/>
+</div>
 
 {% endblock %}
 
