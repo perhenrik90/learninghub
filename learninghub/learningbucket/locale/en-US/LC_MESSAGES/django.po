@@ -262,8 +262,12 @@ msgstr ""
 msgid "Projects you are participating to"
 msgstr "Go back to projects"
 
-#: templates/project_traffic.html:25
+#: templates/project_traffic.html:25 templates/project_traffic.html.py:39
 msgid "has been updated by"
+msgstr ""
+
+#: templates/project_traffic.html:35 templates/projects_following.html:14
+msgid "Projects you are following"
 msgstr ""
 
 #: templates/project_uploadfile.html:7 templates/project_uploadsuccess.html:6
@@ -301,8 +305,4 @@ msgstr ""
 
 #: templates/project_uploadsuccess.html:9
 msgid " to "
-msgstr ""
-
-#: templates/projects_following.html:14
-msgid "Projects you are following"
 msgstr ""

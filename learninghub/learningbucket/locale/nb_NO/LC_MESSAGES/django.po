@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-28 17:15+0100\n"
-"PO-Revision-Date: 2014-12-28 17:17+0100\n"
+"POT-Creation-Date: 2014-12-28 19:10+0100\n"
+"PO-Revision-Date: 2014-12-28 19:12+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -167,6 +167,8 @@ msgstr "Noe gikk galt!"
 msgid "Back to my projects "
 msgstr "Tilbake til mine prosjekter "
 
+# \n Når filen er slettet kan du ikke hente den tilbake.
+# Er du sikker på du vil slette filen?
 #: templates/project.html:18
 msgid ""
 "\n"
@@ -174,7 +176,7 @@ msgid ""
 "    Are you shure you want to delete it? "
 msgstr ""
 "\n"
-"Når du filen er slettet kan du ikke hente den tilbake.\n"
+"Når filen er slettet kan du ikke hente den tilbake.\n"
 "Er du sikker på at du vil slette filen? "
 
 #: templates/project.html:24
@@ -269,9 +271,13 @@ msgstr "Legg til"
 msgid "Projects you are participating to"
 msgstr "Prosjekter du er medvirkende til"
 
-#: templates/project_traffic.html:25
+#: templates/project_traffic.html:25 templates/project_traffic.html.py:39
 msgid "has been updated by"
 msgstr "har blitt oppdatert av"
+
+#: templates/project_traffic.html:35 templates/projects_following.html:14
+msgid "Projects you are following"
+msgstr "Prosjekter du følger"
 
 #: templates/project_uploadfile.html:7 templates/project_uploadsuccess.html:6
 msgid "Upload a file to project."
@@ -308,7 +314,3 @@ msgstr "Du har lastet opp filen: \n"
 #: templates/project_uploadsuccess.html:9
 msgid " to "
 msgstr " til "
-
-#: templates/projects_following.html:14
-msgid "Projects you are following"
-msgstr "Prosjekter du følger"
