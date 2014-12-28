@@ -16,15 +16,15 @@ Functionalies (x implemented)
 [x] - upload a file to a project
 [x] - download a file from a project
 [x] - search within all projects (tags)
-[ ] - search by title and project description
+[/] - search by title and project description
 [ ] - search priorities (number of visits)
 [x] - tag a project (# with a category)
 [x] - self change password
 [x] - user profile
-[ ] - user profile image
+[x] - user profile image
 [ ] - following other users
 [ ] - wall / table of activities
-[ ] - follow projects
+[x] - follow projects
 [ ] - self registrating restricted to domains
 
 Requirments
