@@ -233,7 +233,7 @@ def profile_projects(request):
     projects = EProject.objects.all().filter(owner=viewuser)
 
     # load the profile image 
-    user_profile = UserProfile.objects.all().filter(user_ref=user)
+    user_profile = UserProfile.objects.all().filter(user_ref=viewuser)
     if(len(user_profile) > 0):
         user_profile = user_profile[0]
 

@@ -10,6 +10,8 @@ Display a user profile main entries.
 {% load url from future %}
 
 {% block profile_content %}
+
+{% if projects %}
 <p>{{user_auth.first_name}}'s {% blocktrans %}projects{% endblocktrans %}</p>
 <table>
 {% for project in projects %}
@@ -17,5 +19,8 @@ Display a user profile main entries.
     <td><a href="{% url 'learningbucket.views.project' %}?id={{project.id}}">{{project.name}}</a></td>
 </tr>
 {% endfor %}
+{% else %}
+{{user_auth.first_name}} {% blocktrans %}has no projects!{% endblocktrans %}
+{% endif %}
 </table>
 {% endblock %}

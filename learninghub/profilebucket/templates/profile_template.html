@@ -32,10 +32,10 @@ Template for user profile.
 <input type="button" value="{% blocktrans %}Edit profile{% endblocktrans %}"/></a>
 {% endif %}
 
-<a href="{% url 'profilebucket.views.profile' %}?id={{user.id}}">
+<a href="{% url 'profilebucket.views.profile' %}?id={{user_auth.id}}">
 <input type="button" value="{% blocktrans %}Information{% endblocktrans %}"/></a>
 
-<a href="{% url 'profilebucket.views.profile_projects' %}?id={{user.id}}">
+<a href="{% url 'profilebucket.views.profile_projects' %}?id={{user_auth.id}}">
 <input type="button" value="{% blocktrans %}Projects{% endblocktrans %}"/>
 </a>
 </nav>
