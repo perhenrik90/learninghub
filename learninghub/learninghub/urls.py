@@ -8,7 +8,7 @@ import settings
 
 admin.autodiscover()
 
-up = "lh/" # prefix
+up = "" # prefix
 
 urlpatterns = patterns('',
     # learning bucket app/module

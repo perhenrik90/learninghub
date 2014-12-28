@@ -230,8 +230,8 @@ def deleteFile(request):
     efile.filepointer.delete()
     efile.delete()
     
-    newurl = '/project?id='+str(efile.owner_project.id)
-    return redirect(newurl)
+    idstr = str(efile.owner_project.id)
+    return redirect(reverse(project)+'?id='+idstr)
         
         
 
