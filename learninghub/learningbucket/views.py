@@ -507,8 +507,11 @@ def project_traffic(request):
     c = {}
     user = request.user
     EProject = models.EProject
-    participants = models.EProjectParticipant.objects.filter(usr=user).order_by('-project__timeupdated')
+    participants = models.EProjectParticipant.objects.filter(usr=user).order_by('-project__timeupdated')[:10]
     c["participants"] = participants
+
+    following = models.EProjectFollower.objects.filter(user=user).order_by('-project__timeupdated')[:10]
+    c["following"] = following 
 
     template = loader.get_template("project_traffic.html")
     context = RequestContext(request, c)

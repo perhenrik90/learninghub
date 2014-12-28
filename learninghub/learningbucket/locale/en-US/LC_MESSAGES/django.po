@@ -6,35 +6,39 @@ msgstr ""
 msgid "Unknown error"
 msgstr ""
 
-#: views.py:164
-msgid "You don't have the premission to delete this file!"
-msgstr ""
-
-#: views.py:186 views.py:206
-msgid "The comment has not been posted!"
+#: views.py:177
+msgid "Not project given to follow."
 msgstr ""
 
 #: views.py:228
+msgid "You don't have the premission to delete this file!"
+msgstr ""
+
+#: views.py:250 views.py:270
+msgid "The comment has not been posted!"
+msgstr ""
+
+#: views.py:292
 msgid "No file was given."
 msgstr ""
 
-#: views.py:255
+#: views.py:319
 msgid "No project is choosen."
 msgstr ""
 
-#: views.py:275
+#: views.py:339
 msgid "No file were given!"
 msgstr ""
 
-#: views.py:345
+#: views.py:409
 msgid "Can not edit a non existing project"
 msgstr ""
 
-#: views.py:353
+#: views.py:417
 msgid "You don't have the premission to edit this project!"
 msgstr ""
 
-#: views.py:384
+#: views.py:448
 msgid "Can not add a participant to a non existing project."
 msgstr ""
 
@@ -84,8 +88,8 @@ msgid "Go back to projects"
 msgstr "Go back to projects"
 
 #: templates/createproject.html:15 templates/editproject.html:19
-#: templates/project.html:51 templates/project.html.py:100
-#: templates/project_uploadfile.html:11
+#: templates/project.html:62 templates/project.html.py:111
+#: templates/project_uploadfile.html:12
 msgid "Name"
 msgstr "Name"
 
@@ -93,7 +97,7 @@ msgstr "Name"
 msgid "Organization"
 msgstr "Organization"
 
-#: templates/createproject.html:17 templates/project.html:65
+#: templates/createproject.html:17 templates/project.html:76
 msgid "Description"
 msgstr ""
 
@@ -179,47 +183,47 @@ msgstr ""
 msgid "Edit participants"
 msgstr ""
 
-#: templates/project.html:55
+#: templates/project.html:66
 msgid "Project owner: "
-msgstr ""
-
-#: templates/project.html:62
-#, fuzzy
-msgid "Organization "
-msgstr "Organization"
-
-#: templates/project.html:69
-msgid "Last update"
 msgstr ""
 
 #: templates/project.html:73
 #, fuzzy
+msgid "Organization "
+msgstr "Organization"
+
+#: templates/project.html:80
+msgid "Last update"
+msgstr ""
+
+#: templates/project.html:84
+#, fuzzy
 msgid "Created "
 msgstr "Create project"
 
-#: templates/project.html:82
+#: templates/project.html:93
 #, fuzzy
 msgid "Uploaded files"
 msgstr "Go back to projects"
 
-#: templates/project.html:88
+#: templates/project.html:99
 #, fuzzy
 msgid "Upload file"
 msgstr "Go back to projects"
 
-#: templates/project.html:101
+#: templates/project.html:112
 msgid "File type"
 msgstr ""
 
-#: templates/project.html:102
+#: templates/project.html:113
 msgid "Date uploaded"
 msgstr ""
 
-#: templates/project.html:126
+#: templates/project.html:137
 msgid "No files are uploaded to this project"
 msgstr ""
 
-#: templates/project.html:132
+#: templates/project.html:143
 msgid "Comments"
 msgstr ""
 
@@ -254,39 +258,40 @@ msgid "Add"
 msgstr ""
 
 #: templates/project_traffic.html:19
-msgid "Projects you are following"
-msgstr ""
+#, fuzzy
+msgid "Projects you are participating to"
+msgstr "Go back to projects"
 
 #: templates/project_traffic.html:25
 msgid "has been updated by"
 msgstr ""
 
-#: templates/project_uploadfile.html:6 templates/project_uploadsuccess.html:6
+#: templates/project_uploadfile.html:7 templates/project_uploadsuccess.html:6
 #, fuzzy
 msgid "Upload a file to project."
 msgstr "Go back to projects"
 
-#: templates/project_uploadfile.html:15
+#: templates/project_uploadfile.html:16
 msgid "SCORM"
 msgstr ""
 
-#: templates/project_uploadfile.html:17
+#: templates/project_uploadfile.html:18
 msgid "Zip"
 msgstr ""
 
-#: templates/project_uploadfile.html:19
+#: templates/project_uploadfile.html:20
 msgid "Image"
 msgstr ""
 
-#: templates/project_uploadfile.html:21
+#: templates/project_uploadfile.html:22
 msgid "Storyline"
 msgstr ""
 
-#: templates/project_uploadfile.html:23
+#: templates/project_uploadfile.html:24
 msgid "Flash"
 msgstr ""
 
-#: templates/project_uploadfile.html:25
+#: templates/project_uploadfile.html:26
 msgid "Other"
 msgstr ""
 
@@ -296,4 +301,8 @@ msgstr ""
 
 #: templates/project_uploadsuccess.html:9
 msgid " to "
+msgstr ""
+
+#: templates/projects_following.html:14
+msgid "Projects you are following"
 msgstr ""

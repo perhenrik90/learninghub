@@ -29,5 +29,18 @@ Author Per-Henrik Kvalnes, 2014
   <p>{{participant.project.timeupdated}}</p>
 </div>
 {% endfor %}
+
+{% if following %}
+<hr/>
+<p>{% blocktrans %}Projects you are following{% endblocktrans %}
+{% for follow in following %}
+<div class="entry">
+  <a href="{% url 'learningbucket.views.project' %}?id={{follow.project.id}}">
+  <p>{{follow.project.name}}</a> {% blocktrans %}has been updated by{% endblocktrans %} 
+    <a href="{% url 'profilebucket.views.profile' %}?id={{follow.project.owner.id}}">
+      {{follow.project.owner.first_name}} {{follow.project.owner.last_name}}</a></p>
+</div>
+{% endfor %}
+{% endif %}
 {% endblock %}
 
