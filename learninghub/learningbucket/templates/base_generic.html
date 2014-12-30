@@ -27,11 +27,9 @@ Author Per-Henrik Kvalnes, 2014
     </header>
     <nav id="topMenu">
       <a href={% url 'learningbucket.views.myprojects' %}>
-	{% trans "My Projects" %}</a> 
+	{% trans "Projects" %}</a> 
       <a href={% url 'learningbucket.views.project_traffic' %}>
 	{% trans "Traffic Hall" %}</a> 
-      <a href={% url 'learningbucket.views.createproject' %}>
-	{% trans "Create project" %}</a> 
       <a href={% url 'searchbucket.views.searchProjects' %}>
 	{% trans "Search" %}</a> 
       <a href={% url 'profilebucket.views.profile_menu' %}>
