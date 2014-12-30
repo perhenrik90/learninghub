@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-28 19:10+0100\n"
-"PO-Revision-Date: 2014-12-28 19:12+0100\n"
+"PO-Revision-Date: 2014-12-30 10:22+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -71,7 +71,7 @@ msgstr "Mine prosjekter"
 
 #: templates/base_generic.html:32 templates/project_traffic.html:18
 msgid "Traffic Hall"
-msgstr "Trafikk hall"
+msgstr "Trafikkhall"
 
 #: templates/base_generic.html:34 templates/createproject.html:12
 msgid "Create project"
