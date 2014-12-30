@@ -14,6 +14,7 @@ Functionalies (x implemented)
 [x] - creating a project
 [x] - commenting on a project
 [x] - upload a file to a project
+[ ] - image to project (4:3 size)
 [x] - download a file from a project
 [x] - search within all projects (tags)
 [/] - search by title and project description
