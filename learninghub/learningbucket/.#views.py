@@ -1,0 +1,1 @@
+rufus@openSUSE.local.2464:1420031843
