@@ -95,10 +95,16 @@ def myprojects(request):
     if(not user.is_authenticated()):
         return userNotAuthenticated(request)
 
-    # get user related projects by updated date
-    projects = models.EProject.objects.all().filter(owner=user).order_by('-timeupdated')
-    print(projects)
-    c = {"projects":projects}
+    if 'search' in request.GET:
+        rx = r'.*'+request.GET["search"]+'.*'
+        projects = models.EProject.objects.filter(owner=user,name__iregex=rx).order_by('-timeupdated')
+        c = {"projects":projects, "search":request.GET["search"]}
+        print request.GET["search"]
+
+    else:
+        # get all user related projects by updated date
+        projects = models.EProject.objects.all().filter(owner=user).order_by('-timeupdated')
+        c = {"projects":projects}
     
     template = loader.get_template("myprojects.html")
     context = RequestContext(request, c)
@@ -164,7 +170,6 @@ def project(request):
 # The view acts like a toggle and does not have 
 # its own template
 #
-
 def project_follow(request):
     # if user is not authenticated!
     user = request.user
