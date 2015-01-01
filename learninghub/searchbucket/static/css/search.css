@@ -1,0 +1,29 @@
+/*****************************************
+ * CSS styleshseet for searchbucket app
+ * @author Per-Henrik Kvalnes 2015
+ *****************************************/
+.comment
+{
+    color:#AAA;
+}
+
+.searchEntry
+{
+    margin:10px;
+    margin-bottom:25px;
+}
+.searchEntry h2,a
+{
+    font-size:15px;
+    color:rgb(0,50,131);
+    margin:1px;
+}
+.searchEntry p
+{
+    margin:1px;
+}
+.searchEntry hr
+{
+    color:#EEE;
+    margin:0px;
+}

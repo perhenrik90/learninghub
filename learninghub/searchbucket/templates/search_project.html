@@ -9,6 +9,11 @@ Author Per-Henrik Kvalnes 2014
 {% load i18n %}
 {% load url from future %}
 
+{% block customhead %}
+<link href="{% static 'css/search.css' %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+
 {% block content %}
 <table>
 <form method="GET">
@@ -29,9 +34,9 @@ Author Per-Henrik Kvalnes 2014
 
 {% for project in projects %}
 
-<div>
-  <h1><a href="{% url 'learningbucket.views.project'%}?id={{project.id}}"></h1>
-      {{project.name}}</a></br><hr/>
+<div class="searchEntry">
+  <h2><a href="{% url 'learningbucket.views.project'%}?id={{project.id}}">
+      {{project.name}}</a></h2><hr/>
   <p>{{project.description}} 
     <span class="comment">- {% blocktrans %}Project owned by{% endblocktrans %} 
       {{project.owner.first_name}} {{project.owner.last_name}}</span></p>
