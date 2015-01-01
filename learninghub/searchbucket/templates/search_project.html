@@ -26,16 +26,19 @@ Author Per-Henrik Kvalnes 2014
 {% if results %}
 
 {% if projects %}
-<table id="results">
+
 {% for project in projects %}
 
-<tr>
+<div>
+  <h1><a href="{% url 'learningbucket.views.project'%}?id={{project.id}}"></h1>
+      {{project.name}}</a></br><hr/>
+  <p>{{project.description}} 
+    <span class="comment">- {% blocktrans %}Project owned by{% endblocktrans %} 
+      {{project.owner.first_name}} {{project.owner.last_name}}</span></p>
 
-  <td><a href="{% url 'learningbucket.views.project' %}?id={{project.id}}">{{project.name}}</a></td>
-  <td>{{project.priority}}</td>
-</tr>
+</div>
 {% endfor %}
-</table>
+
 {% endif %}
 
 <!-- user results -->
