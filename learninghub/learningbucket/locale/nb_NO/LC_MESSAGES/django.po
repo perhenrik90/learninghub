@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 12:50+0100\n"
-"PO-Revision-Date: 2015-01-02 13:19+0100\n"
+"POT-Creation-Date: 2015-01-02 18:04+0100\n"
+"PO-Revision-Date: 2015-01-02 18:05+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -24,40 +24,40 @@ msgstr "Deltaker"
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#: views.py:182
+#: views.py:187
 msgid "Not project given to follow."
 msgstr "Ikke et prosjekt gitt å følge."
 
-#: views.py:233
+#: views.py:238
 msgid "You don't have the premission to delete this file!"
 msgstr "Du har ikke rettigheter til å slette denne filen!"
 
-#: views.py:255 views.py:275
+#: views.py:260 views.py:280
 msgid "The comment has not been posted!"
 msgstr "Kommentaren ble ikke postet!"
 
-#: views.py:297
+#: views.py:302
 msgid "No file was given."
 msgstr "Ingen fil ble gitt."
 
-#: views.py:324
+#: views.py:329
 msgid "No project is choosen."
 msgstr "Ingen prosjekt er valgt."
 
-#: views.py:344
+#: views.py:349
 msgid "No file were given!"
 msgstr "Ingen fil er angitt!"
 
-#: views.py:414
+#: views.py:419
 msgid "Can not edit a non existing project"
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
-#: views.py:422
+#: views.py:427
 msgid "You don't have the premission to edit this project!"
 msgstr "Du har ikke tilgang til å endre dette prosjektet!"
 
 # Du kan ikke legge til en deltaker på et ikke eksisterende prosjekt.
-#: views.py:453
+#: views.py:458
 msgid "Can not add a participant to a non existing project."
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
@@ -73,7 +73,7 @@ msgstr "Prosjekter"
 msgid "Traffic Hall"
 msgstr "Trafikkhall"
 
-#: templates/base_generic.html:34 templates/myprojects.html:23
+#: templates/base_generic.html:34 templates/myprojects.html:24
 #: templates/project_participants.html:41
 msgid "Search"
 msgstr "Søk"
@@ -103,7 +103,7 @@ msgid "Create project"
 msgstr "Opprett prosjekt"
 
 #: templates/createproject.html:15 templates/editproject.html:19
-#: templates/project.html:62 templates/project.html.py:111
+#: templates/project.html:62 templates/project.html.py:115
 #: templates/project_uploadfile.html:12
 msgid "Name"
 msgstr "Navn"
@@ -112,7 +112,7 @@ msgstr "Navn"
 msgid "Organization"
 msgstr "Organisasjon"
 
-#: templates/createproject.html:17 templates/project.html:76
+#: templates/createproject.html:17 templates/project.html:88
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -212,35 +212,39 @@ msgstr "Prosjekteier: "
 msgid "Organization "
 msgstr "Organisasjon "
 
-#: templates/project.html:80
+#: templates/project.html:76
 msgid "Last update"
 msgstr "Sist oppdatert"
 
-#: templates/project.html:84
+#: templates/project.html:80
 msgid "Created "
 msgstr "Opprettet "
 
-#: templates/project.html:93
+#: templates/project.html:84
+msgid "Times visited "
+msgstr "Antall besøk "
+
+#: templates/project.html:97
 msgid "Uploaded files"
 msgstr "Last opp filer"
 
-#: templates/project.html:99
+#: templates/project.html:103
 msgid "Upload file"
 msgstr "Last opp fil"
 
-#: templates/project.html:112
+#: templates/project.html:116
 msgid "File type"
 msgstr "Filtype"
 
-#: templates/project.html:113
+#: templates/project.html:117
 msgid "Date uploaded"
 msgstr "Dato opplastet"
 
-#: templates/project.html:137
+#: templates/project.html:141
 msgid "No files are uploaded to this project"
 msgstr "Ingen filer er lastet opp til dette prosjektet"
 
-#: templates/project.html:143
+#: templates/project.html:147
 msgid "Comments"
 msgstr "Kommentarer"
 

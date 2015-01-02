@@ -73,16 +73,20 @@ Author Per-Henrik Kvalnes, 2014
 {% blocktrans %}Organization {% endblocktrans %}</td>
 <td>  {{project.organization}}</td>
 <tr>
-  <td>{% blocktrans %}Description{% endblocktrans %}</td>
-  <td>{{project.description}}</td>
-</tr>
-<tr>
   <td>{% blocktrans %}Last update{% endblocktrans %}</td>
   <td>{{ project.timeupdated }}</td>
 </tr>
 <tr>
   <td>{% blocktrans %}Created {% endblocktrans %}</td>
   <td>{{ project.timecreated }}</td>
+</tr>
+<tr>
+  <td>{% blocktrans %}Times visited {% endblocktrans %}</td>
+  <td>{{ project.visits }}</td>
+</tr>
+<tr>
+  <td>{% blocktrans %}Description{% endblocktrans %}</td>
+  <td>{{project.description}}</td>
 </tr>
 </table>
 </div>

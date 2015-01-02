@@ -6,39 +6,39 @@ msgstr ""
 msgid "Unknown error"
 msgstr ""
 
-#: views.py:182
+#: views.py:187
 msgid "Not project given to follow."
 msgstr ""
 
-#: views.py:233
+#: views.py:238
 msgid "You don't have the premission to delete this file!"
 msgstr ""
 
-#: views.py:255 views.py:275
+#: views.py:260 views.py:280
 msgid "The comment has not been posted!"
 msgstr ""
 
-#: views.py:297
+#: views.py:302
 msgid "No file was given."
 msgstr ""
 
-#: views.py:324
+#: views.py:329
 msgid "No project is choosen."
 msgstr ""
 
-#: views.py:344
+#: views.py:349
 msgid "No file were given!"
 msgstr ""
 
-#: views.py:414
+#: views.py:419
 msgid "Can not edit a non existing project"
 msgstr ""
 
-#: views.py:422
+#: views.py:427
 msgid "You don't have the premission to edit this project!"
 msgstr ""
 
-#: views.py:453
+#: views.py:458
 msgid "Can not add a participant to a non existing project."
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr "My Projects"
 msgid "Traffic Hall"
 msgstr ""
 
-#: templates/base_generic.html:34 templates/myprojects.html:23
+#: templates/base_generic.html:34 templates/myprojects.html:24
 #: templates/project_participants.html:41
 msgid "Search"
 msgstr ""
@@ -90,7 +90,7 @@ msgid "Create project"
 msgstr "Create project"
 
 #: templates/createproject.html:15 templates/editproject.html:19
-#: templates/project.html:62 templates/project.html.py:111
+#: templates/project.html:62 templates/project.html.py:115
 #: templates/project_uploadfile.html:12
 msgid "Name"
 msgstr "Name"
@@ -99,7 +99,7 @@ msgstr "Name"
 msgid "Organization"
 msgstr "Organization"
 
-#: templates/createproject.html:17 templates/project.html:76
+#: templates/createproject.html:17 templates/project.html:88
 msgid "Description"
 msgstr ""
 
@@ -198,38 +198,42 @@ msgstr ""
 msgid "Organization "
 msgstr "Organization"
 
-#: templates/project.html:80
+#: templates/project.html:76
 msgid "Last update"
 msgstr ""
 
-#: templates/project.html:84
+#: templates/project.html:80
 #, fuzzy
 msgid "Created "
 msgstr "Create project"
 
-#: templates/project.html:93
+#: templates/project.html:84
+msgid "Times visited "
+msgstr ""
+
+#: templates/project.html:97
 #, fuzzy
 msgid "Uploaded files"
 msgstr "Go back to projects"
 
-#: templates/project.html:99
+#: templates/project.html:103
 #, fuzzy
 msgid "Upload file"
 msgstr "Go back to projects"
 
-#: templates/project.html:112
+#: templates/project.html:116
 msgid "File type"
 msgstr ""
 
-#: templates/project.html:113
+#: templates/project.html:117
 msgid "Date uploaded"
 msgstr ""
 
-#: templates/project.html:137
+#: templates/project.html:141
 msgid "No files are uploaded to this project"
 msgstr ""
 
-#: templates/project.html:143
+#: templates/project.html:147
 msgid "Comments"
 msgstr ""
 
