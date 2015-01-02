@@ -99,12 +99,17 @@ def myprojects(request):
         rx = r'.*'+request.GET["search"]+'.*'
         projects = models.EProject.objects.filter(owner=user,name__iregex=rx).order_by('-timeupdated')
         c = {"projects":projects, "search":request.GET["search"]}
-        print request.GET["search"]
+
+        if len(projects) > 8:
+            c["bigdata"] = True
 
     else:
         # get all user related projects by updated date
         projects = models.EProject.objects.all().filter(owner=user).order_by('-timeupdated')
         c = {"projects":projects}
+
+        if len(projects) > 8:
+            c["bigdata"] = True
     
     template = loader.get_template("myprojects.html")
     context = RequestContext(request, c)

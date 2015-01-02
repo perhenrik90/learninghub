@@ -18,10 +18,12 @@ Author Per-Henrik Kvalnes, 2014
 	<input value="{% trans "Projects following" %}" type="button"/></a> 
 </nav>
 <h1>{% blocktrans %}My projects{% endblocktrans %}</h1>
+{% if bigdata %}
 <form>
   <input name="search" value={{search}}></input>
   <input type="submit" value="{% blocktrans %}Search{% endblocktrans %}"/>
 </form>
+{% endif %}
 <div id="myProjectList">
 {% for project in projects %}
 

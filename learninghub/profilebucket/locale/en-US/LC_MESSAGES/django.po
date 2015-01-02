@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-21 00:07+0100\n"
+"POT-Creation-Date: 2015-01-02 12:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,16 +81,20 @@ msgstr ""
 msgid "Change password"
 msgstr ""
 
-#: templates/profile_menu.html:23 templates/profile_template.html:32
+#: templates/profile_menu.html:24 templates/profile_template.html:32
 msgid "Edit profile"
 msgstr ""
 
-#: templates/profile_menu.html:26
+#: templates/profile_menu.html:27
 msgid "Upload profile image"
 msgstr ""
 
-#: templates/profile_projects.html:13
+#: templates/profile_projects.html:15
 msgid "projects"
+msgstr ""
+
+#: templates/profile_projects.html:23
+msgid "has no projects!"
 msgstr ""
 
 #: templates/profile_template.html:36
