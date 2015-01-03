@@ -185,6 +185,10 @@ def project_delete(request):
     project = models.EProject.objects.get(id=request.GET['project'])
     c = {'project':project}
 
+    # abort if the projects is not owned by the user
+    if request.user != project.owner:
+        return error_view(request, _("Can not delete another users project!"))
+
     # get the files
     project_files = models.EProjectFile.objects.filter(owner_project=project)
     if(len(project_files)>0):

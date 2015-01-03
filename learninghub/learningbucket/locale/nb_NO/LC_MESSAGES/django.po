@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-03 15:32+0100\n"
-"PO-Revision-Date: 2015-01-03 15:40+0100\n"
+"POT-Creation-Date: 2015-01-03 15:45+0100\n"
+"PO-Revision-Date: 2015-01-03 15:47+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -28,40 +28,44 @@ msgstr "Ukjent feil"
 msgid "Can not delete a non exsisting project"
 msgstr "Kan ikke slette et ikke-eksisterende prosjekt."
 
-#: views.py:228
+#: views.py:190
+msgid "Can not delete another users project!"
+msgstr "Kan ikke slette en annen brukers sitt prosjekt! "
+
+#: views.py:232
 msgid "Not project given to follow."
 msgstr "Ikke et prosjekt gitt å følge."
 
-#: views.py:277
+#: views.py:281
 msgid "You don't have the premission to delete this file!"
 msgstr "Du har ikke rettigheter til å slette denne filen!"
 
-#: views.py:299 views.py:319
+#: views.py:303 views.py:323
 msgid "The comment has not been posted!"
 msgstr "Kommentaren ble ikke postet!"
 
-#: views.py:341
+#: views.py:345
 msgid "No file was given."
 msgstr "Ingen fil ble gitt."
 
-#: views.py:368
+#: views.py:372
 msgid "No project is choosen."
 msgstr "Ingen prosjekt er valgt."
 
-#: views.py:388
+#: views.py:392
 msgid "No file were given!"
 msgstr "Ingen fil er angitt!"
 
-#: views.py:458
+#: views.py:462
 msgid "Can not edit a non existing project"
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
-#: views.py:466
+#: views.py:470
 msgid "You don't have the premission to edit this project!"
 msgstr "Du har ikke tilgang til å endre dette prosjektet!"
 
 # Du kan ikke legge til en deltaker på et ikke eksisterende prosjekt.
-#: views.py:497
+#: views.py:501
 msgid "Can not add a participant to a non existing project."
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
@@ -260,7 +264,9 @@ msgstr "Kommentarer"
 msgid ""
 "\n"
 "has been deleted."
-msgstr "\nhar blitt slettet."
+msgstr ""
+"\n"
+"har blitt slettet."
 
 #: templates/project_delete.html:18
 msgid ""
