@@ -34,7 +34,6 @@ def userNotAuthenticated(request):
 #
 # Login view
 #
-
 def login_view(request):
     user = request.user
     c = {}
@@ -119,7 +118,6 @@ def myprojects(request):
 #
 # Display a project
 #
-
 def project(request):
 
     # if user is not authenticated!
@@ -171,10 +169,53 @@ def project(request):
 
 
 #
+# Delete a project
+#
+def project_delete(request):
+
+    # if user is not authenticated!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+    
+    if(not 'project' in request.GET):
+        return error_view(request, _("Can not delete a non exsisting project"))
+
+    # get the project
+    project = models.EProject.objects.get(id=request.GET['project'])
+    c = {'project':project}
+
+    # get the files
+    project_files = models.EProjectFile.objects.filter(owner_project=project)
+    if(len(project_files)>0):
+        c['project_files'] = project_files
+
+    # If the method is POST, the user need to authenticate
+    if(request.method == "POST"):
+        pwd = request.POST["password"]
+        right_password = request.user.check_password(pwd)
+        if(right_password):
+            # delete files and the project
+            for pfile in project_files: 
+                pfile.filepointer.delete()
+                pfile.delete()
+            project.delete()
+
+            c["project_deleted"] = True
+
+        else:
+            c["project_delete_fail"] = True
+
+
+    template = loader.get_template('project_delete.html')
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))
+
+##################################################
 # Follow / unfollow a project
 # The view acts like a toggle and does not have 
 # its own template
-#
+##################################################
 def project_follow(request):
     # if user is not authenticated!
     user = request.user
@@ -220,8 +261,6 @@ def projects_following(request):
 #
 # File views
 #
-
-
 def deleteFile(request):
 
     user = request.user

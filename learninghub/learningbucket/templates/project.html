@@ -41,6 +41,8 @@ Author Per-Henrik Kvalnes, 2014
   <input type="button" value="{% blocktrans %}Edit{% endblocktrans %}"/></a>
   <a href="{% url 'learningbucket.views.project_participants' %}?project={{project.id}}">
     <input type="button" value="{% blocktrans %}Edit participants{% endblocktrans %}" /></a>
+  <a href="{% url 'learningbucket.views.project_delete' %}?project={{project.id}}">
+    <input type="button" value="{% blocktrans %}Delete project{% endblocktrans %}" /></a>
 </nav>
 <hr/>
 {% else %}

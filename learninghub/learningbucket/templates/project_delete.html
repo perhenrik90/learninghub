@@ -1,0 +1,60 @@
+{% extends "base_generic.html" %}
+{% comment %}
+Comfirm and deletes a project.
+
+Author Per-Henrik Kvalnes, 2015
+{% endcomment %}
+{% load i18n %}
+{% load static %}
+{% load url from future %}
+
+{% block content %}
+{% if project_deleted %}
+<h1>
+{{project.name}} {% blocktrans %}
+has been deleted.{% endblocktrans%}</h1>
+{% else %}
+<h1>
+{% blocktrans %}Are you shure you 
+want to delete the project {% endblocktrans%} {{project.name}}?</h1>
+{% endif %}
+{% if project_files %}
+{% if project_deleted %}
+<p>{% blocktrans %}The following files has been deleted{% endblocktrans %}</p>
+{% else %}
+<p>{% blocktrans %}The following files will be deleted{% endblocktrans %}</p>
+{% endif %}
+<table id="deletedFiles">
+<tr>
+  <td>{% blocktrans %}File name{% endblocktrans %}</td>
+  <td>{% blocktrans %}Type{% endblocktrans %}</td>
+  <td>{% blocktrans %}Time created{% endblocktrans %}</td>
+</tr>
+{% for file in project_files %}
+<tr>
+  <td>{{file.name}}</td>
+  <td>{{file.filetype}}</td>
+  <td>{{file.timecreated}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+<hr/>
+{% if project_deleted %}
+{% else %}
+{% if project_delete_fail %}
+<p style="color:red">{% blocktrans %}The password you entered is not correct. Try again. 
+{% endblocktrans %}</p>
+{% else %}
+<p>{% blocktrans %}Enter the password to comfirm the deletion
+{% endblocktrans %}</p>
+{% endif %}
+<form method="POST">
+  {% csrf_token %}
+  <input name="project_id" value="{{project.id}}" hidden="true"></input>
+  <input name="password" type="password">{% blocktrans %}Password{% endblocktrans %}</input></br>
+  <input type="submit" value="{% blocktrans %}Delete{% endblocktrans %}"/>
+</form>
+{% endif %}
+{% endblock %}
+

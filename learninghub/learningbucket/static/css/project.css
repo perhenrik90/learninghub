@@ -128,3 +128,16 @@
     height:160px;
 }
 
+#deletedFiles
+{
+    
+}
+
+#deletedFiles tr:first-child
+{
+    font-weight:bold;
+}
+#deletedFiles td
+{
+    padding-right:20px;
+}
