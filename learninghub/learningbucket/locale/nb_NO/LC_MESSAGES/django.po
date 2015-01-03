@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 18:04+0100\n"
-"PO-Revision-Date: 2015-01-02 18:05+0100\n"
+"POT-Creation-Date: 2015-01-03 15:32+0100\n"
+"PO-Revision-Date: 2015-01-03 15:40+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,44 +20,48 @@ msgstr ""
 msgid "Participant"
 msgstr "Deltaker"
 
-#: views.py:76
+#: views.py:75
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#: views.py:187
+#: views.py:182
+msgid "Can not delete a non exsisting project"
+msgstr "Kan ikke slette et ikke-eksisterende prosjekt."
+
+#: views.py:228
 msgid "Not project given to follow."
 msgstr "Ikke et prosjekt gitt å følge."
 
-#: views.py:238
+#: views.py:277
 msgid "You don't have the premission to delete this file!"
 msgstr "Du har ikke rettigheter til å slette denne filen!"
 
-#: views.py:260 views.py:280
+#: views.py:299 views.py:319
 msgid "The comment has not been posted!"
 msgstr "Kommentaren ble ikke postet!"
 
-#: views.py:302
+#: views.py:341
 msgid "No file was given."
 msgstr "Ingen fil ble gitt."
 
-#: views.py:329
+#: views.py:368
 msgid "No project is choosen."
 msgstr "Ingen prosjekt er valgt."
 
-#: views.py:349
+#: views.py:388
 msgid "No file were given!"
 msgstr "Ingen fil er angitt!"
 
-#: views.py:419
+#: views.py:458
 msgid "Can not edit a non existing project"
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
-#: views.py:427
+#: views.py:466
 msgid "You don't have the premission to edit this project!"
 msgstr "Du har ikke tilgang til å endre dette prosjektet!"
 
 # Du kan ikke legge til en deltaker på et ikke eksisterende prosjekt.
-#: views.py:458
+#: views.py:497
 msgid "Can not add a participant to a non existing project."
 msgstr "Du kan ikke redigere på et prosjekt som ikke eksisterer!"
 
@@ -103,7 +107,7 @@ msgid "Create project"
 msgstr "Opprett prosjekt"
 
 #: templates/createproject.html:15 templates/editproject.html:19
-#: templates/project.html:62 templates/project.html.py:115
+#: templates/project.html:64 templates/project.html.py:117
 #: templates/project_uploadfile.html:12
 msgid "Name"
 msgstr "Navn"
@@ -112,7 +116,7 @@ msgstr "Navn"
 msgid "Organization"
 msgstr "Organisasjon"
 
-#: templates/createproject.html:17 templates/project.html:88
+#: templates/createproject.html:17 templates/project.html:90
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -144,7 +148,7 @@ msgstr "Logg inn"
 msgid "Username"
 msgstr "Brukernavn"
 
-#: templates/login.html:50
+#: templates/login.html:50 templates/project_delete.html:55
 msgid "Password"
 msgstr "Passord"
 
@@ -204,49 +208,99 @@ msgstr "Rediger"
 msgid "Edit participants"
 msgstr "Endre deltakere"
 
-#: templates/project.html:66
+#: templates/project.html:45
+msgid "Delete project"
+msgstr "Slett prosjekt"
+
+#: templates/project.html:68
 msgid "Project owner: "
 msgstr "Prosjekteier: "
 
-#: templates/project.html:73
+#: templates/project.html:75
 msgid "Organization "
 msgstr "Organisasjon "
 
-#: templates/project.html:76
+#: templates/project.html:78
 msgid "Last update"
 msgstr "Sist oppdatert"
 
-#: templates/project.html:80
+#: templates/project.html:82
 msgid "Created "
 msgstr "Opprettet "
 
-#: templates/project.html:84
+#: templates/project.html:86
 msgid "Times visited "
 msgstr "Antall besøk "
 
-#: templates/project.html:97
+#: templates/project.html:99
 msgid "Uploaded files"
 msgstr "Last opp filer"
 
-#: templates/project.html:103
+#: templates/project.html:105
 msgid "Upload file"
 msgstr "Last opp fil"
 
-#: templates/project.html:116
+#: templates/project.html:118
 msgid "File type"
 msgstr "Filtype"
 
-#: templates/project.html:117
+#: templates/project.html:119
 msgid "Date uploaded"
 msgstr "Dato opplastet"
 
-#: templates/project.html:141
+#: templates/project.html:143
 msgid "No files are uploaded to this project"
 msgstr "Ingen filer er lastet opp til dette prosjektet"
 
-#: templates/project.html:147
+#: templates/project.html:149
 msgid "Comments"
 msgstr "Kommentarer"
+
+#: templates/project_delete.html:14
+msgid ""
+"\n"
+"has been deleted."
+msgstr "\nhar blitt slettet."
+
+#: templates/project_delete.html:18
+msgid ""
+"Are you shure you \n"
+"want to delete the project "
+msgstr ""
+"Er du sikker på at du vil slette\n"
+"prosjektet "
+
+#: templates/project_delete.html:23
+msgid "The following files has been deleted"
+msgstr "Følgende filer har blitt slettet"
+
+#: templates/project_delete.html:25
+msgid "The following files will be deleted"
+msgstr "Følgende filer vil bli slettet"
+
+#: templates/project_delete.html:29
+msgid "File name"
+msgstr "Filnavn"
+
+#: templates/project_delete.html:30
+msgid "Type"
+msgstr "Type"
+
+#: templates/project_delete.html:31
+msgid "Time created"
+msgstr "Tidspunkt opprettet"
+
+#: templates/project_delete.html:46
+msgid "The password you entered is not correct. Try again. \n"
+msgstr "Passordet var ikke riktig. Prøv igjen.\n"
+
+#: templates/project_delete.html:49
+msgid "Enter the password to comfirm the deletion\n"
+msgstr "Skriv passordet for å bekrefte slettingen\n"
+
+#: templates/project_delete.html:56 templates/project_participants.html:30
+msgid "Delete"
+msgstr "Slett"
 
 #: templates/project_not_found.html:6
 msgid "Project not found!"
@@ -263,10 +317,6 @@ msgstr "Deltakere"
 #: templates/project_participants.html:23
 msgid "People participating to the project: "
 msgstr "Personer som deltar i prosjektet: "
-
-#: templates/project_participants.html:30
-msgid "Delete"
-msgstr "Slett"
 
 #: templates/project_participants.html:37
 msgid "Search to add new participants"
