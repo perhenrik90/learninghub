@@ -27,6 +27,7 @@ Functionalies (x implemented)
 [ ] - wall / table of activities
 [x] - follow projects
 [ ] - self registrating restricted to domains
+[ ] - share through email (internly)
 
 Requirments
 -------------------
