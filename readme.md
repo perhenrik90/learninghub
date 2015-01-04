@@ -8,8 +8,8 @@ Contributors
 ------------
 Per-Henrik Kvalnes 
 
-Functionalies (x implemented)
------------------------------
+Functional requirments
+-----------------------
 
 * [x] - creating a project
 * [x] - commenting on a project
@@ -17,7 +17,7 @@ Functionalies (x implemented)
 * [ ] - image to project (4:3 size)
 * [x] - download a file from a project
 * [x] - search within all projects (tags)
-* [/] - search by title and project description
+* [x] - search by title
 * [ ] - search priorities (number of visits)
 * [x] - tag a project (# with a category)
 * [x] - self change password
@@ -27,18 +27,16 @@ Functionalies (x implemented)
 * [ ] - wall / table of activities
 * [x] - follow projects
 * [ ] - self registrating restricted to domains
-* [ ] - share through email (internly)
+* [ ] - share a project by email (internly)
 
 Requirments
--------------------
+------------
 
 - Python3 (runs on 2.7 ) 
 - Python-django 
 - Sqlite (for now) / mysql
 
-Tested on Linux OpenSUSE, OpenSUSE on raspberry pi and Linux Mint. 
-
-
+Tested on Linux OpenSUSE, OpenSUSE on raspberry pi,Linux Mint, and Cent OS.
 
 
 Setup
