@@ -4,9 +4,6 @@ Learning Hub
 Simple tool for sharing e-learning resources and files. 
 Still in early developmentstage.
 
-Contributors
-------------
-Per-Henrik Kvalnes 
 
 Functional requirments
 -----------------------
@@ -29,18 +26,15 @@ Functional requirments
 * [ ] - self registrating restricted to domains
 * [ ] - share a project by email (internly)
 
-Requirments
-------------
+Setup
+-----
+### Requirments
 
 - Python3 (runs on 2.7 ) 
 - Python-django 
 - Sqlite (for now) / mysql
 
 Tested on Linux OpenSUSE, OpenSUSE on raspberry pi,Linux Mint, and Cent OS.
-
-
-Setup
---------
 
 ### sqlite3
 1) change to sqlite in learninghub/learninghub/settings.py 
@@ -57,3 +51,7 @@ Setup
 user administration is done by django default admin site. 
 <your-size>/admin
 
+
+Contributors
+------------
+Per-Henrik Kvalnes 
