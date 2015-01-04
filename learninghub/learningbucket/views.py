@@ -344,11 +344,17 @@ def project_upload_file(request):
         if not 'projectFile' in request.FILES:
             return error_view(request, _("No file was given."))
 
+
+
         # get post parameters
         pid = request.POST["project_id"]
         filetype = request.POST["filetype"]
         name = request.POST["name"]
         filep = request.FILES["projectFile"]
+
+        # if the name is an empty string, give error message
+        if len(name.strip()) <= 0:
+            return error_view(request, _("A file must have a name. Can not upload a file with no name."))
 
         project = models.EProject.objects.get(id=pid)
 

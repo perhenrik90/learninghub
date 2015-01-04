@@ -2,54 +2,6 @@
 msgid "Participant"
 msgstr ""
 
-#: views.py:75
-msgid "Unknown error"
-msgstr ""
-
-#: views.py:182
-msgid "Can not delete a non exsisting project"
-msgstr ""
-
-#: views.py:190
-msgid "Can not delete another users project!"
-msgstr ""
-
-#: views.py:232
-msgid "Not project given to follow."
-msgstr ""
-
-#: views.py:281
-msgid "You don't have the premission to delete this file!"
-msgstr ""
-
-#: views.py:303 views.py:323
-msgid "The comment has not been posted!"
-msgstr ""
-
-#: views.py:345
-msgid "No file was given."
-msgstr ""
-
-#: views.py:372
-msgid "No project is choosen."
-msgstr ""
-
-#: views.py:392
-msgid "No file were given!"
-msgstr ""
-
-#: views.py:462
-msgid "Can not edit a non existing project"
-msgstr ""
-
-#: views.py:470
-msgid "You don't have the premission to edit this project!"
-msgstr ""
-
-#: views.py:501
-msgid "Can not add a participant to a non existing project."
-msgstr ""
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -59,25 +11,25 @@ msgstr ""
 msgid "app-title"
 msgstr "Learning Hub"
 
-#: templates/base_generic.html:30
+#: templates/base_generic.html:33
 #, fuzzy
 msgid "Projects"
 msgstr "My Projects"
 
-#: templates/base_generic.html:32 templates/project_traffic.html:18
+#: templates/base_generic.html:35 templates/project_traffic.html:18
 msgid "Traffic Hall"
 msgstr ""
 
-#: templates/base_generic.html:34 templates/myprojects.html:24
+#: templates/base_generic.html:37 templates/myprojects.html:24
 #: templates/project_participants.html:41
 msgid "Search"
 msgstr ""
 
-#: templates/base_generic.html:36
+#: templates/base_generic.html:39
 msgid "Profile"
 msgstr ""
 
-#: templates/base_generic.html:38
+#: templates/base_generic.html:41
 msgid "Logout"
 msgstr ""
 
@@ -369,4 +321,56 @@ msgstr ""
 
 #: templates/project_uploadsuccess.html:9
 msgid " to "
+msgstr ""
+
+#: views.py:75
+msgid "Unknown error"
+msgstr ""
+
+#: views.py:182
+msgid "Can not delete a non exsisting project"
+msgstr ""
+
+#: views.py:190
+msgid "Can not delete another users project!"
+msgstr ""
+
+#: views.py:232
+msgid "Not project given to follow."
+msgstr ""
+
+#: views.py:281
+msgid "You don't have the premission to delete this file!"
+msgstr ""
+
+#: views.py:303 views.py:323
+msgid "The comment has not been posted!"
+msgstr ""
+
+#: views.py:345
+msgid "No file was given."
+msgstr ""
+
+#: views.py:357
+msgid "A file must have a name. Can not upload a file with no name."
+msgstr ""
+
+#: views.py:378
+msgid "No project is choosen."
+msgstr ""
+
+#: views.py:398
+msgid "No file were given!"
+msgstr ""
+
+#: views.py:468
+msgid "Can not edit a non existing project"
+msgstr ""
+
+#: views.py:476
+msgid "You don't have the premission to edit this project!"
+msgstr ""
+
+#: views.py:507
+msgid "Can not add a participant to a non existing project."
 msgstr ""
