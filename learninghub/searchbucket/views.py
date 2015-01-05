@@ -8,6 +8,7 @@ from django.template import RequestContext, loader, Template, Context
 from django.contrib.auth.models import User
 
 # import models from learning bucket
+from django.db.models import Count
 import learningbucket.models as models
 
 #
@@ -104,3 +105,20 @@ def searchProjects(request):
     template = loader.get_template("search_project.html")
     context = RequestContext(request, c) 
     return HttpResponse(template.render(context))
+
+#
+# Counts the top used tags
+#  and presents them
+#
+def topTags(request):
+    c = {}
+    taglist = models.EProjectTag.objects.values('tag').annotate(dcount=Count('tag'))\
+              .order_by('-dcount')[:20]
+
+    if(len(taglist)>0):
+        c["tags"] = taglist
+ 
+    template = loader.get_template("toptags.html")
+    context = RequestContext(request, c) 
+    return HttpResponse(template.render(context))
+

@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+
+{% comment %}
+Display the top tags of the system
+Author Per-Henrik Kvalnes 2015
+{% endcomment %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load url from future %}
+
+{% block customhead %}
+<link href="{% static 'css/search.css' %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block content %}
+<h1>{% blocktrans %}Top most used tags{% endblocktrans %}</h1> 
+{% if tags %}
+
+<table>
+{% for tag in tags %}
+<tr>
+<td><a href="{% url 'searchbucket.views.searchProjects' %}?tags={{tag.tag}}">
+       {{ tag.tag }}</a> {% blocktrans %}is used {% endblocktrans %} {{tag.dcount}} {% blocktrans %}times {% endblocktrans %}</td>
+</tr>
+{% endfor %}  
+</table>
+
+{% else %}
+<p>{% blocktrans %}No tags used yet!{% endblocktrans %}</p>
+{% endif %}
+{% endblock %}
+

@@ -48,6 +48,9 @@ urlpatterns = patterns('',
     # search bucket app/module 
     url(r'^'+up+'search$','searchbucket.views.searchProjects',
         name='Search'),
+    # search bucket app/module 
+    url(r'^'+up+'search/toptags$','searchbucket.views.topTags',
+        name='Top tags'),
 
     # profile bucket app/module
     url(r'^'+up+'profile$','profilebucket.views.profile',
