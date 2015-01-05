@@ -37,8 +37,6 @@ Author Per-Henrik Kvalnes, 2014
    <img src="{% static 'img/logo.png' %}"/>
 </object>
 {% endif %}    
-
-
     <form method="POST">
       {% csrf_token %}
        <h1>{% trans "Login" %}</h1>
@@ -52,7 +50,9 @@ Author Per-Henrik Kvalnes, 2014
 	   <td>{% trans "Password" %}</td>
 	 </tr>
 	 <tr>
-	   <td><input type="submit"></input></td>
+	   <td><input type="submit" 
+		      value="{% blocktrans %}Login{% endblocktrans%}">
+	   </input></td>
 	 </tr>
     </form>
   </section>
