@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 12:52+0100\n"
+"POT-Creation-Date: 2015-01-05 20:12+0100\n"
 "PO-Revision-Date: 2015-01-02 12:53+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: templates/base_generic.html:28
 msgid "Create project"
-msgstr ""
+msgstr "Opprett prosjekt"
 
 #: templates/base_generic.html:30
 msgid "Logout"
-msgstr ""
+msgstr "Logut"
 
 #: templates/search_project.html:21
 msgid "Search "
@@ -45,6 +45,35 @@ msgstr "Søk"
 msgid "Project owned by"
 msgstr "Prosjekt eid av"
 
-#: templates/search_project.html:53
-msgid "Name"
-msgstr "Navn"
+#: templates/search_project.html:56
+msgid "Email: "
+msgstr "Epost"
+
+#: templates/search_project.html:63
+msgid ""
+"Search for a tag or project title in the box over, or use some of these "
+"predefined lookups."
+msgstr "Søk etter emnerknagger eller tittler i boksen over, eller bruk et ferdigsøk via knappende under."
+
+#: templates/search_project.html:66
+msgid "Most used tags"
+msgstr "Mest brukte emneknagger"
+
+#: templates/toptags.html:18
+msgid "Top most used tags"
+msgstr "Mest brukte emneknagger"
+
+#: templates/toptags.html:25
+msgid "is used "
+msgstr "er brukt "
+
+#: templates/toptags.html:25
+msgid "times "
+msgstr "ganger "
+
+#: templates/toptags.html:31
+msgid "No tags used yet!"
+msgstr "Ingen emneknagger er benyttet ennå."
+
+#~ msgid "Name"
+#~ msgstr "Navn"
