@@ -159,10 +159,9 @@ Author Per-Henrik Kvalnes, 2014
   <form method="POST" 
 	action="{% url 'learningbucket.views.project_post_comment' %}">
     {% csrf_token %}
-
-    <input name="id" hidden="true" value="{{project.id}}"/>
+    <input name="id" hidden="true" value="{{project.id}}" type="hidden"/>
     <input name="comment"></input>
-    <input type="submit"></input>
+    <input type="submit" value="{% blocktrans %}Send{% endblocktrans %}></input>
   </form>
 </div>
 {% endblock %}

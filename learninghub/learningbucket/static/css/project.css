@@ -97,6 +97,7 @@
     box-shadow:1px 1px 5px #999;
     width:260px;
     height:160px;
+    display:inline;
     display:inline-block;
     tekst-align:center;
     padding:0px;
@@ -111,6 +112,7 @@
     margin:0px;
 
     color:#FFF;
+    background-color:#003283;
     background-color:rgba(0,50,131,0.8);
     font-size:20px;
     padding:5px;

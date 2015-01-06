@@ -107,7 +107,7 @@ input[type=button]:hover
 }
 input[type=submit]
 {
-    background-color:rgba(107,155,78,1);
+    background-color:#6B9B4E;
     border:2px rgba(100,143,74,1);
     color:#FFF;
 
