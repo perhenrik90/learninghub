@@ -25,6 +25,7 @@ Functional requirments
 * [x] - follow projects
 * [ ] - self registrating restricted to domains
 * [ ] - share a project by email (internly)
+* [ ] - add skills for users
 
 Setup
 -----
