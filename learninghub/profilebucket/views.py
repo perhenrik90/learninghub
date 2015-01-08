@@ -292,11 +292,45 @@ def profile_lostpwd(request):
 
 def profile_validatePwdCode(request):
     c = {}
-    if 'pwdcode' not in request.GET:
-        c = {'notvalid':True}
 
-    c["pwdcode"] = request.GET["pwdcode"]
-    
+    if request.method == "POST":
+        pwdcode = request.POST["pwdcode"]
+        pwd1 = request.POST["pass1"]
+        pwd2 = request.POST["pass2"]
+
+        tokens = PwdValidationCode.objects.filter(code=pwdcode)
+        if(len(tokens)>0):
+            token = tokens[0]     
+
+            if pwd1 == pwd2 and pwd1 != "":
+                token.owner.set_password(pwd1)
+                token.owner.save()
+                token.delete()
+                c["success"] = True
+
+            else:
+                c["pwd_not_equal"] = True
+
+        template = loader.get_template("profile_validatepwdcode.html")
+        context = RequestContext(request, c)
+        return HttpResponse(template.render(context))
+
+    # if no password are given
+    if 'pwdcode' in request.GET:
+        pwdcode = request.GET["pwdcode"]
+        c["pwdcode"] = pwdcode
+
+        tokens = PwdValidationCode.objects.filter(code=pwdcode)
+        if(len(tokens)>0):
+            token = tokens[0]
+        
+        else:
+            c["notvalid"] = True
+
+    else:
+        c["notvalid"] = True
+        
+        
     template = loader.get_template("profile_validatepwdcode.html")
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))

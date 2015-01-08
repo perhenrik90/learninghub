@@ -27,9 +27,15 @@ Author Per-Henrik Kvalnes, 2014
       </a>
     </nav>
     <section>
+      {% if success %}
+      <p>{% blocktrans %}The password has been change{% endblocktrans %}</p>
+      {% else %}
       {% if notvalid %}
           <p>{% blocktrans %}Your token is invalid. {% endblocktrans %}</p>      
       {% else %}
+	  {% if pwd_not_equal %}
+	  <p style="color:red">{% blocktrans %}Your passwords are not equal. Try again{% endblocktrans %}</p>
+	  {% endif %}
       <form method="POST">
 	{% csrf_token %}
 	<input type="hidden" name="pwdcode" value="{{pwdcode}}"></input>
@@ -47,7 +53,7 @@ Author Per-Henrik Kvalnes, 2014
 	</tr>
       </form>
       {% endif %}
-
+      {% endif %}
     </section>
     <footer>
     </footer>
