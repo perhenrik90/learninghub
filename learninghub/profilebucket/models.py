@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -26,6 +28,10 @@ class UserSkill(models.Model):
     user = models.ForeignKey(User)
 
 class PwdValidationCode(models.Model):
-    code = models.CharField(max_legnth:
-    owner = models.ForeignKey(User)
 
+    def timedelta():
+        return datetime.datetime.now() + datetime.timedelta(hours=2)
+
+    code = models.CharField(max_length=40, unique=True)
+    owner = models.ForeignKey(User)
+    expire = models.DateTimeField(default=timedelta)

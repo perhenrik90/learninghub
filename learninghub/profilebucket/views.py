@@ -1,7 +1,9 @@
 import os
 import re
-from django.shortcuts import render
+import sha
+import datetime
 
+from django.shortcuts import render
 from django.core.context_processors import csrf
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
@@ -18,7 +20,9 @@ from django.contrib.auth.models import User
 from learninghub import settings
 from learningbucket.views import login_view
 from profilebucket.models import UserProfile
+from profilebucket.models import PwdValidationCode
 from learningbucket.models import EProject
+
 #
 # Views for profilebucket
 # All profile related views goes here
@@ -30,7 +34,6 @@ from learningbucket.models import EProject
 # called when user is not logged in 
 def userNotAuthenticated(request):
     return redirect(login_view);
-
 
 
 #
@@ -248,6 +251,10 @@ def profile_projects(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))            
 
+##################################################################
+#     PASSWORD VALIDATION 
+##################################################################
+
 #
 # Request a new password by email
 #
@@ -262,8 +269,17 @@ def profile_lostpwd(request):
         if(re.match(r'\b[\w.-]+@[\w.-]+.\w{2,4}\b', email)):
             c = {'email':email}
             usrs = User.objects.filter(email=email)
+            # if user is found
             if(len(usrs)>0):
                 usr = usrs[0]
+                # generate a validation code 
+                time = datetime.datetime.now()
+                code = time.year+time.day+time.minute
+                code = sha.new(str(code)+email).hexdigest()
+                print(code)
+                m = PwdValidationCode(code=code, owner=usr)
+                m.save()
+
                 send_mail(_("Password reset"),_("Your user requested a password change."),
                           settings.EMAIL, [usr.email])
             
@@ -273,3 +289,15 @@ def profile_lostpwd(request):
     template = loader.get_template("profile_lostpwd.html")
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
+
+def profile_validatePwdCode(request):
+    c = {}
+    if 'pwdcode' not in request.GET:
+        c = {'notvalid':True}
+
+    c["pwdcode"] = request.GET["pwdcode"]
+    
+    template = loader.get_template("profile_validatepwdcode.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))
+

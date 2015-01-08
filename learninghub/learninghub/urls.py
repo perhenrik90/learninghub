@@ -67,6 +67,8 @@ urlpatterns = patterns('',
         name='Profile Projects'),
     url(r'^'+up+'lostpwd$','profilebucket.views.profile_lostpwd',
         name='Lost Password'),
+    url(r'^'+up+'validatepwdcode$','profilebucket.views.profile_validatePwdCode',
+        name='Validate Pwd Code'),
     
     # admin app/module
     url(r'^'+up+'admin/', include(admin.site.urls)),

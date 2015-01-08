@@ -1,0 +1,55 @@
+{% comment %}
+Send a lostpassword link
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load url from future %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% blocktrans %}app-title{% endblocktrans %}</title>
+    <meta charset="UTF-8"></meta>
+    <link rel="stylesheet" type="text/css"
+	  href="{% static 'css/default.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+	  href="{% static 'css/project.css' %}"/>
+    {% block customhead %}
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+    </header>
+    <nav id="topMenu">
+      <a href="{% url 'learningbucket.views.login_view' %}">
+	{% blocktrans %}Back to login{% endblocktrans %}
+      </a>
+    </nav>
+    <section>
+      {% if notvalid %}
+          <p>{% blocktrans %}Your token is invalid. {% endblocktrans %}</p>      
+      {% else %}
+      <form method="POST">
+	{% csrf_token %}
+	<input type="hidden" name="pwdcode" value="{{pwdcode}}"></input>
+	<table>
+	  <tr>
+	<td><input type="password" name="pass1"></input></td>
+	<td><p>{% blocktrans %}Enter a new password{% endblocktrans %}</p></td>
+	</tr>
+	<tr>
+	<td><input type="password" name="pass2"></input></td>
+	<td><p>{% blocktrans %}Enter the password again{% endblocktrans %}</p></td>
+	</tr>
+	  <tr>
+	<td><input type="submit" value="{% blocktrans %}Save{% endblocktrans %}"></input></td>
+	</tr>
+      </form>
+      {% endif %}
+
+    </section>
+    <footer>
+    </footer>
+  </body>
+</html>
