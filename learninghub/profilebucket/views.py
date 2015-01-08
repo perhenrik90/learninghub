@@ -1,7 +1,9 @@
 import os
+import re
 from django.shortcuts import render
 
 from django.core.context_processors import csrf
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
 from django.template import RequestContext, loader, Template, Context
@@ -13,6 +15,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.forms.models import model_to_dict
 from django.contrib.auth.models import User
 
+from learninghub import settings
 from learningbucket.views import login_view
 from profilebucket.models import UserProfile
 from learningbucket.models import EProject
@@ -244,3 +247,29 @@ def profile_projects(request):
     template = loader.get_template("profile_projects.html");
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))            
+
+#
+# Request a new password by email
+#
+def profile_lostpwd(request):
+    c = {}
+    reglist = [r'.*@nlsh.no']
+
+    # if email defined 
+    if 'email' in request.POST and request.method == "POST":
+        email = request.POST["email"]
+        # check if the mail is valid
+        if(re.match(r'\b[\w.-]+@[\w.-]+.\w{2,4}\b', email)):
+            c = {'email':email}
+            usrs = User.objects.filter(email=email)
+            if(len(usrs)>0):
+                usr = usrs[0]
+                send_mail(_("Password reset"),_("Your user requested a password change."),
+                          settings.EMAIL, [email])
+            
+        else:
+            c = {"not_valid_mail":True}
+
+    template = loader.get_template("profile_lostpwd.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))

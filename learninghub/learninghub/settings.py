@@ -108,5 +108,8 @@ MEDIA_ROOT = '../media/'
 # LEARNING HUB settings
 # Spesific settings for learninghub
 
+# email 
+EMAIL = "learninghub@test.com"
+
 # Shall the project be open for all
 OPEN_PROJECTS = True
