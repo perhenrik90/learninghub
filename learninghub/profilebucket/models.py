@@ -24,3 +24,8 @@ class UserProfile(models.Model):
 class UserSkill(models.Model):
     skill = models.CharField(max_length=22)
     user = models.ForeignKey(User)
+
+class PwdValidationCode(models.Model):
+    code = models.CharField(max_legnth:
+    owner = models.ForeignKey(User)
+

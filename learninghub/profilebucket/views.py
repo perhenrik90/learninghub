@@ -265,7 +265,7 @@ def profile_lostpwd(request):
             if(len(usrs)>0):
                 usr = usrs[0]
                 send_mail(_("Password reset"),_("Your user requested a password change."),
-                          settings.EMAIL, [email])
+                          settings.EMAIL, [usr.email])
             
         else:
             c = {"not_valid_mail":True}
