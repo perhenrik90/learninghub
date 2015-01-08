@@ -63,7 +63,7 @@ Author Per-Henrik Kvalnes 2014
 <p>{% blocktrans %}Search for a tag or project title in the box over, or use some of these predefined lookups.{% endblocktrans %}</p>
 <nav>
   <a href="{% url 'searchbucket.views.topTags' %}"/>
-  <input value="{% blocktrans %}Most used tags{% endblocktrans %}" type="button"></input></a>
+  <button>{% blocktrans %}Most used tags{% endblocktrans %}</button></a>
 </nav>
 {% endif %}
 {% endblock %}

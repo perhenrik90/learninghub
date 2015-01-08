@@ -29,14 +29,14 @@ Template for user profile.
 <nav>
 {% if is_owner %}
 <a href="{% url 'profilebucket.views.profile_update' %}">
-<input type="button" value="{% blocktrans %}Edit profile{% endblocktrans %}"/></a>
+<button type="button">{% blocktrans %}Edit profile{% endblocktrans %}</button></a>
 {% endif %}
 
 <a href="{% url 'profilebucket.views.profile' %}?id={{user_auth.id}}">
-<input type="button" value="{% blocktrans %}Information{% endblocktrans %}"/></a>
+<button type="button">{% blocktrans %}Information{% endblocktrans %}</button></a>
 
 <a href="{% url 'profilebucket.views.profile_projects' %}?id={{user_auth.id}}">
-<input type="button" value="{% blocktrans %}Projects{% endblocktrans %}"/>
+<button type="button">{% blocktrans %}Projects{% endblocktrans %}</button>
 </a>
 </nav>
 
