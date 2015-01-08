@@ -17,8 +17,8 @@ Author Per-Henrik Kvalnes, 2014
 <hr/>
 <form method="POST">
   {% csrf_token %}
-  <input value="delete" name="operation" hidden="true"/>
-  <input value="{{project_id}}" name="project" hidden="true"/>
+  <input value="delete" name="operation" hidden="true" type="hidden"/>
+  <input value="{{project_id}}" name="project" hidden="true" type="hidden"/>
   {% if participants %}
   <p>{% blocktrans %}People participating to the project: {% endblocktrans %}{{project.name}}</p>
   {% for participant in participants %}
@@ -35,7 +35,7 @@ Author Per-Henrik Kvalnes, 2014
 
 <form method="GET">
   <p>{% blocktrans %}Search to add new participants{% endblocktrans %}</p>
-  <input value="{{project_id}}" name="project" hidden="true"/>
+  <input value="{{project_id}}" name="project" hidden="true" type="hidden"/>
   <input name="searchstring"></input>
   <input type="submit" 
 	 value="{% blocktrans %}Search{% endblocktrans %}"></input>
@@ -44,8 +44,8 @@ Author Per-Henrik Kvalnes, 2014
 <form method="POST">
   {% csrf_token %}
   {% if usermatches %}
-  <input value="{{project_id}}" name="project" hidden="true"/>
-  <input value="add" name="operation" hidden="true"/>
+  <input value="{{project_id}}" name="project" hidden="true" type="hidden"/>
+  <input value="add" name="operation" hidden="true" type="hidden"/>
   {% for usr in usermatches %}
 
   <input type="checkbox" name="userid" value="{{usr.id}}">
