@@ -108,6 +108,8 @@ MEDIA_ROOT = '../media/'
 # LEARNING HUB settings
 # Spesific settings for learninghub
 
+SITE_URL = "http://172.0.0.1:8000"
+
 # email 
 EMAIL = "learninghub@test.com"
 

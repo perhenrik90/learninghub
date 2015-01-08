@@ -14,6 +14,7 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from django.utils import translation
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.sites.models import get_current_site
 from django.forms.models import model_to_dict
 from django.contrib.auth.models import User
 
@@ -279,8 +280,14 @@ def profile_lostpwd(request):
                 print(code)
                 m = PwdValidationCode(code=code, owner=usr)
                 m.save()
-
-                send_mail(_("Password reset"),_("Your user requested a password change."),
+                
+                # generate email
+                request = None
+                full_url = settings.SITE_URL+'/validatepwdcode?pwdcode='+code
+                
+                message = _("You have requested a new password: ")+ full_url
+                print(message)
+                send_mail(_("Password reset"),message,
                           settings.EMAIL, [usr.email])
             
         else:
@@ -290,6 +297,10 @@ def profile_lostpwd(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
+
+#
+# Validate pwd code
+#
 def profile_validatePwdCode(request):
     c = {}
 
