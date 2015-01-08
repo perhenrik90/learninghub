@@ -13,9 +13,12 @@ Author Per-Henrik Kvalnes, 2014
 {% block content %}
 <nav>
       <a href={% url 'learningbucket.views.createproject' %}>
-	<input value="{% trans "Create project" %}" type="button"/></a> 
+	<button type="button">
+	  {% trans "Create project" %}
+      </button></a> 
       <a href={% url 'learningbucket.views.projects_following' %}>
-	<input value="{% trans "Projects following" %}" type="button"/></a> 
+	<button  type="button">
+      {% trans "Projects following" %}</button></a> 
 </nav>
 <h1>{% blocktrans %}My projects{% endblocktrans %}</h1>
 {% if bigdata %}

@@ -38,11 +38,15 @@ Author Per-Henrik Kvalnes, 2014
 {% if is_owner %}
 <nav>
   <a href="{% url 'learningbucket.views.editproject' %}?id={{project.id}}">
-  <input type="button" value="{% blocktrans %}Edit{% endblocktrans %}"/></a>
+  <button type="button" value="{% blocktrans %}Edit{% endblocktrans %}">
+  {% blocktrans %}Edit{% endblocktrans %}</button></a>
   <a href="{% url 'learningbucket.views.project_participants' %}?project={{project.id}}">
-    <input type="button" value="{% blocktrans %}Edit participants{% endblocktrans %}" /></a>
+    <button type="button" value="{% blocktrans %}Edit participants{% endblocktrans %}">
+  {% blocktrans %}Edit participants{% endblocktrans %}</button></a>
   <a href="{% url 'learningbucket.views.project_delete' %}?project={{project.id}}">
-    <input type="button" value="{% blocktrans %}Delete project{% endblocktrans %}" /></a>
+    <button type="button" value="{% blocktrans %}Delete project{% endblocktrans %}">
+      {% blocktrans %}Delete project{% endblocktrans %}
+  </button></a>
 </nav>
 <hr/>
 {% else %}
