@@ -17,7 +17,7 @@
 {
     position:relative;
     width:80%;
-    border:2px solid rgb(0,50,131);
+    border:2px solid #003283;
     margin-left:auto;
     margin-right:auto;
     margin-bottom:20px;
@@ -30,7 +30,7 @@
     font-size:22px;
     margin-top:0px;
     width:100%;
-    background-color:rgb(0,50,131);
+    background-color:#003283;
     color:#FFF;
 }
 .subsection p
@@ -56,7 +56,7 @@
     margin:0px;
     margin-left:4px;
     width:30px;
-    background-color:rgba(107,155,78,1);
+    background-color:#6B9B4E;
 }
 
 /** style upper right menu in sub sectoins **/
@@ -99,6 +99,7 @@
     height:160px;
     display:inline;
     display:inline-block;
+    float:left;
     tekst-align:center;
     padding:0px;
 }
@@ -111,9 +112,10 @@
     right:2px;
     margin:0px;
 
-    color:#FFF;
-    background-color:#003283;
-    background-color:rgba(0,50,131,0.8);
+    color:#000;
+    background-color:#FFF;
+    background-color:rgba(255,255,255,0.8);
+    border:1px solid #003283;
     font-size:20px;
     padding:5px;
 }
