@@ -121,20 +121,23 @@ input[type=checkbox]
 {
     width:24px;
 }
-button
+.menu a
 {
     background-color:#6B9B4E;
     border:2px rgba(100,143,74,1);
     width:auto;
     color:#FFF;
+    text-decoration:none;
     margin:4px;
+    padding:5px;
     font-size:18px;
     box-shadow:1px 1px 5px #999;
 }
-button:hover
+.meun a:hover
 {
     background-color:rgba(97,145,68,1);	
 }
+
 textarea
 {
     border:2px solid rgb(0,50,131);

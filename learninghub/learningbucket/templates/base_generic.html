@@ -13,7 +13,6 @@ Author Per-Henrik Kvalnes, 2014
 <html>
   <head>
     <title>{% blocktrans %}app-title{% endblocktrans %}</title>
-    <sciprt src="{' static 'js/lib/jquery-1.11.2.min.js"></script>
     <meta charset="UTF-8"></meta>
     <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -52,13 +51,5 @@ Author Per-Henrik Kvalnes, 2014
     <footer>
       
     </footer>
-
-    <!-- old ie button fix -->
-    <script>
-      $("a > button").live('click', function() {
-      location.href = $(this).closest("a").attr("href");
-      }); // fixed
-    </script>
-
   </body>
 </html>

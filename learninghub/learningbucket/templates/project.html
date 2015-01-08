@@ -36,17 +36,13 @@ Author Per-Henrik Kvalnes, 2014
 
 
 {% if is_owner %}
-<nav>
+<nav class="menu">
   <a href="{% url 'learningbucket.views.editproject' %}?id={{project.id}}">
-  <button type="button" value="{% blocktrans %}Edit{% endblocktrans %}">
-  {% blocktrans %}Edit{% endblocktrans %}</button></a>
+  {% blocktrans %}Edit{% endblocktrans %}</a>
   <a href="{% url 'learningbucket.views.project_participants' %}?project={{project.id}}">
-    <button type="button" value="{% blocktrans %}Edit participants{% endblocktrans %}">
-  {% blocktrans %}Edit participants{% endblocktrans %}</button></a>
+  {% blocktrans %}Edit participants{% endblocktrans %}</a>
   <a href="{% url 'learningbucket.views.project_delete' %}?project={{project.id}}">
-    <button type="button" value="{% blocktrans %}Delete project{% endblocktrans %}">
-      {% blocktrans %}Delete project{% endblocktrans %}
-  </button></a>
+      {% blocktrans %}Delete project{% endblocktrans %}</a>
 </nav>
 <hr/>
 {% else %}

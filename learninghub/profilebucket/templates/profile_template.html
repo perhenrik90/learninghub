@@ -26,17 +26,17 @@ Template for user profile.
   <p>{{user_auth.first_name}} {{user_auth.last_name}}</p>
   <hr/>
 </div>
-<nav>
+<nav class="menu">
 {% if is_owner %}
 <a href="{% url 'profilebucket.views.profile_update' %}">
-<button type="button">{% blocktrans %}Edit profile{% endblocktrans %}</button></a>
+{% blocktrans %}Edit profile{% endblocktrans %}</a>
 {% endif %}
 
 <a href="{% url 'profilebucket.views.profile' %}?id={{user_auth.id}}">
-<button type="button">{% blocktrans %}Information{% endblocktrans %}</button></a>
+{% blocktrans %}Information{% endblocktrans %}</a>
 
 <a href="{% url 'profilebucket.views.profile_projects' %}?id={{user_auth.id}}">
-<button type="button">{% blocktrans %}Projects{% endblocktrans %}</button>
+{% blocktrans %}Projects{% endblocktrans %}
 </a>
 </nav>
 
