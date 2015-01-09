@@ -282,16 +282,14 @@ def profile_lostpwd(request):
                 m.save()
                 
                 # generate email
-                request = None
                 full_url = settings.SITE_URL+'/validatepwdcode?pwdcode='+code
                 
                 message = _("You have requested a new password: ")+ full_url
                 print(message)
-                send_mail(_("Password reset"),message,
-                          settings.EMAIL, [usr.email])
+                send_mail(_("Password reset"),message, settings.EMAIL, [usr.email])
             
-        else:
-            c = {"not_valid_mail":True}
+    else:
+        c = {"not_valid_mail":True}
 
     template = loader.get_template("profile_lostpwd.html")
     context = RequestContext(request, c)
