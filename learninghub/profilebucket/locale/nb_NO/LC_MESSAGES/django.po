@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 12:44+0100\n"
+"POT-Creation-Date: 2015-01-10 14:28+0100\n"
 "PO-Revision-Date: 2015-01-02 12:49+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: views.py:36
+#: views.py:43
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#: views.py:77 views.py:224
+#: views.py:84 views.py:231
 msgid "Can not show profile with an empty id"
 msgstr "Profil uten id kan ikke vises"
 
-#: views.py:84
+#: views.py:91
 msgid "This is not a valid user profile"
 msgstr "Dette er ikke en bruker profil"
 
-#: views.py:163
+#: views.py:170
 msgid "No file was given."
 msgstr "Ingen bilde ble lastet opp."
 
-#: templates/base_generic.html:14
+#: views.py:287
+#, fuzzy
+msgid "You have requested a new password: "
+msgstr "Tast inn et nytt passord"
+
+#: views.py:289
+msgid "Password reset"
+msgstr ""
+
+#: templates/base_generic.html:14 templates/profile_lostpwd.html:12
+#: templates/profile_validatepwdcode.html:12
 msgid "app-title"
 msgstr "Lærebøtte"
 
@@ -63,6 +73,7 @@ msgid "Your password has been changed!"
 msgstr "Ditt passord har blitt endret"
 
 #: templates/profile_change_password.html:32
+#: templates/profile_validatepwdcode.html:45
 msgid "Enter a new password"
 msgstr "Tast inn et nytt passord"
 
@@ -71,8 +82,33 @@ msgid "Enter the new password again "
 msgstr "Tast inn ditt nye passord en gang til"
 
 #: templates/profile_change_password.html:40 templates/profile_update.html:36
+#: templates/profile_validatepwdcode.html:52
 msgid "Save"
 msgstr "Lagre"
+
+#: templates/profile_lostpwd.html:26 templates/profile_validatepwdcode.html:26
+msgid "Back to login"
+msgstr "Tilbake til login"
+
+#: templates/profile_lostpwd.html:32
+msgid "An email was sent if it exists in the system"
+msgstr "En epost ble sent hvis brukeren eksiterer i systemet"
+
+#: templates/profile_lostpwd.html:34
+msgid "Enter your email and press the button"
+msgstr "Skriv inn din epost og trykk på knappen"
+
+#: templates/profile_lostpwd.html:36
+msgid "You must enter a valid email"
+msgstr "Du må skrive inn en epostadresse"
+
+#: templates/profile_lostpwd.html:40 templates/profile_update.html:29
+msgid "Email"
+msgstr "Epost"
+
+#: templates/profile_lostpwd.html:41
+msgid "Send a new password"
+msgstr "Send et nytt passord"
 
 #: templates/profile_menu.html:16
 msgid "View your profile"
@@ -114,10 +150,6 @@ msgstr "Fornavn"
 msgid "Last name"
 msgstr "Etternavn"
 
-#: templates/profile_update.html:29
-msgid "Email"
-msgstr "Epost"
-
 # Biografi
 #: templates/profile_update.html:33
 msgid "Biography"
@@ -126,3 +158,20 @@ msgstr "Biografi"
 #: templates/profile_upload_img.html:6
 msgid "Upload a profile image."
 msgstr "Last opp et profilbilde"
+
+#: templates/profile_validatepwdcode.html:31
+msgid "Your password has been changed"
+msgstr "Ditt passord har blitt endret"
+
+#: templates/profile_validatepwdcode.html:34
+msgid "Your token is invalid. "
+msgstr "Din nøkkel er ikke gyldig."
+
+#: templates/profile_validatepwdcode.html:37
+msgid "Your passwords are not equal. Try again"
+msgstr "Passordene må være like. Prøv igjen."
+
+#: templates/profile_validatepwdcode.html:49
+#, fuzzy
+msgid "Enter the password again"
+msgstr "Tast inn ditt nye passord en gang til"
