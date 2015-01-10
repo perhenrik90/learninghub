@@ -46,9 +46,13 @@ def login_view(request):
 
         usr = authenticate(username=us, password=pa)
         if(usr is not None):
-            login(request, usr)
-            return redirect(myprojects)
-            
+            # check if the user is activated
+            if(usr.is_active):
+                login(request, usr)
+                return redirect(myprojects)
+            else:
+                error_view(request, _("Your user is suspended."))
+
         # mark that the user has tried to login
         c["not_authenticated"] = 1
         
