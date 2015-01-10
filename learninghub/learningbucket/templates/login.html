@@ -54,6 +54,11 @@ Author Per-Henrik Kvalnes, 2014
 		      value="{% blocktrans %}Login{% endblocktrans%}">
 	   </input></td>
 	 </tr>
+	 <tr>
+	   <td><a class="comment" href="{% url 'profilebucket.views.profile_lostpwd' %}">
+	       {% blocktrans %}Lost your password?{% endblocktrans %}
+	   </a></td>
+	 </tr>
     </form>
   </section>
   <footer>
