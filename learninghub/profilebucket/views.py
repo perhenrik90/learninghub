@@ -288,8 +288,8 @@ def profile_lostpwd(request):
                 print(message)
                 send_mail(_("Password reset"),message, settings.EMAIL, [usr.email])
             
-    else:
-        c = {"not_valid_mail":True}
+        else:
+            c = {"not_valid_mail":True}
 
     template = loader.get_template("profile_lostpwd.html")
     context = RequestContext(request, c)

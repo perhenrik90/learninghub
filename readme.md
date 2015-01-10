@@ -52,7 +52,7 @@ Tested on Linux OpenSUSE, OpenSUSE on raspberry pi,Linux Mint, and Cent OS.
 5) python manage.py runserver
 
 user administration is done by django default admin site. 
-<your-size>/admin
+<your-site>/admin
 
 
 Contributors
