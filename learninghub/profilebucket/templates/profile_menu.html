@@ -14,15 +14,15 @@ Menu for the profile.
 <nav class="menu">
   <a href="{% url 'profilebucket.views.profile' %}?id={{user.id}}">
     {% blocktrans %}View your profile{% endblocktrans %}
-  </a> </br>
+  </a>
     
   <a href="{% url 'profilebucket.views.profile_change_password' %}">
     {% blocktrans %}Change password{% endblocktrans %}
-  </a></br>
+  </a>
   
   <a href="{% url 'profilebucket.views.profile_update' %}">
     {% blocktrans %}Edit profile{% endblocktrans %}
-  </a><br/>
+  </a>
   <a href="{% url 'profilebucket.views.project_uploadimage' %}">
     {% blocktrans %}Upload profile image{% endblocktrans %}
   </a>
