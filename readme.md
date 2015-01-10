@@ -3,6 +3,9 @@ Learning Hub
 
 Simple tool for sharing e-learning resources and files. 
 Still in early developmentstage.
+The project is written in awsome the Python Django
+framework (https://www.djangoproject.com/).
+
 
 
 Functional requirments
