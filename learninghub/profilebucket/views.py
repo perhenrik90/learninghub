@@ -313,8 +313,9 @@ def profile_validatePwdCode(request):
 
             if pwd1 == pwd2 and pwd1 != "":
                 token.owner.set_password(pwd1)
-                usr = User.objects.get(token.owner.id)
+                usr = User.objects.get(id=token.owner.id)
                 usr.set_password(pwd1)
+                usr.save()
                 token.delete()
                 c["success"] = True
 
