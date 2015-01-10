@@ -36,6 +36,7 @@ Setup
 - Python3 (runs on 2.7 ) 
 - Python-django 
 - Sqlite (for now) / mysql
+- sendmail
 
 Tested on Linux OpenSUSE, OpenSUSE on raspberry pi,Linux Mint, and Cent OS.
 
