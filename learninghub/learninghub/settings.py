@@ -113,5 +113,7 @@ SITE_URL = "http://127.0.0.1:8000"
 # email 
 EMAIL = "learninghub@test.com"
 
+EMAIL_DOMAINS = [r'.*@gmail.com', r'.*@test.com']
+
 # Shall the project be open for all
 OPEN_PROJECTS = True
