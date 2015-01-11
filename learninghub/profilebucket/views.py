@@ -283,7 +283,7 @@ def profile_lostpwd(request):
                 m.save()
                 
                 # generate email
-                full_url = settings.SITE_URL+'/validatepwdcode?pwdcode='+code
+                full_url = settings.SITE_URL+reverse(profile_validatePwdCode)+'?pwdcode='+code
                 
                 message = _("You have requested a new password: ")+ full_url
                 print(message)
@@ -387,7 +387,7 @@ def profile_createusr(request):
             code.save()
             message = _("You have created a new user.\n")
             message += _("Confirm with the url following url.\n\n")
-            message += settings.SITE_URL + '/validate?code='+code.code
+            message += settings.SITE_URL + reverse(profile_validateusr)+'?code='+code.code
             print(message)
             c["usr"] = usr
             c["success"] = True
@@ -403,6 +403,14 @@ def profile_validateusr(request):
     c = {}
     if 'code' in request.GET:
         c = {'success':True}
+        try:
+            code = UsrValidationCode.objects.get(code=request.GET["code"])
+            code.owner.is_active = True
+            code.owner.save()
+            code.delete()
+
+        except:
+            error_view(request, _("This code is not valid"))
 
     template = loader.get_template("profile_validateusr.html")
     context = RequestContext(request, c)
