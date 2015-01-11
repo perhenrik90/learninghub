@@ -346,3 +346,14 @@ def profile_validatePwdCode(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
+#
+# Create a new uesr (if allowed)
+#
+
+def profile_createusr(request):
+
+    c = {}
+    
+    template = loader.get_template("profile_createusr.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))    

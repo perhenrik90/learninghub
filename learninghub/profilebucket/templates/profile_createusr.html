@@ -1,0 +1,56 @@
+{% comment %}
+Send a lostpassword link
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load url from future %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% blocktrans %}app-title{% endblocktrans %}</title>
+    <meta charset="UTF-8"></meta>
+    <link rel="stylesheet" type="text/css"
+	  href="{% static 'css/default.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+	  href="{% static 'css/project.css' %}"/>
+    {% block customhead %}
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+    </header>
+    <nav id="topMenu">
+      <a href="{% url 'learningbucket.views.login_view' %}">
+	{% blocktrans %}Back to login{% endblocktrans %}
+      </a>
+    </nav>
+    <section>
+      <h1>{% blocktrans %}Create a new user{% endblocktrans %}</h1>
+      <form>
+	<table>
+	  <tr>
+	    <td><input name="first_name"/></td>
+	    <td><p>{% blocktrans %}First name{% endblocktrans %}</p></td>
+	  </tr>
+	  <tr>
+	    <td><input name="last_name"/></td>
+	    <td><p>{% blocktrans %}Last name{% endblocktrans %}</p></td>
+	  </tr>
+	  <tr>
+	    <td><input name="email"/></td>
+	    <td><p>Email</p></td>
+	  </tr>
+	  <tr>
+	    <td><input type="submit" 
+		       value="{% blocktrans %}Create user{% endblocktrans %}"/></td>
+	  </tr>
+	</table>
+      </form>
+    </section>
+    <footer>
+      
+    </footer>
+  </body>
+</html>
