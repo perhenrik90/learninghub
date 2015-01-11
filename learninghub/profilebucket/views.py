@@ -409,8 +409,8 @@ def profile_validateusr(request):
             code.owner.save()
             code.delete()
 
-        except:
-            error_view(request, _("This code is not valid"))
+        except Exception:
+            return error_view(request, _("This code is not valid"))
 
     template = loader.get_template("profile_validateusr.html")
     context = RequestContext(request, c)
