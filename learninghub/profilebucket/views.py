@@ -354,6 +354,22 @@ def profile_createusr(request):
 
     c = {}
     
+    # if the user try to create 
+    if request.method == "POST":
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
+        email = request.POST["email"]        
+        pwd1 = request.POST["pwd1"]
+        pwd2 = request.POST["pwd2"]
+
+        # check if ther is a real name
+        if not first_name.strip() or not last_name.strip():
+            c["not_valid"] = _("You must enter a valid name")
+
+        # check if passwords are equal 
+        if pwd1.strip() and pwd1 == pwd2:
+            c["not_valid"] = _("The passwords are not equal")
+
     template = loader.get_template("profile_createusr.html")
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))    

@@ -27,9 +27,14 @@ Author Per-Henrik Kvalnes, 2014
       </a>
     </nav>
     <section>
+
       <h1>{% blocktrans %}Create a new user{% endblocktrans %}</h1>
-      <form>
-	<table>
+      {% if not_valid %}
+      <p style="color:red;">{{not_valid}}</p>
+      {% endif %}
+      <form method="POST">
+	{% csrf_token %}
+	<table style="margin-left:auto; margin-right:auto;">
 	  <tr>
 	    <td><input name="first_name"/></td>
 	    <td><p>{% blocktrans %}First name{% endblocktrans %}</p></td>
@@ -40,7 +45,15 @@ Author Per-Henrik Kvalnes, 2014
 	  </tr>
 	  <tr>
 	    <td><input name="email"/></td>
-	    <td><p>Email</p></td>
+	    <td><p>{% blocktrans %}Email{% endblocktrans %}</p></td>
+	  </tr>
+	  <tr>
+	    <td><input name="pwd1" type="password"/></td>
+	    <td><p>{% blocktrans %}Password{% endblocktrans %}</p></td>
+	  </tr>
+	  <tr>
+	    <td><input name="pwd2" type="password"/></td>
+	    <td><p>{% blocktrans %}Retype password{% endblocktrans %}</p></td>
 	  </tr>
 	  <tr>
 	    <td><input type="submit" 
