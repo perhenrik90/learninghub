@@ -1,4 +1,5 @@
 import datetime
+import sha
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -27,11 +28,29 @@ class UserSkill(models.Model):
     skill = models.CharField(max_length=22)
     user = models.ForeignKey(User)
 
+#
+# Lost password validation code
+#
 class PwdValidationCode(models.Model):
 
     def timedelta():
         return datetime.datetime.now() + datetime.timedelta(hours=2)
 
     code = models.CharField(max_length=40, unique=True)
+    owner = models.ForeignKey(User)
+    expire = models.DateTimeField(default=timedelta)
+
+class UsrValidationCode(models.Model):
+
+    def timedelta():
+        return datetime.datetime.now() + datetime.timedelta(hours=2)
+
+    def usrcode():
+        time = datetime.datetime.now()
+        code = time.year+time.day+time.minute+time.second
+        code = sha.new(str(code)).hexdigest()
+        return code
+
+    code = models.CharField(max_length=40, unique=True, default=usrcode)
     owner = models.ForeignKey(User)
     expire = models.DateTimeField(default=timedelta)

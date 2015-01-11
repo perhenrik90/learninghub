@@ -22,6 +22,7 @@ from learninghub import settings
 from learningbucket.views import login_view
 from profilebucket.models import UserProfile
 from profilebucket.models import PwdValidationCode
+from profilebucket.models import UsrValidationCode
 from learningbucket.models import EProject
 
 #
@@ -373,8 +374,22 @@ def profile_createusr(request):
         if pwd1.strip() and pwd1 != pwd2:
             c["not_valid"] = _("The passwords are not equal")
 
-        # if there are no errors
+        # if there are no errors, create a user
         if not 'not_valid' in c:
+            usr = User(username=email,
+                       first_name=first_name,
+                       last_name=last_name,
+                       email=email,
+                       is_active=False)
+            usr.set_password(pwd1)
+            usr.save()
+            code = UsrValidationCode(owner=usr)
+            code.save()
+            message = _("You have created a new user.\n")
+            message += _("Confirm with the url following url.\n\n")
+            message += settings.SITE_URL + '/validate?code='+code.code
+            print(message)
+            c["usr"] = usr
             c["success"] = True
 
     template = loader.get_template("profile_createusr.html")
