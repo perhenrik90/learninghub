@@ -28,6 +28,11 @@ Author Per-Henrik Kvalnes, 2014
     </nav>
     <section>
 
+      {% if success %}
+      <h1>{% blocktrans %}You have successfully created an user{% endblocktrans %}</h1>
+      <p>{% blocktrans %}An email has been sent to {{usr.email}}. Please check your email 
+	and confirm your user acount. You wil not be able to login before this is done.{% endblocktrans %}</p>
+      {% else %}
       <h1>{% blocktrans %}Create a new user{% endblocktrans %}</h1>
       {% if not_valid %}
       <p style="color:red;">{{not_valid}}</p>
@@ -61,6 +66,7 @@ Author Per-Henrik Kvalnes, 2014
 	  </tr>
 	</table>
       </form>
+      {% endif %}
     </section>
     <footer>
       

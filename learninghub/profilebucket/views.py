@@ -366,9 +366,16 @@ def profile_createusr(request):
         if not first_name.strip() or not last_name.strip():
             c["not_valid"] = _("You must enter a valid name")
 
+        if not re.match(r'\b[\w.-]+@[\w.-]+.\w{2,4}\b', email):
+            c["not_valid"] = _("You must enter a valid email")
+
         # check if passwords are equal 
         if pwd1.strip() and pwd1 != pwd2:
             c["not_valid"] = _("The passwords are not equal")
+
+        # if there are no errors
+        if not 'not_valid' in c:
+            c["success"] = True
 
     template = loader.get_template("profile_createusr.html")
     context = RequestContext(request, c)
