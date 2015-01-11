@@ -347,9 +347,9 @@ def profile_validatePwdCode(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
-#
+###################################
 # Create a new uesr (if allowed)
-#
+###################################
 
 def profile_createusr(request):
 
@@ -395,3 +395,15 @@ def profile_createusr(request):
     template = loader.get_template("profile_createusr.html")
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))    
+
+#
+# Set an user to is_active based on a validation url 
+#
+def profile_validateusr(request):
+    c = {}
+    if 'code' in request.GET:
+        c = {'success':True}
+
+    template = loader.get_template("profile_validateusr.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))        

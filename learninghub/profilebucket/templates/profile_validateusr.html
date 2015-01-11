@@ -1,0 +1,38 @@
+{% comment %}
+Send a lostpassword link
+Author Per-Henrik Kvalnes, 2014
+{% endcomment %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load url from future %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% blocktrans %}app-title{% endblocktrans %}</title>
+    <meta charset="UTF-8"></meta>
+    <link rel="stylesheet" type="text/css"
+	  href="{% static 'css/default.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+	  href="{% static 'css/project.css' %}"/>
+    {% block customhead %}
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+    </header>
+    <nav id="topMenu">
+      <a href="{% url 'learningbucket.views.login_view' %}">
+	{% blocktrans %}Back to login{% endblocktrans %}
+      </a>
+    </nav>
+    <section>
+      {% if success %}
+      <h1>{% blocktrans %}Your user is now active{% endblocktrans %}</h1>
+      {% else %}
+      {% endif %}
+    </section>
+    <footer>
+    </footer>
+  </body>
+</html>
