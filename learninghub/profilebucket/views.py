@@ -367,7 +367,7 @@ def profile_createusr(request):
             c["not_valid"] = _("You must enter a valid name")
 
         # check if passwords are equal 
-        if pwd1.strip() and pwd1 == pwd2:
+        if pwd1.strip() and pwd1 != pwd2:
             c["not_valid"] = _("The passwords are not equal")
 
     template = loader.get_template("profile_createusr.html")
