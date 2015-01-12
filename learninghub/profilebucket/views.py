@@ -287,7 +287,7 @@ def profile_lostpwd(request):
                 
                 message = _("You have requested a new password: ")+ full_url
                 print(message)
-                send_mail(_("Password reset"),message, settings.EMAIL, [usr.email])
+                send_mail(_("Password reset"),message, settings.HOST_EMAIL, [usr.email])
             
         else:
             c = {"not_valid_mail":True}
@@ -388,6 +388,7 @@ def profile_createusr(request):
             message = _("You have created a new user.\n")
             message += _("Confirm with the url following url.\n\n")
             message += settings.SITE_URL + reverse(profile_validateusr)+'?code='+code.code
+            send_mail(_("Activate your user."), message, settings.HOST_EMAIL,[email])
             print(message)
             c["usr"] = usr
             c["success"] = True
@@ -408,7 +409,6 @@ def profile_validateusr(request):
             code.owner.is_active = True
             code.owner.save()
             code.delete()
-
         except Exception:
             return error_view(request, _("This code is not valid"))
 
