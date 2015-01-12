@@ -113,6 +113,7 @@ SITE_URL = "http://127.0.0.1:8000"
 # email 
 EMAIL = "learninghub@test.com"
 
+USER_SELF_REGESTRING = True
 EMAIL_DOMAINS = [r'.*@gmail.com', r'.*@test.com']
 
 # Shall the project be open for all
