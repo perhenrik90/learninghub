@@ -29,7 +29,7 @@ Functional requirments
 * [ ] - self registrating restricted to domains
 * [ ] - share a project by email (internly)
 * [ ] - add skills for users
-* [ ] - lost password function 
+* [x] - lost password function 
 
 
 Setup
