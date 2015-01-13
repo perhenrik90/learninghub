@@ -447,7 +447,7 @@ def createproject(request):
         eproject.save()
 
         template = loader.get_template("createdproject.html")
-        context = Context({"pname":pname})
+        context = Context({"pname":pname, "project":eproject})
         context.update(csrf(request))
         return HttpResponse(template.render(context))
 
