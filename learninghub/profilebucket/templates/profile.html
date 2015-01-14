@@ -10,23 +10,27 @@ Display a user profile main entries.
 {% load url from future %}
 
 {% block profile_content %}
-<table>
+<table id="profile_info">
   <tr>
+    <td>{% blocktrans %}Email{% endblocktrans %}</td>
     <td>{{user_auth.email}}</td>
   </tr>
   <tr>
+    <td>{% blocktrans %}Biography{% endblocktrans %}</td>
     <td>{{user_profile.bio}}</td>
   </tr>
 </table>
 
 {% if skills %}
-<hr/>
+
 <h1>{% blocktrans %}Skills{% endblocktrans %}</h1>
 <div class="skillSet">
 {% for skill in skills %}
 <span class="skill">
   {{skill.skill}}
-  <button>X</button>
+  {% if is_owner %}
+  <button class="deleteButton">X</button>
+  {% endif %}
 </span>
 {% endfor %}
 </div>
