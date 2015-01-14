@@ -18,4 +18,25 @@ Display a user profile main entries.
     <td>{{user_profile.bio}}</td>
   </tr>
 </table>
+
+{% if skills %}
+<hr/>
+<h1>{% blocktrans %}Skills{% endblocktrans %}</h1>
+<div class="skillSet">
+{% for skill in skills %}
+<span class="skill">
+  {{skill.skill}}
+  <button>X</button>
+</span>
+{% endfor %}
+</div>
+{% endif %}
+
+{% if is_owner %}
+<form action="{% url 'profilebucket.views.profile_add_skill' %}" method="POST">
+{% csrf_token %}
+<input name="skill"/>
+<input type="submit" value="{% blocktrans %}Add skill{% endblocktrans %}"/>
+</form>
+{% endif %}
 {% endblock %}

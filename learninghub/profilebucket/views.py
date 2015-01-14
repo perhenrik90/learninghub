@@ -21,6 +21,7 @@ from django.contrib.auth.models import User
 from learninghub import settings
 from learningbucket.views import login_view
 from profilebucket.models import UserProfile
+from profilebucket.models import UserSkill
 from profilebucket.models import PwdValidationCode
 from profilebucket.models import UsrValidationCode
 from learningbucket.models import EProject
@@ -91,9 +92,15 @@ def profile(request):
     if not viewuser:
         return error_view(request, _("This is not a valid user profile"))
 
+    # set is owner 
     if(viewuser == request.user):
         c["is_owner"] = True
 
+    # get skills
+    skills = UserSkill.objects.filter(user=user)
+    if(len(skills)>0):
+        c["skills"] = skills
+        
     user_profile = UserProfile.objects.all().filter(user_ref=viewuser)
     if(len(user_profile)>0): user_profile = user_profile[0]
 
@@ -153,6 +160,30 @@ def profile_update(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))        
 
+#
+# Add a skill to a user
+#
+def profile_add_skill(request):
+    # if user is not authenticated!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+    # if the method is not post 
+    if not request.method == "POST" and not 'skill' in request.POST:
+        error_view(request, _("No skill given"))
+
+    c = {}
+    skill = request.POST["skill"]
+    usr = request.user
+    
+    s = UserSkill(skill=skill, user=usr)
+    s.save()
+    return redirect(reverse(profile)+'?id='+str(usr.id))
+
+    template = loader.get_template("profile.html");
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))
 
 def project_uploadimage(request):
 
