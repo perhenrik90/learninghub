@@ -24,7 +24,7 @@ Functional requirments
 * [x] - user profile
 * [x] - user profile image
 * [ ] - following other users
-* [ ] - wall / table of activities
+* [x] - wall / table of activities
 * [x] - follow projects
 * [ ] - self registrating restricted to domains
 * [ ] - share a project by email (internly)
