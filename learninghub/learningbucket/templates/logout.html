@@ -12,7 +12,9 @@ Author Per-Henrik Kvalnes, 2014
 {% block content %}
 <h1>{% blocktrans %}You are out!{% endblocktrans %}</h1>
 <p>{% blocktrans %}Welcome back {% endblocktrans %} {{name}}</p>
-
+<a href={% url 'learningbucket.views.login_view' %}>
+<button class="button">{% blocktrans %}Back to login{% endblocktrans %}</button>
+</a>
 
 </div>
 {% endblock %}
