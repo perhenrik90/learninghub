@@ -16,6 +16,10 @@ Author Per-Henrik Kvalnes 2014
 
 {% block content %}
 {% if skills %}
+<h1>{% blocktrans %}People with the skill: {% endblocktrans %}{{skill}}</h1>
+{% for s in skills %}
+<p>{{s.skill}}  {{s.user.first_name}} {{s.user.last_name}}</p>
+{% endfor %}
 {% else %}
 <p>{% blocktrans %}No user was found with skill:{% endblocktrans %} {{skill.skill}}</p>
 {% endif %}
