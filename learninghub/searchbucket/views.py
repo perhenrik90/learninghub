@@ -19,6 +19,20 @@ import learningbucket.models as models
 # @author Per-Henrik Kvalnes 2014
 #
 
+
+#
+# Display an error to the user
+#
+def error_view(request, message=_("Unknown error")):
+    user = request.user
+    if user.is_authenticated():
+        template = loader.get_template('private_error.html')
+        context = RequestContext(request, {'message':message})
+        return HttpResponse(template.render(context))
+ 
+    return "Not yet implemented."
+
+
 #
 # search based on tag names
 #
