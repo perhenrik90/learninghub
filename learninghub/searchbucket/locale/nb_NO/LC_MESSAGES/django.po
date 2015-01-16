@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-05 20:12+0100\n"
+"POT-Creation-Date: 2015-01-16 20:44+0100\n"
 "PO-Revision-Date: 2015-01-02 12:53+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: views.py:26
+msgid "Unknown error"
+msgstr "Ukjent feil"
+
+#: views.py:152
+msgid "User skill search requires a search parameter."
+msgstr "Bruker ferdighetsøk krever et søke parameter."
+
 #: templates/base_generic.html:14
 msgid "app-title"
-msgstr ""
+msgstr "Lærebøtta"
 
 #: templates/base_generic.html:25
 msgid "My Projects"
-msgstr ""
+msgstr "Mine prosjekter"
 
 #: templates/base_generic.html:28
 msgid "Create project"
@@ -53,7 +61,9 @@ msgstr "Epost"
 msgid ""
 "Search for a tag or project title in the box over, or use some of these "
 "predefined lookups."
-msgstr "Søk etter emnerknagger eller tittler i boksen over, eller bruk et ferdigsøk via knappende under."
+msgstr ""
+"Søk etter emnerknagger eller tittler i boksen over, eller bruk et ferdigsøk "
+"via knappende under."
 
 #: templates/search_project.html:66
 msgid "Most used tags"
@@ -74,6 +84,14 @@ msgstr "ganger "
 #: templates/toptags.html:31
 msgid "No tags used yet!"
 msgstr "Ingen emneknagger er benyttet ennå."
+
+#: templates/usersskill.html:19
+msgid "People with the similar skill to "
+msgstr "Mennesker med liknene ferdigheter til "
+
+#: templates/usersskill.html:29
+msgid "No user was found with skill:"
+msgstr "Ingen bruker ble funnet med ferdighet:"
 
 #~ msgid "Name"
 #~ msgstr "Navn"
