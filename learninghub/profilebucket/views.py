@@ -97,7 +97,7 @@ def profile(request):
         c["is_owner"] = True
 
     # get skills
-    skills = UserSkill.objects.filter(user=user)
+    skills = UserSkill.objects.filter(user=viewuser)
     if(len(skills)>0):
         c["skills"] = skills
         

@@ -25,13 +25,15 @@ Display a user profile main entries.
 
 <h1>{% blocktrans %}Skills{% endblocktrans %}</h1>
 <div class="skillSet">
-{% for skill in skills %}
-<span class="skill">
-  {{skill.skill}}
-  {% if is_owner %}
-  <button class="deleteButton">X</button>
-  {% endif %}
-</span>
+  {% for skill in skills %}
+  <a href="{% url 'searchbucket.views.usersSkill' %}?search={{skill.skill}}"/>
+  <span class="skill">
+    {{skill.skill}}
+    {% if is_owner %}
+    <button class="deleteButton">X</button>
+    {% endif %}
+  </span>
+</a>
 {% endfor %}
 </div>
 {% endif %}

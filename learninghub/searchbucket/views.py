@@ -133,11 +133,15 @@ def topTags(request):
 #
 def usersSkill(request):
     c = {}
-    
 
-    skill = "Utvikling"
+    if 'search' not in request.GET:
+        return error_view(request, _("User skill search requires a search parameter."))
+    
+    skill = request.GET["search"]
     c["skill"] = skill
-    skills = UserSkill.objects.filter(skill=skill)
+    
+    # get skills matching the pattern
+    skills = UserSkill.objects.filter(skill__iregex=skill)
     
     if(len(skills) > 0):
         c["skills"] = skills

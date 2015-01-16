@@ -45,7 +45,11 @@
 {
     margin-bottom:25px;
 }
-
+.skillSet a
+{
+    text-decoration:None;
+    color:#FFF;
+}
 .skill
 {
     position:relative;

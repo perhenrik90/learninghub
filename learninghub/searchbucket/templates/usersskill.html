@@ -16,10 +16,16 @@ Author Per-Henrik Kvalnes 2014
 
 {% block content %}
 {% if skills %}
-<h1>{% blocktrans %}People with the skill: {% endblocktrans %}{{skill}}</h1>
-{% for s in skills %}
-<p>{{s.skill}}  {{s.user.first_name}} {{s.user.last_name}}</p>
+<h1>{% blocktrans %}People with the similar skill to {% endblocktrans %}{{skill}}</h1>
+<table>
+  {% for s in skills %}
+  <tr>
+
+    <td><a href="{% url 'profilebucket.views.profile' %}?id={{s.user.id}}">
+	{{s.user.first_name}} {{s.user.last_name}}</a></td>
+    </tr>
 {% endfor %}
+</table>
 {% else %}
 <p>{% blocktrans %}No user was found with skill:{% endblocktrans %} {{skill.skill}}</p>
 {% endif %}
