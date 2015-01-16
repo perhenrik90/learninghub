@@ -51,6 +51,8 @@ urlpatterns = patterns('',
     # search bucket app/module 
     url(r'^'+up+'search/toptags$','searchbucket.views.topTags',
         name='Top tags'),
+    url(r'^'+up+'search/usersskill$','searchbucket.views.usersSkill',
+        name='Users skill'),
 
     # profile bucket app/module
     url(r'^'+up+'profile$','profilebucket.views.profile',

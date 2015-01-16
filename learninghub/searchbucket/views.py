@@ -5,10 +5,13 @@ from django.core.context_processors import csrf
 from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
 from django.template import RequestContext, loader, Template, Context
+
 from django.contrib.auth.models import User
 
 # import models from learning bucket
 from django.db.models import Count
+from profilebucket.models import UserSkill
+
 import learningbucket.models as models
 
 #
@@ -16,7 +19,9 @@ import learningbucket.models as models
 # @author Per-Henrik Kvalnes 2014
 #
 
+#
 # search based on tag names
+#
 def searchProjects(request):
     
     c = {"results":False}
@@ -122,3 +127,21 @@ def topTags(request):
     context = RequestContext(request, c) 
     return HttpResponse(template.render(context))
 
+
+#
+# Gets all users with a spesific skill
+#
+def usersSkill(request):
+    c = {}
+    
+
+    skill = "Utvikling"
+    c["skill"] = skill
+    skills = UserSkill.objects.filter(skill=skill)
+    
+    if(len(skills) > 0):
+        c["skills"] = skills
+
+    template = loader.get_template("usersskill.html")
+    context = RequestContext(request, c)
+    return HttpResponse(template.render(context))

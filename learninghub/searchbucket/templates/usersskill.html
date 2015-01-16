@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% comment %}
+Template for searching through projects
+Author Per-Henrik Kvalnes 2014
+{% endcomment %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load url from future %}
+
+{% block customhead %}
+<link href="{% static 'css/search.css' %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block content %}
+{% if skills %}
+{% else %}
+<p>{% blocktrans %}No user was found with skill:{% endblocktrans %} {{skill.skill}}</p>
+{% endif %}
+{% endblock %}
+
