@@ -185,6 +185,25 @@ def profile_add_skill(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
+#
+# Delete a skill
+# 
+def profile_delete_skill(request):
+    # if user is not authenticated!
+    user = request.user
+    if(not user.is_authenticated()):
+        return userNotAuthenticated(request)
+
+    try:
+        comment_id = request.GET["id"]
+        comment = UserSkill.objects.get(id=comment_id)
+        comment.delete()
+        return redirect(reverse(profile)+'?id='+str(user.id))
+    
+    except Exception:
+        return error_view(request, _("Can not delete this comment. It does not exist."))
+        
+    
 
 #
 # Upload an profile image 

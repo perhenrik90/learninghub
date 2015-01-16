@@ -43,7 +43,8 @@
  *****************/
 .skillSet
 {
-    margin-bottom:25px;
+    padding:10px;
+    margin-bottom:20px;
 }
 .skillSet a
 {
@@ -53,19 +54,37 @@
 .skill
 {
     position:relative;
-    padding:8px;
-    margin-right:15px;
-    background-color:#81A9E1;
+    padding:10px;
+    margin:5px;
+    width:200px;
+    background-color:#003283;
     font-family:monospace;
     font-weight:bold;
     box-shadow:1px 1px 5px;
+    display:inline-block;
 }
+.skill:hover{background-color:#81A9E1;}
+
 .deleteButton
 {
-    position:aboslute;
-    right:2px;
-    left:auto;
-    top:2px;
-    bottom:2px;
-    font-size:10px;
+    position:relative;
+    right:45px;
+
+    top:0px;
+    bottom:0px;
+    background-color:#555;
+    font-size:20px;
+    
+    padding:6px;
+}
+.deleteButton:hover
+{
+    background-color:#000;
+}
+.skillText
+{
+    margin-top:2px;
+    margin-bottom:2px;
+    font-size:20px;
+    margin-right:15px;
 }

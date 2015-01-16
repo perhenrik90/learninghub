@@ -28,9 +28,11 @@ Display a user profile main entries.
   {% for skill in skills %}
   <a href="{% url 'searchbucket.views.usersSkill' %}?search={{skill.skill}}"/>
   <span class="skill">
-    {{skill.skill}}
+    <span class="skillText">{{skill.skill}}</span>
     {% if is_owner %}
-    <button class="deleteButton">X</button>
+    <a class="deleteButton" href="{% url 'profilebucket.views.profile_delete_skill' %}?id={{skill.id}}"/>
+    X
+    </a>
     {% endif %}
   </span>
 </a>
