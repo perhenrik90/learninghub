@@ -185,6 +185,10 @@ def profile_add_skill(request):
     context = RequestContext(request, c)
     return HttpResponse(template.render(context))
 
+
+#
+# Upload an profile image 
+#
 def project_uploadimage(request):
 
     # no user, no file!

@@ -320,7 +320,7 @@ def project_post_comment(request):
         taglist = buckettool.filterTags(comment)
         buckettool.storeTags(taglist=taglist, project=p)
 
-        return redirect(reverse(myprojects)+"?id="+project_id)
+        return redirect(reverse(project)+"?id="+project_id)
 
     except Exception as e:
         print(e)
