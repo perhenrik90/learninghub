@@ -57,7 +57,7 @@ class EProjectComment(models.Model):
     owner = models.ForeignKey(User)
     
 #
-# A comment on a project
+# A tag as comment on a project
 # 
 class EProjectTag(models.Model):
     
