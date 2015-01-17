@@ -11,6 +11,9 @@
 {
     margin:10px;
     margin-bottom:25px;
+    background-color:#FFF;
+    padding:10px;
+    border:1px solid #9AA2AB;
 }
 .searchEntry h2,a
 {
