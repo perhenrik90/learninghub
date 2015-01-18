@@ -113,6 +113,7 @@ SITE_URL = "http://127.0.0.1:8000"
 # email 
 HOST_EMAIL = "learninghub@test.com"
 
+# self regestring options 
 USER_SELF_REGESTRING = True
 EMAIL_DOMAINS = [r'.*@gmail.com', r'.*@test.com']
 

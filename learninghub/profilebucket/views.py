@@ -421,9 +421,20 @@ def profile_createusr(request):
         if not first_name.strip() or not last_name.strip():
             c["not_valid"] = _("You must enter a valid name")
 
+        # check if the email is in one of the allowed domains
+        not_in_dommain = True
+        for email_regex in settings.EMAIL_DOMAINS:
+            if re.match(email_regex, email):
+                not_in_dommain = False
+            
+        # check if the entered email is valid 
         if not re.match(r'\b[\w.-]+@[\w.-]+.\w{2,4}\b', email):
             c["not_valid"] = _("You must enter a valid email")
 
+        if not_in_dommain:
+            domain = email.split("@")[1]
+            c["not_valid"] = _("The email domain "+domain +" is not accepted by the system.")
+            
         # check if passwords are equal 
         if pwd1.strip() and pwd1 != pwd2:
             c["not_valid"] = _("The passwords are not equal")

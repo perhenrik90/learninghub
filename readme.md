@@ -26,7 +26,7 @@ Functional requirments
 * [ ] - following other users
 * [x] - wall / table of activities
 * [x] - follow projects
-* [ ] - self registrating restricted to domains
+* [x] - self registrating restricted to domains
 * [ ] - share a project by email (internly)
 * [x] - add skills for users
 * [x] - lost password function 
