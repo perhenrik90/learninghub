@@ -109,17 +109,22 @@ def searchProjects(request):
             
         # make the dictionary to a list and sort by priority
         #  on users and projects
+        c['results'] = False
         s = lambda(x): x.priority
         pdic = sorted(pdic.values(),key=s, reverse=True)
         users = sorted(udic.values(), key=s, reverse=True)
 
+        
         if len(users)> 0:
             c["users"] = users
+            c['results'] = True
 
         if len(pdic)> 0:
             c['projects'] = pdic
+            c['results'] = True
 
-        c['results'] = True
+        if len(users) == 0 and len(pdic) == 0:
+            c["no_results"] = True
 
     template = loader.get_template("search_project.html")
     context = RequestContext(request, c) 

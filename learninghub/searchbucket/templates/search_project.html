@@ -60,6 +60,9 @@ Author Per-Henrik Kvalnes 2014
 {% endif %}
 {% else %}
 <!-- if no results are given, show buttons -->
+{% if no_results %}
+<p style="color:red">{% blocktrans %}No search results was found. {% endblocktrans %}</p>
+{% endif %}
 <p>{% blocktrans %}Search for a tag or project title in the box over, or use some of these predefined lookups.{% endblocktrans %}</p>
 <nav class="menu">
   <a href="{% url 'searchbucket.views.topTags' %}"/>
