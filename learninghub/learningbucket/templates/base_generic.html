@@ -15,7 +15,7 @@ Author Per-Henrik Kvalnes, 2014
     <title>{% blocktrans %}app-title{% endblocktrans %}</title>
     <meta charset="UTF-8"></meta>
     <!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="{% static 'js/lib/html5.js' %}"></script>
 <![endif]-->
     <link rel="stylesheet" type="text/css"
 	  href="{% static 'css/default.css' %}"/>
@@ -39,7 +39,6 @@ Author Per-Henrik Kvalnes, 2014
 	{% trans "Profile" %}</a> 
       <a href={% url 'learningbucket.views.logout_view' %}>
 	{% trans "Logout" %}</a> 
-
     </nav>
     <section>
     <div id="content">
