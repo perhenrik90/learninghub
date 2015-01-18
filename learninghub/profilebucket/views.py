@@ -337,9 +337,9 @@ def profile_lostpwd(request):
                 m.save()
                 
                 # generate email
-                full_url = settings.SITE_URL+reverse(profile_validatePwdCode)+'?pwdcode='+code
+                full_url = "http://"+settings.SITE_URL+reverse(profile_validatePwdCode)+'?pwdcode='+code
                 
-                message = _("You have requested a new password: ")+ full_url
+                message = _("You have requested a new password: \n\n")+ full_url
                 print(message)
                 send_mail(_("Password reset"),message, settings.HOST_EMAIL, [usr.email])
             
