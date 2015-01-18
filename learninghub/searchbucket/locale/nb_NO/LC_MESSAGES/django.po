@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-16 20:44+0100\n"
+"POT-Creation-Date: 2015-01-18 14:16+0100\n"
 "PO-Revision-Date: 2015-01-02 12:53+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#: views.py:152
+#: views.py:157
 msgid "User skill search requires a search parameter."
 msgstr "Bruker ferdighetsøk krever et søke parameter."
 
@@ -57,7 +57,11 @@ msgstr "Prosjekt eid av"
 msgid "Email: "
 msgstr "Epost"
 
-#: templates/search_project.html:63
+#: templates/search_project.html:64
+msgid "No search results was found. "
+msgstr "Ingen søkeresultater funnet."
+
+#: templates/search_project.html:66
 msgid ""
 "Search for a tag or project title in the box over, or use some of these "
 "predefined lookups."
@@ -65,7 +69,7 @@ msgstr ""
 "Søk etter emnerknagger eller tittler i boksen over, eller bruk et ferdigsøk "
 "via knappende under."
 
-#: templates/search_project.html:66
+#: templates/search_project.html:69
 msgid "Most used tags"
 msgstr "Mest brukte emneknagger"
 
