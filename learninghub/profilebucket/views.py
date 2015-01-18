@@ -439,7 +439,7 @@ def profile_createusr(request):
         if pwd1.strip() and pwd1 != pwd2:
             c["not_valid"] = _("The passwords are not equal")
 
-        # if there are no errors, create a user
+        # if there are no errors, try create a user
         if not 'not_valid' in c:
             usr = User(username=email,
                        first_name=first_name,
@@ -451,9 +451,10 @@ def profile_createusr(request):
             code = UsrValidationCode(owner=usr)
             code.save()
             message = _("You have created a new user.\n")
-            message += _("Confirm with the url following url.\n\n")
-            message += settings.SITE_URL + reverse(profile_validateusr)+'?code='+code.code
-            send_mail(_("Activate your user."), message, settings.HOST_EMAIL,[email])
+            message += _("Confirm your new user with the following url.\n\n")
+            message += "http://"+settings.SITE_URL + reverse(profile_validateusr)+'?code='+code.code
+
+            send_mail(_("DO NOT REPLY."), message, settings.HOST_EMAIL,[email])
             print(message)
             c["usr"] = usr
             c["success"] = True
