@@ -151,7 +151,8 @@ Author Per-Henrik Kvalnes, 2014
   {% if comments %}
   {% for c in comments %}
   <div class="comment">
-    <p><b>{{c.owner.first_name}} {{c.owner.last_name}}: </b>
+    <p><b><a href="{% url 'profilebucket.views.profile' %}?id={{c.owner.id}}">
+	     {{c.owner.first_name}} {{c.owner.last_name}}</a>: </b>
       {{c.comment}} <span> - {{c.timecreated}}</span></p>
   </div>
   {% endfor %}
