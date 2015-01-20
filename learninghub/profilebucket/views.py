@@ -171,11 +171,14 @@ def profile_add_skill(request):
 
     # if the method is not post 
     if not request.method == "POST" and not 'skill' in request.POST:
-        error_view(request, _("No skill given"))
+        return error_view(request, _("No skill given"))
 
     c = {}
     skill = request.POST["skill"]
     usr = request.user
+
+    if not skill.strip():
+        return error_view(request, _("A skill must have a text."))
     
     s = UserSkill(skill=skill, user=usr)
     s.save()
