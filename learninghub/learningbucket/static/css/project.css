@@ -47,6 +47,7 @@
 
 .subsection table td
 {
+    vertical-align:top;
     min-width:230px;
     padding-right:15px;
 }
