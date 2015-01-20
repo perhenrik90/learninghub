@@ -28,6 +28,9 @@ class UserSkill(models.Model):
     skill = models.CharField(max_length=22)
     user = models.ForeignKey(User)
 
+    # A user just have one skill of a same type
+    class Meta:
+        unique_together = ('skill', 'user')
 #
 # Lost password validation code
 #
