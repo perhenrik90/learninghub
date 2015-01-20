@@ -10,8 +10,13 @@ Author Per-Henrik Kvalnes, 2014
 <h1>{% blocktrans %}Something went worng! {% endblocktrans %}</h1>
 <p>{{message}}</p>
 <br\>
-<a href="{% url 'learningbucket.views.myprojects' %}">
-<p>{% blocktrans %}Back to my projects {% endblocktrans %}</p>
+<nav class="menu">
+<a onclick="window.history.back()">
+{% blocktrans %}Back{% endblocktrans %}
 </a>
+<a href="{% url 'learningbucket.views.myprojects' %}">
+{% blocktrans %}Back to my projects {% endblocktrans %}
+</a>
+</nav>
 {% endblock %}
 

@@ -181,7 +181,13 @@ def profile_add_skill(request):
         return error_view(request, _("A skill must have a text."))
     
     s = UserSkill(skill=skill, user=usr)
-    s.save()
+    
+    # try to save
+    try:
+        s.save()
+    except Exception:
+        return error_view(request, _("Can not add the skill. The skill allredy exist."))
+    
     return redirect(reverse(profile)+'?id='+str(usr.id))
 
     template = loader.get_template("profile.html");
