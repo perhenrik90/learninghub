@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 
 from django.core.context_processors import csrf

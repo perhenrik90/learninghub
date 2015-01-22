@@ -4,6 +4,7 @@
 # 
 # @author Per-Henrik Kvalnes 2014
 #
+# -*- coding: utf-8 -*-
 import learningbucket.models
 
 # return a list of tags based on a comment string
